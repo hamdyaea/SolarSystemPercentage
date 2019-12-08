@@ -75,62 +75,84 @@ def Earth():
 
 
 def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+
+    # Rotation year before this year
+    years_ago_full = datetime.now() - timedelta(days=1 * 365)
+    years_ago_full = str(years_ago_full)
+    years_ago = years_ago_full[:4]
+    years_ago = int(years_ago) # result
+
+
+    # Next rotation year
+    years_after_full = datetime.now() + timedelta(days=1 * 365)
+    years_after_full = str(years_after_full)
+    years_after = years_after_full[:4]
+    years_after = int(years_after) # result
+
+
     with open("Orbit.json", "r") as O:
         orbit = json.load(O)
         thisYear = orbit["Moon"][str(Percentage.current_year)]  # This year
-        """
-        d0Str=orbit["Moon"][str(Percentage.current_year)][0]
-        d0Year=(d0Str[:4])
-        d0Year=int(d0Year)
-        d0Month=(d0Str[5:7])
-        d0Month=int(d0Month)
-        d0Day=(d0Str[8:10])
-        d0Day=int(d0Day)
+        try:
+            for i in thisYear:
+                d0Year = i[:4]
+                d0Year = int(d0Year)
+                d0Month = i[5:7]
+                d0Month = int(d0Month)
+                d0Day = i[8:10]
+                d0Day = int(d0Day)
+                d0 = date(d0Year, d0Month, d0Day)
+                d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+                if (
+                    d0 >= d1 - timedelta(days=30) and d0 <= d1
+                ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                    Percentage.MoonPerihelion = d0
 
-        d2Str = orbit["Moon"][str(Percentage.current_year)][1]
-        d2Year = (d2Str[:4])
-        d2Year = int(d2Year)
-        d2Month = (d2Str[5:7])
-        d2Month = int(d2Month)
-        d2Day = (d2Str[8:10])
-        d2Day = int(d2Day)
+            for i in thisYear:
+                d0Year = i[:4]
+                d0Year = int(d0Year)
+                d0Month = i[5:7]
+                d0Month = int(d0Month)
+                d0Day = i[8:10]
+                d0Day = int(d0Day)
+                d0 = date(d0Year, d0Month, d0Day)
+                d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+                if (
+                    d0 <= d1 + timedelta(days=30) and d0 >= d1
+                ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                    Percentage.NewMoonPerihelion = d0
 
-        d0 =date(d0Year,d0Month,d0Day)
-        d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-        d2 = date(d2Year,d2Month,d2Day)
-        d3 = d2 - d0
-        """
-        for i in thisYear:
-            d0Year = i[:4]
-            d0Year = int(d0Year)
-            d0Month = i[5:7]
-            d0Month = int(d0Month)
-            d0Day = i[8:10]
-            d0Day = int(d0Day)
-            d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            if (
-                d0 >= d1 - timedelta(days=30) and d0 <= d1
-            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
-                Percentage.MoonPerihelion = d0
+            d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
+        except:
+            for i in thisYear:
+                d0Year = years_ago
+                d0Month = i[5:7]
+                d0Month = int(d0Month)
+                d0Day = i[8:10]
+                d0Day = int(d0Day)
+                d0 = date(d0Year, d0Month, d0Day)
+                d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+                if (
+                        d0 >= d1 - timedelta(days=30) and d0 <= d1
+                ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                    Percentage.MoonPerihelion = d0
 
-        for i in thisYear:
-            d0Year = i[:4]
-            d0Year = int(d0Year)
-            d0Month = i[5:7]
-            d0Month = int(d0Month)
-            d0Day = i[8:10]
-            d0Day = int(d0Day)
-            d0 = date(d0Year, d0Month, d0Day)
+            for i in thisYear:
+                d0Year = years_after
+                d0Month = i[5:7]
+                d0Month = int(d0Month)
+                d0Day = i[8:10]
+                d0Day = int(d0Day)
+                d0 = date(d0Year, d0Month, d0Day)
+                d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+                if (
+                        d0 <= d1 + timedelta(days=30) and d0 >= d1
+                ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                    Percentage.NewMoonPerihelion = d0
+
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            if (
-                d0 <= d1 + timedelta(days=30) and d0 >= d1
-            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
-                Percentage.NewMoonPerihelion = d0
-        # print(Percentage.MoonPerihelion) # = d0
-        # print(Percentage.NewMoonPerihelion) # = d2
-        d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-        d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
+            d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
         d3 = str(d3)
         d3 = d3[:3]
         d3 = int(d3)
@@ -158,12 +180,10 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
         bar.finish()
         print("\n")
 
+
     """
-  
-    i = est plus grand  ou égal qu'aujourd'hui mains 30 jours et n'est pas plus grand qu'aujourd'hui.
 
-
-    Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar systme. 
+    Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
     """
 
 
