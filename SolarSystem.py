@@ -261,11 +261,11 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
         # Add graph progress #####
 
         print("Planet : Mercury")
-        print(("Day of Mercury rotation : ") + str("Day ") + str(new))
-        print(("Mercury rotation progress : ") + str(Percentage.MercuryResult) + str("%"))
+        print(("Day of the year : ") + str("Day ") + str(new))
+        print(("Year progress : ") + str(Percentage.MercuryResult) + str("%"))
 
         # Progress bar creation
-        bar = Bar("Percent of Mercury rotation : ", max=100)
+        bar = Bar("Percent of this year : ", max=100)
         for i in range(int(Percentage.MercuryResult)):
             bar.next()
         bar.finish()
