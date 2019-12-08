@@ -5,7 +5,6 @@
  
 ```sh
 
-
  __     __               _   __
  \ \   / /              (_) / /
   \ \_/ /__  __ _ _ __     / / 
@@ -28,9 +27,9 @@ Percent of this moon rotation :  |##################              | 57/100
 
 
 Planet : Mercury
-Day of Mercury rotation : Day 22
-Mercury rotation progress : 24.72%
-Percent of Mercury rotation :  |#######                         | 24/100
+Day of the year : Day 22
+Year progress : 24.72%
+Percent of this year :  |#######                         | 24/100
 
 
 ```
