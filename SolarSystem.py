@@ -80,13 +80,17 @@ def Earth():
 def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
-    years_ago_full = datetime.now() - timedelta(days=1 * 365) # adapt to the number of years
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
     years_ago_full = str(years_ago_full)
     years_ago = years_ago_full[:4]
     years_ago = int(years_ago)  # result
 
     # Next rotation year
-    years_after_full = datetime.now() + timedelta(days=1 * 365) # adapt to the number of years
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
     years_after_full = str(years_after_full)
     years_after = years_after_full[:4]
     years_after = int(years_after)  # result
@@ -189,20 +193,24 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
         bar.finish()
         print("\n")
 
+
 def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
-    years_ago_full = datetime.now() - timedelta(days=1 * 365)  # adapt to the number of years
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
     years_ago_full = str(years_ago_full)
     years_ago = years_ago_full[:4]
     years_ago = int(years_ago)  # result
 
     # Next rotation year
-    years_after_full = datetime.now() + timedelta(days=1 * 365)  # adapt to the number of years
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
     years_after_full = str(years_after_full)
     years_after = years_after_full[:4]
     years_after = int(years_after)  # result
-
 
     with open("Orbit.json", "r") as O:
         orbit = json.load(O)
@@ -222,7 +230,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
                 if (
-                        d0 >= d1 - timedelta(days=90) and d0 <= d1
+                    d0 >= d1 - timedelta(days=90) and d0 <= d1
                 ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                     Percentage.MercuryPerihelion = d0
 
@@ -238,10 +246,12 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
                 if (
-                        d0 <= d1 + timedelta(days=90) and d0 >= d1
+                    d0 <= d1 + timedelta(days=90) and d0 >= d1
                 ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                     Percentage.NewMercuryPerihelion = d0
-                d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
                 d3 = Percentage.NewMercuryPerihelion - Percentage.MercuryPerihelion
                 d3 = str(d3)
                 d3 = d3[:3]
@@ -283,7 +293,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         Percentage.current_year, Percentage.thisMonth, Percentage.today
                     )
                     if (
-                            d0 >= d1 - timedelta(days=90) and d0 <= d1
+                        d0 >= d1 - timedelta(days=90) and d0 <= d1
                     ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                         Percentage.MercuryPerihelion = d0
 
@@ -299,10 +309,12 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
                 if (
-                        d0 <= d1 + timedelta(days=90) and d0 >= d1
+                    d0 <= d1 + timedelta(days=90) and d0 >= d1
                 ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                     Percentage.NewMercuryPerihelion = d0
-                d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
                 d3 = Percentage.NewMercuryPerihelion - Percentage.MercuryPerihelion
                 d3 = str(d3)
                 d3 = d3[:3]
@@ -343,7 +355,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
                 if (
-                        d0 <= d1 - timedelta(days=90) and d0 >= d1
+                    d0 <= d1 - timedelta(days=90) and d0 >= d1
                 ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                     Percentage.NewMercuryPerihelion = d0
 
@@ -359,10 +371,12 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         Percentage.current_year, Percentage.thisMonth, Percentage.today
                     )
                     if (
-                            d0 <= d1 + timedelta(days=90) and d0 >= d1
+                        d0 <= d1 + timedelta(days=90) and d0 >= d1
                     ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                         Percentage.NewMercuryPerihelion = d0
-                    d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+                    d1 = date(
+                        Percentage.current_year, Percentage.thisMonth, Percentage.today
+                    )
                     d3 = Percentage.NewMercuryPerihelion - Percentage.MercuryPerihelion
                     d3 = str(d3)
                     d3 = d3[:3]
@@ -382,7 +396,9 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                     print("Planet : Mercury")
                     print(("Day of the year : ") + str("Day ") + str(new))
-                    print(("Year progress : ") + str(Percentage.MercuryResult) + str("%"))
+                    print(
+                        ("Year progress : ") + str(Percentage.MercuryResult) + str("%")
+                    )
 
                     # Progress bar creation
                     bar = Bar("Percent of this year : ", max=100)
