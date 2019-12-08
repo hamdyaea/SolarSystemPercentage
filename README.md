@@ -4,6 +4,7 @@
  This programm is not finish, I am working on it
  
 ```sh
+
  __     __               _   __
  \ \   / /              (_) / /
   \ \_/ /__  __ _ _ __     / / 
@@ -23,5 +24,11 @@ Satelite : Moon
 Day of the moon rotation : Day 15
 Moon rotation progress : 57.69%
 Percent of this moon rotation :  |##################              | 57/100
+
+
+Planet : Mercury
+Day of the moon rotation : Day 22
+Mercury rotation progress : 24.72%
+Percent of this moon rotation :  |#######                         | 24/100
 
 ```
