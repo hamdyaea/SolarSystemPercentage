@@ -4,7 +4,7 @@
  This programm is not finish, I am working on it
  
 ```sh
-  __     __               _   __
+ __     __               _   __
  \ \   / /              (_) / /
   \ \_/ /__  __ _ _ __     / / 
    \   / _ \/ _` | '__|   / /  
