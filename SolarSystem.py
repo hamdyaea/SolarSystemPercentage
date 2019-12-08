@@ -5,6 +5,7 @@
 
 # percentage of the year for the earth, the moon, jupiter, Saturn, etc...
 # Lunar Perigee and Apogee Calculator : https://www.fourmilab.ch/earthview/pacalc.html
+# Mercury and others : https://in-the-sky.org/newscalyear.php
 
 from datetime import date, datetime, timedelta
 import re
