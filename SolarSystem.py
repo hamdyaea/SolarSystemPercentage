@@ -278,9 +278,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                     print("Planet : Moon")
                     print(("Day of the year : ") + str("Day ") + str(new))
-                    print(
-                        ("Year progress : ") + str(Percentage.MoonResult) + str("%")
-                    )
+                    print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
 
                     # Progress bar creation
                     bar = Bar("Percent of this year : ", max=100)
