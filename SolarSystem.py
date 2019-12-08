@@ -112,7 +112,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
                 if (
-                    d0 >= d1 - timedelta(days=90) and d0 <= d1
+                    d0 >= d1 - timedelta(days=40) and d0 <= d1
                 ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                     Percentage.MoonPerihelion = d0
 
@@ -128,7 +128,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
                 if (
-                    d0 <= d1 + timedelta(days=90) and d0 >= d1
+                    d0 <= d1 + timedelta(days=40) and d0 >= d1
                 ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                     Percentage.NewMoonPerihelion = d0
                 d1 = date(
@@ -175,7 +175,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         Percentage.current_year, Percentage.thisMonth, Percentage.today
                     )
                     if (
-                        d0 >= d1 - timedelta(days=90) and d0 <= d1
+                        d0 >= d1 - timedelta(days=40) and d0 <= d1
                     ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                         Percentage.MoonPerihelion = d0
 
@@ -191,7 +191,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
                 if (
-                    d0 <= d1 + timedelta(days=90) and d0 >= d1
+                    d0 <= d1 + timedelta(days=40) and d0 >= d1
                 ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                     Percentage.NewMoonPerihelion = d0
                 d1 = date(
@@ -237,7 +237,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
                 if (
-                    d0 <= d1 - timedelta(days=90) and d0 >= d1
+                    d0 <= d1 - timedelta(days=40) and d0 >= d1
                 ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                     Percentage.NewMoonPerihelion = d0
 
@@ -253,7 +253,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         Percentage.current_year, Percentage.thisMonth, Percentage.today
                     )
                     if (
-                        d0 <= d1 + timedelta(days=90) and d0 >= d1
+                        d0 <= d1 + timedelta(days=40) and d0 >= d1
                     ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                         Percentage.NewMoonPerihelion = d0
                     d1 = date(
