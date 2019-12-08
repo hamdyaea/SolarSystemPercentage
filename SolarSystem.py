@@ -77,13 +77,13 @@ def Earth():
 def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
-    years_ago_full = datetime.now() - timedelta(days=1 * 365)
+    years_ago_full = datetime.now() - timedelta(days=1 * 365) # adapt to the number of years
     years_ago_full = str(years_ago_full)
     years_ago = years_ago_full[:4]
     years_ago = int(years_ago)  # result
 
     # Next rotation year
-    years_after_full = datetime.now() + timedelta(days=1 * 365)
+    years_after_full = datetime.now() + timedelta(days=1 * 365) # adapt to the number of years
     years_after_full = str(years_after_full)
     years_after = years_after_full[:4]
     years_after = int(years_after)  # result
