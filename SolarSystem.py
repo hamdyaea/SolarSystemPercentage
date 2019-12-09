@@ -12,7 +12,6 @@ import re
 import json
 
 
-
 class Percentage:
     def __init__(self):
         self.current_year
@@ -46,9 +45,7 @@ def motd():
 
 def Earth():
     d0 = date(Percentage.current_year, 1, 1)
-    d1 = date(
-        Percentage.current_year, Percentage.thisMonth, Percentage.today
-    )
+    d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
     d1 = d1 + timedelta(days=1)  # Year, month, day
     d2 = date(Percentage.current_year, 12, 31)
     d3 = d2 - d0
@@ -72,7 +69,12 @@ def Earth():
     print(("Year progress : ") + str(Percentage.EarthResult) + str("%"))
     # Progress bar creation
     percent = Percentage.EarthResult
-    barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+    barre = (
+        "["
+        + "#" * int((50 / 100) * percent)
+        + "-" * int((50 / 100) * (100 - percent))
+        + "]"
+    )
     print("Percent of this year : " + (barre))
     print("\n")
 
@@ -157,7 +159,12 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
 
                     percent = Percentage.MoonResult
-                    barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                    barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                    )
                     print("Percent of this year : " + (barre))
                     print("\n")
         except:
@@ -219,7 +226,12 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
 
                     percent = Percentage.MoonResult
-                    barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                    barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                    )
                     print("Percent of this year : " + (barre))
                     print("\n")
             except:
@@ -256,7 +268,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                         Percentage.NewMoonPerihelion = d0
                         d1 = date(
-                            Percentage.current_year, Percentage.thisMonth, Percentage.today
+                            Percentage.current_year,
+                            Percentage.thisMonth,
+                            Percentage.today,
                         )
                         d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
                         d3 = str(d3)
@@ -277,10 +291,17 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                         print("Satelite : Moon")
                         print(("Day of the year : ") + str("Day ") + str(new))
-                        print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
+                        print(
+                            ("Year progress : ") + str(Percentage.MoonResult) + str("%")
+                        )
 
                         percent = Percentage.MoonResult
-                        barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                        barre = (
+                            "["
+                            + "#" * int((50 / 100) * percent)
+                            + "-" * int((50 / 100) * (100 - percent))
+                            + "]"
+                        )
                         print("Percent of this year : " + (barre))
                         print("\n")
 
@@ -367,7 +388,12 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 print(("Year progress : ") + str(Percentage.MercuryResult) + str("%"))
 
                 percent = Percentage.MercuryResult
-                barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                barre = (
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
+                )
                 print("Percent of this year : " + (barre))
                 print("\n")
         except:
@@ -429,7 +455,12 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 print(("Year progress : ") + str(Percentage.MercuryResult) + str("%"))
 
                 percent = Percentage.MercuryResult
-                barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                barre = (
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
+                )
                 print("Percent of this year : " + (barre))
                 print("\n")
             except:
@@ -492,7 +523,12 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     )
 
                     percent = Percentage.MercuryResult
-                    barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                    barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                    )
                     print("Percent of this year : " + (barre))
                     print("\n")
     """
