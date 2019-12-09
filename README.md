@@ -19,21 +19,22 @@ Need progress : python3 -m pip install progress
 
 
 Planet : Earth
-Day of the year : Day 341
-Year progress : 93.42%
-Percent of this year :  |#############################   | 93/100
+Day of the year : Day 343
+Year progress : 93.97%
+Percent of this year : [##############################################---]
 
 
 Satelite : Moon
-Day of the moon rotation : Day 15
-Moon rotation progress : 57.69%
-Percent of this moon rotation :  |##################              | 57/100
+Day of the year : Day 17
+Year progress : 65.38%
+Percent of this year : [################################-----------------]
 
 
 Planet : Mercury
-Day of the year : Day 22
-Year progress : 24.72%
-Percent of this year :  |#######                         | 24/100
+Day of the year : Day 24
+Year progress : 26.97%
+Percent of this year : [#############------------------------------------]
+
 
 
 ```

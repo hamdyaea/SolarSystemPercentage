@@ -10,7 +10,7 @@
 from datetime import date, datetime, timedelta
 import re
 import json
-from progress.bar import Bar
+
 
 
 class Percentage:
@@ -71,10 +71,9 @@ def Earth():
     print(("Day of the year : ") + str("Day ") + str(new))
     print(("Year progress : ") + str(Percentage.EarthResult) + str("%"))
     # Progress bar creation
-    bar = Bar("Percent of this year : ", max=100)
-    for i in range(int(Percentage.EarthResult)):
-        bar.next()
-    bar.finish()
+    percent = Percentage.EarthResult
+    barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+    print("Percent of this year : " + (barre))
     print("\n")
 
 
@@ -157,11 +156,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     print(("Day of the year : ") + str("Day ") + str(new))
                     print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
 
-                    # Progress bar creation
-                    bar = Bar("Percent of this year : ", max=100)
-                    for i in range(int(Percentage.MoonResult)):
-                        bar.next()
-                    bar.finish()
+                    percent = Percentage.MoonResult
+                    barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                    print("Percent of this year : " + (barre))
                     print("\n")
         except:
             try:
@@ -221,11 +218,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     print(("Day of the year : ") + str("Day ") + str(new))
                     print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
 
-                    # Progress bar creation
-                    bar = Bar("Percent of this year : ", max=100)
-                    for i in range(int(Percentage.MoonResult)):
-                        bar.next()
-                    bar.finish()
+                    percent = Percentage.MoonResult
+                    barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                    print("Percent of this year : " + (barre))
                     print("\n")
             except:
                 d0Year = years_ago[:4]
@@ -284,11 +279,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         print(("Day of the year : ") + str("Day ") + str(new))
                         print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
 
-                        # Progress bar creation
-                        bar = Bar("Percent of this year : ", max=100)
-                        for i in range(int(Percentage.MoonResult)):
-                            bar.next()
-                        bar.finish()
+                        percent = Percentage.MoonResult
+                        barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                        print("Percent of this year : " + (barre))
                         print("\n")
 
 
@@ -373,11 +366,9 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 print(("Day of the year : ") + str("Day ") + str(new))
                 print(("Year progress : ") + str(Percentage.MercuryResult) + str("%"))
 
-                # Progress bar creation
-                bar = Bar("Percent of this year : ", max=100)
-                for i in range(int(Percentage.MercuryResult)):
-                    bar.next()
-                bar.finish()
+                percent = Percentage.MercuryResult
+                barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                print("Percent of this year : " + (barre))
                 print("\n")
         except:
             try:
@@ -437,11 +428,9 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 print(("Day of the year : ") + str("Day ") + str(new))
                 print(("Year progress : ") + str(Percentage.MercuryResult) + str("%"))
 
-                # Progress bar creation
-                bar = Bar("Percent of this year : ", max=100)
-                for i in range(int(Percentage.MercuryResult)):
-                    bar.next()
-                bar.finish()
+                percent = Percentage.MercuryResult
+                barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                print("Percent of this year : " + (barre))
                 print("\n")
             except:
                 d0Year = years_ago[:4]
@@ -502,11 +491,9 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         ("Year progress : ") + str(Percentage.MercuryResult) + str("%")
                     )
 
-                    # Progress bar creation
-                    bar = Bar("Percent of this year : ", max=100)
-                    for i in range(int(Percentage.MercuryResult)):
-                        bar.next()
-                    bar.finish()
+                    percent = Percentage.MercuryResult
+                    barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
+                    print("Percent of this year : " + (barre))
                     print("\n")
     """
 
