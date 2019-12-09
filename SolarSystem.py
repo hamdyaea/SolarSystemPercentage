@@ -131,36 +131,36 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     d0 <= d1 + timedelta(days=40) and d0 >= d1
                 ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                     Percentage.NewMoonPerihelion = d0
-                d1 = date(
-                    Percentage.current_year, Percentage.thisMonth, Percentage.today
-                )
-                d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
-                d3 = str(d3)
-                d3 = d3[:3]
-                d3 = int(d3)
-                d3 = d3 + 1
-                ValuePercent = d3 / 100
-                delta = d1 - Percentage.MoonPerihelion
-                new = re.sub("[^0-9]", "", str(delta))
-                new = str(new)
-                new = new[:2]
-                new = int(new)
+                    d1 = date(
+                        Percentage.current_year, Percentage.thisMonth, Percentage.today
+                    )
+                    d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
+                    d3 = str(d3)
+                    d3 = d3[:3]
+                    d3 = int(d3)
+                    d3 = d3 + 1
+                    ValuePercent = d3 / 100
+                    delta = d1 - Percentage.MoonPerihelion
+                    new = re.sub("[^0-9]", "", str(delta))
+                    new = str(new)
+                    new = new[:2]
+                    new = int(new)
 
-                Percentage.MoonResult = new / ValuePercent
-                Percentage.MoonResult = round(Percentage.MoonResult, 2)
+                    Percentage.MoonResult = new / ValuePercent
+                    Percentage.MoonResult = round(Percentage.MoonResult, 2)
 
-                # Add graph progress #####
+                    # Add graph progress #####
 
-                print("Satelite : Moon")
-                print(("Day of the year : ") + str("Day ") + str(new))
-                print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
+                    print("Satelite : Moon")
+                    print(("Day of the year : ") + str("Day ") + str(new))
+                    print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
 
-                # Progress bar creation
-                bar = Bar("Percent of this year : ", max=100)
-                for i in range(int(Percentage.MoonResult)):
-                    bar.next()
-                bar.finish()
-                print("\n")
+                    # Progress bar creation
+                    bar = Bar("Percent of this year : ", max=100)
+                    for i in range(int(Percentage.MoonResult)):
+                        bar.next()
+                    bar.finish()
+                    print("\n")
         except:
             try:
                 for i in thisYear:
@@ -179,75 +179,13 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                         Percentage.MoonPerihelion = d0
 
-                d0Year = years_after[:4]
-                d0Year = int(d0Year)
-                d0Month = years_after[5:7]
-                d0Month = int(d0Month)
-                d0Day = years_after[8:10]
-                d0Day = int(d0Day)
-
-                d0 = date(d0Year, d0Month, d0Day)
-                d1 = date(
-                    Percentage.current_year, Percentage.thisMonth, Percentage.today
-                )
-                if (
-                    d0 <= d1 + timedelta(days=40) and d0 >= d1
-                ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
-                    Percentage.NewMoonPerihelion = d0
-                d1 = date(
-                    Percentage.current_year, Percentage.thisMonth, Percentage.today
-                )
-                d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
-                d3 = str(d3)
-                d3 = d3[:3]
-                d3 = int(d3)
-                d3 = d3 + 1
-                ValuePercent = d3 / 100
-                delta = d1 - Percentage.MoonPerihelion
-                new = re.sub("[^0-9]", "", str(delta))
-                new = str(new)
-                new = new[:2]
-                new = int(new)
-
-                Percentage.MoonResult = new / ValuePercent
-                Percentage.MoonResult = round(Percentage.MoonResult, 2)
-
-                # Add graph progress #####
-
-                print("Satelite : Moon")
-                print(("Day of the year : ") + str("Day ") + str(new))
-                print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
-
-                # Progress bar creation
-                bar = Bar("Percent of this year : ", max=100)
-                for i in range(int(Percentage.MoonResult)):
-                    bar.next()
-                bar.finish()
-                print("\n")
-            except:
-                d0Year = years_ago[:4]
-                d0Year = int(d0Year)
-                d0Month = years_ago[5:7]
-                d0Month = int(d0Month)
-                d0Day = years_ago[8:10]
-                d0Day = int(d0Day)
-
-                d0 = date(d0Year, d0Month, d0Day)
-                d1 = date(
-                    Percentage.current_year, Percentage.thisMonth, Percentage.today
-                )
-                if (
-                    d0 <= d1 - timedelta(days=40) and d0 >= d1
-                ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
-                    Percentage.NewMoonPerihelion = d0
-
-                for i in thisYear:
-                    d0Year = i[:4]
+                    d0Year = years_after[:4]
                     d0Year = int(d0Year)
-                    d0Month = i[5:7]
+                    d0Month = years_after[5:7]
                     d0Month = int(d0Month)
-                    d0Day = i[8:10]
+                    d0Day = years_after[8:10]
                     d0Day = int(d0Day)
+
                     d0 = date(d0Year, d0Month, d0Day)
                     d1 = date(
                         Percentage.current_year, Percentage.thisMonth, Percentage.today
@@ -286,6 +224,68 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         bar.next()
                     bar.finish()
                     print("\n")
+            except:
+                d0Year = years_ago[:4]
+                d0Year = int(d0Year)
+                d0Month = years_ago[5:7]
+                d0Month = int(d0Month)
+                d0Day = years_ago[8:10]
+                d0Day = int(d0Day)
+
+                d0 = date(d0Year, d0Month, d0Day)
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
+                if (
+                    d0 <= d1 - timedelta(days=40) and d0 >= d1
+                ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                    Percentage.NewMoonPerihelion = d0
+
+                for i in thisYear:
+                    d0Year = i[:4]
+                    d0Year = int(d0Year)
+                    d0Month = i[5:7]
+                    d0Month = int(d0Month)
+                    d0Day = i[8:10]
+                    d0Day = int(d0Day)
+                    d0 = date(d0Year, d0Month, d0Day)
+                    d1 = date(
+                        Percentage.current_year, Percentage.thisMonth, Percentage.today
+                    )
+                    if (
+                        d0 <= d1 + timedelta(days=40) and d0 >= d1
+                    ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                        Percentage.NewMoonPerihelion = d0
+                        d1 = date(
+                            Percentage.current_year, Percentage.thisMonth, Percentage.today
+                        )
+                        d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
+                        d3 = str(d3)
+                        d3 = d3[:3]
+                        d3 = int(d3)
+                        d3 = d3 + 1
+                        ValuePercent = d3 / 100
+                        delta = d1 - Percentage.MoonPerihelion
+                        new = re.sub("[^0-9]", "", str(delta))
+                        new = str(new)
+                        new = new[:2]
+                        new = int(new)
+
+                        Percentage.MoonResult = new / ValuePercent
+                        Percentage.MoonResult = round(Percentage.MoonResult, 2)
+
+                        # Add graph progress #####
+
+                        print("Satelite : Moon")
+                        print(("Day of the year : ") + str("Day ") + str(new))
+                        print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
+
+                        # Progress bar creation
+                        bar = Bar("Percent of this year : ", max=100)
+                        for i in range(int(Percentage.MoonResult)):
+                            bar.next()
+                        bar.finish()
+                        print("\n")
 
 
 def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
