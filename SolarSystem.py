@@ -48,7 +48,8 @@ def Earth():
     d0 = date(Percentage.current_year, 1, 1)
     d1 = date(
         Percentage.current_year, Percentage.thisMonth, Percentage.today
-    )  # Year, month, day
+    )
+    d1 = d1 + timedelta(days=1)  # Year, month, day
     d2 = date(Percentage.current_year, 12, 31)
     d3 = d2 - d0
     d3 = str(d3)
