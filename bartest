@@ -1,4 +1,0 @@
-#!/usr/bin/env python3
-percent = 70
-barre = "[" + '#' * int((50 / 100) * percent) + "-" * int((50 / 100) * (100 - percent)) + "]"
-print("Eart Percent :"+(barre))
