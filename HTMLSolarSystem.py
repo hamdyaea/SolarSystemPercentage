@@ -33,15 +33,30 @@ class Percentage:
         self.barrMercury
 
 
-
 Percentage.current_year = date.today().year
 Percentage.today = int(datetime.today().strftime("%d"))
 Percentage.thisMonth = int(datetime.today().strftime("%m"))
 
 
 def motd():
-    motd=("\n")+str("\n")+str(" __     __               _   __")+str("\n")+str(" \ \   / /              (_) / /")+str("\n")+str("  \ \_/ /__  __ _ _ __     / / ")+str("\n")+str("   \   / _ \/ _` | '__|   / /  ")+str("\n")+str("    | |  __/ (_| | |     / / _ ")+str("\n")+str("    |_|\___|\__,_|_|    /_/ (_)")+str("\n\n")
+    motd = (
+        ("\n")
+        + str("\n")
+        + str(" __     __               _   __")
+        + str("\n")
+        + str(" \ \   / /              (_) / /")
+        + str("\n")
+        + str("  \ \_/ /__  __ _ _ __     / / ")
+        + str("\n")
+        + str("   \   / _ \/ _` | '__|   / /  ")
+        + str("\n")
+        + str("    | |  __/ (_| | |     / / _ ")
+        + str("\n")
+        + str("    |_|\___|\__,_|_|    /_/ (_)")
+        + str("\n\n")
+    )
     print(motd)
+
 
 def Earth():
     d0 = date(Percentage.current_year, 1, 1)
@@ -63,7 +78,13 @@ def Earth():
     Percentage.EarthResult = round(Percentage.EarthResult, 2)
 
     # Add graph progress #####
-    Percentage.earth=("Planet : Earth")+str("\n")+str(("Day of the year : ") + str("Day ") + str(new))+str("\n")+str(("Year progress : ") + str(Percentage.EarthResult) + str("%"))
+    Percentage.earth = (
+        ("Planet : Earth")
+        + str("\n")
+        + str(("Day of the year : ") + str("Day ") + str(new))
+        + str("\n")
+        + str(("Year progress : ") + str(Percentage.EarthResult) + str("%"))
+    )
     print(Percentage.earth)
     # Progress bar creation
     percent = Percentage.EarthResult
@@ -73,7 +94,7 @@ def Earth():
         + "-" * int((50 / 100) * (100 - percent))
         + "]"
     )
-    Percentage.BarrEarth=("Percent of this year : " + (barre)+str("\n"))
+    Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n")
     print(Percentage.BarrEarth)
 
 
@@ -153,7 +174,15 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                     # Add graph progress #####
 
-                    Percentage.moon=("Satelite : Moon")+str("\n")+str(("Day of the year : ") + str("Day ") + str(new))+str("\n")+str(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
+                    Percentage.moon = (
+                        ("Satelite : Moon")
+                        + str("\n")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + str("\n")
+                        + str(
+                            ("Year progress : ") + str(Percentage.MoonResult) + str("%")
+                        )
+                    )
                     print(Percentage.moon)
 
                     percent = Percentage.MoonResult
@@ -163,7 +192,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         + "-" * int((50 / 100) * (100 - percent))
                         + "]"
                     )
-                    Percentage.barrMoon=("Percent of this year : " + (barre)+str("\n"))
+                    Percentage.barrMoon = (
+                        "Percent of this year : " + (barre) + str("\n")
+                    )
                     print(Percentage.barrMoon)
         except:
             try:
@@ -219,7 +250,15 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                     # Add graph progress #####
 
-                    Percentage.moon=("Satelite : Moon")+str("\n")+str(("Day of the year : ") + str("Day ") + str(new))+str("\n")+str(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
+                    Percentage.moon = (
+                        ("Satelite : Moon")
+                        + str("\n")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + str("\n")
+                        + str(
+                            ("Year progress : ") + str(Percentage.MoonResult) + str("%")
+                        )
+                    )
                     print(Percentage.moon)
 
                     percent = Percentage.MoonResult
@@ -229,7 +268,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         + "-" * int((50 / 100) * (100 - percent))
                         + "]"
                     )
-                    Percentage.barrMoon=("Percent of this year : " + (barre)+str("\n"))
+                    Percentage.barrMoon = (
+                        "Percent of this year : " + (barre) + str("\n")
+                    )
                     print(Percentage.barrMoon)
             except:
                 d0Year = years_ago[:4]
@@ -286,11 +327,18 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                         # Add graph progress #####
 
-                        Percentage.moon=("Satelite : Moon")+str("\n")+str(("Day of the year : ") + str("Day ") + str(new))+str("\n")+str(
-                            ("Year progress : ") + str(Percentage.MoonResult) + str("%")
+                        Percentage.moon = (
+                            ("Satelite : Moon")
+                            + str("\n")
+                            + str(("Day of the year : ") + str("Day ") + str(new))
+                            + str("\n")
+                            + str(
+                                ("Year progress : ")
+                                + str(Percentage.MoonResult)
+                                + str("%")
+                            )
                         )
                         print(Percentage.moon)
-
 
                         percent = Percentage.MoonResult
                         barre = (
@@ -299,7 +347,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             + "-" * int((50 / 100) * (100 - percent))
                             + "]"
                         )
-                        Percentage.barrMoon=("Percent of this year : " + (barre)+str("\n"))
+                        Percentage.barrMoon = (
+                            "Percent of this year : " + (barre) + str("\n")
+                        )
                         print(Percentage.barrMoon)
 
 
@@ -380,7 +430,16 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 # Add graph progress #####
 
-                Percentage.mercury=("Planet : Mercury")+str("\n")+str(("Day of the year : ") + str("Day ") + str(new))+str("\n")+str("\n")+str(("Year progress : ") + str(Percentage.MercuryResult) + str("%"))
+                Percentage.mercury = (
+                    ("Planet : Mercury")
+                    + str("\n")
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + str("\n")
+                    + str("\n")
+                    + str(
+                        ("Year progress : ") + str(Percentage.MercuryResult) + str("%")
+                    )
+                )
                 print(Percentage.mercury)
 
                 percent = Percentage.MercuryResult
@@ -390,7 +449,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     + "-" * int((50 / 100) * (100 - percent))
                     + "]"
                 )
-                Percentage.barrMercury=("Percent of this year : " + (barre)+str("\n"))
+                Percentage.barrMercury = "Percent of this year : " + (barre) + str("\n")
                 print(Percentage.barrMercury)
         except:
             try:
@@ -446,7 +505,15 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 # Add graph progress #####
 
-                Percentage.mercury=("Planet : Mercury")+str("\n")+str(("Day of the year : ") + str("Day ") + str(new))+str("\n")+str(("Year progress : ") + str(Percentage.MercuryResult) + str("%"))
+                Percentage.mercury = (
+                    ("Planet : Mercury")
+                    + str("\n")
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + str("\n")
+                    + str(
+                        ("Year progress : ") + str(Percentage.MercuryResult) + str("%")
+                    )
+                )
                 print(Percentage.mercury)
 
                 percent = Percentage.MercuryResult
@@ -456,7 +523,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     + "-" * int((50 / 100) * (100 - percent))
                     + "]"
                 )
-                Percentage.barrMercury=("Percent of this year : " + (barre)+str("\n"))
+                Percentage.barrMercury = "Percent of this year : " + (barre) + str("\n")
                 print(Percentage.barrMercury)
 
             except:
@@ -512,11 +579,18 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                     # Add graph progress #####
 
-                    Percentage.mercury = ("Planet : Mercury")+str("\n")+str(("Day of the year : ") + str("Day ") + str(new))+str("\n")+str(
-                        ("Year progress : ") + str(Percentage.MercuryResult) + str("%")
+                    Percentage.mercury = (
+                        ("Planet : Mercury")
+                        + str("\n")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + str("\n")
+                        + str(
+                            ("Year progress : ")
+                            + str(Percentage.MercuryResult)
+                            + str("%")
+                        )
                     )
                     print(Percentage.mercury)
-
 
                     percent = Percentage.MercuryResult
                     barre = (
@@ -525,25 +599,55 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         + "-" * int((50 / 100) * (100 - percent))
                         + "]"
                     )
-                    Percentage.barrMercury=("Percent of this year : " + (barre)+str("\n"))
+                    Percentage.barrMercury = (
+                        "Percent of this year : " + (barre) + str("\n")
+                    )
                     print(Percentage.barrMercury)
     """
 
     Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
     """
+
+
 motd()
 Earth()
 Moon()
 Mercury()
 
-startHtml=(str("<!DOCTYPE html>")+str("\n")+str("<html>")+str("\n")+str("<head>")+str("\n")+str("<title>Percent Progress of the Solar System</title>")+str("\n")+str("</head>")+str("\n")+str('<body bgcolor="#000000">')+str("\n")+str('<font color="blue">')+str("\n")+str("<p>")+str("\n")+str('<img src="peri.png" alt="perihelion" width="500" height="333">'+str("\n")+str("<br />")+str("\n")+str("<br />")+str("\n")+str("<br />")))
+startHtml = (
+    str("<!DOCTYPE html>")
+    + str("\n")
+    + str("<html>")
+    + str("\n")
+    + str("<head>")
+    + str("\n")
+    + str("<title>Percent Progress of the Solar System</title>")
+    + str("\n")
+    + str("</head>")
+    + str("\n")
+    + str('<body bgcolor="#000000">')
+    + str("\n")
+    + str('<font color="blue">')
+    + str("\n")
+    + str("<p>")
+    + str("\n")
+    + str(
+        '<img src="peri.png" alt="perihelion" width="500" height="333">'
+        + str("\n")
+        + str("<br />")
+        + str("\n")
+        + str("<br />")
+        + str("\n")
+        + str("<br />")
+    )
+)
 
 
-indexFile = open("index.html",'w')
+indexFile = open("index.html", "w")
 indexFile.write(startHtml)
 indexFile.close()
 
-contentHtml = open("index.html",'a')
+contentHtml = open("index.html", "a")
 contentHtml.write(Percentage.earth)
 contentHtml.write(Percentage.BarrEarth)
 contentHtml.write(Percentage.moon)
@@ -551,5 +655,3 @@ contentHtml.write(Percentage.barrMoon)
 contentHtml.write(Percentage.mercury)
 contentHtml.write(Percentage.barrMercury)
 contentHtml.close()
-
-
