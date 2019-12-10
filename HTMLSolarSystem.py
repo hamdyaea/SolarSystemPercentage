@@ -743,7 +743,7 @@ startHtml = (
     + str("\n")
     + str('<body bgcolor="#000000">')
     + str("\n")
-    + str('<font color="blue">')
+    + str('<font color="white">')
     + str("\n")
     + str("<p>")
     + str("\n")
