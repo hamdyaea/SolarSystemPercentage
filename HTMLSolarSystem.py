@@ -149,7 +149,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
     years_after = years_after_full[:4]
     years_after = int(years_after)  # result
 
-    with open("Orbit.json", "r") as O:
+    with open("/var/www/html/Orbit.json", "r") as O:
         orbit = json.load(O)
         thisYear = orbit["Moon"][str(Percentage.current_year)]  # This year
         years_ago = orbit["Moon"][str(years_ago)][-1]
@@ -429,7 +429,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         )
 
 
-def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+def Mercury():  # d0 = first perihelaperihelion
 
     # Rotation year before this year
     years_ago_full = datetime.now() - timedelta(
@@ -447,7 +447,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
     years_after = years_after_full[:4]
     years_after = int(years_after)  # result
 
-    with open("Orbit.json", "r") as O:
+    with open("/var/www/html/Orbit.json", "r") as O:
         orbit = json.load(O)
         thisYear = orbit["Mercury"][str(Percentage.current_year)]  # This year
         years_ago = orbit["Mercury"][str(years_ago)][-1]
@@ -703,7 +703,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             + str(Percentage.MercuryResult)
                             + str("%")
                             + ("<br />")
-                        )
+                            )
                     )
                     percent = Percentage.MercuryResult
                     barre = (
@@ -743,7 +743,7 @@ startHtml = (
     + str("\n")
     + str("body {")
     + str("\n")
-    + str("background-image: url('/var/www/html/nightsky.jpg');")
+    + str("background-image: url('nightsky.jpg');")
     + str("\n")
     + str("}")
     + str("\n")
