@@ -641,7 +641,7 @@ startHtml = (
         + str("<br />")
     )
 )
-
+endHTML=(str("</p>")+str("\n")+str("</font>")+str("\n")+str("</body>"))
 
 indexFile = open("index.html", "w")
 indexFile.write(startHtml)
@@ -654,4 +654,5 @@ contentHtml.write(Percentage.moon)
 contentHtml.write(Percentage.barrMoon)
 contentHtml.write(Percentage.mercury)
 contentHtml.write(Percentage.barrMercury)
+contentHtml.write(endHTML)
 contentHtml.close()
