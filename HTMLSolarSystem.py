@@ -26,11 +26,19 @@ class Percentage:
         self.MercuryPerihelion
         self.NewMercuryPerihelion
         self.earth
+        self.earthHTML
         self.BarrEarth
+        self.BarrEarthHTML
         self.moon
         self.barrMoon
+        self.moonHTML
+        self.barrMoonHTML
         self.mercury
         self.barrMercury
+        self.mercuryHTML
+        self.barrMercuryHTML
+        self.motdResult
+        self.motdResultHTML
 
 
 Percentage.current_year = date.today().year
@@ -39,7 +47,7 @@ Percentage.thisMonth = int(datetime.today().strftime("%m"))
 
 
 def motd():
-    motd = (
+    Percentage.motdResult = (
         ("\n")
         + str("\n")
         + str(" __     __               _   __")
@@ -55,7 +63,23 @@ def motd():
         + str("    |_|\___|\__,_|_|    /_/ (_)")
         + str("\n\n")
     )
-    print(motd)
+    Percentage.motdResultHTML = (
+
+            ("<br />")
+            + str(" __     __               _   __")
+            +("<br />")
+            + str(" \ \   / /              (_) / /")
+            +("<br />")
+            + str("  \ \_/ /__  __ _ _ __     / / ")
+            +("<br />")
+            + str("   \   / _ \/ _` | '__|   / /  ")
+            +("<br />")
+            + str("    | |  __/ (_| | |     / / _ ")
+            +("<br />")
+            + str("    |_|\___|\__,_|_|    /_/ (_)")
+            + ("<br />")+("<br />")
+    )
+    print(Percentage.motdResult)
 
 
 def Earth():
@@ -86,6 +110,13 @@ def Earth():
         + str(("Year progress : ") + str(Percentage.EarthResult) + str("%"))
     )
     print(Percentage.earth)
+    Percentage.earthHTML = (
+            ("Planet : Earth")
+            +("<br />")
+            + str(("Day of the year : ") + str("Day ") + str(new))
+            +("<br />")
+            + str(("Year progress : ") + str(Percentage.EarthResult) + str("%"))+ ("<br />")
+    )
     # Progress bar creation
     percent = Percentage.EarthResult
     barre = (
@@ -96,6 +127,7 @@ def Earth():
     )
     Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n")
     print(Percentage.BarrEarth)
+    Percentage.BarrEarthHTML = "Percent of this year : " + (barre) +("<br />")
 
 
 def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
@@ -184,7 +216,15 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         )
                     )
                     print(Percentage.moon)
-
+                    Percentage.moonHTML = (
+                            ("Satelite : Moon")
+                            +("<br />")
+                            + str(("Day of the year : ") + str("Day ") + str(new))
+                            + ("<br />")
+                            + str(
+                        ("Year progress : ") + str(Percentage.MoonResult) + str("%")+ ("<br />")
+                    )
+                    )
                     percent = Percentage.MoonResult
                     barre = (
                         "["
@@ -196,6 +236,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         "Percent of this year : " + (barre) + str("\n")
                     )
                     print(Percentage.barrMoon)
+                    Percentage.barrMoonHTML = (
+                            "Percent of this year : " + (barre) + ("<br />")
+                    )
         except:
             try:
                 for i in thisYear:
@@ -260,7 +303,15 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         )
                     )
                     print(Percentage.moon)
-
+                    Percentage.moonHTML = (
+                            ("Satelite : Moon")
+                            + ("<br />")
+                            + str(("Day of the year : ") + str("Day ") + str(new))
+                            + ("<br />")
+                            + str(
+                        ("Year progress : ") + str(Percentage.MoonResult) + str("%")+ ("<br />")
+                    )
+                    )
                     percent = Percentage.MoonResult
                     barre = (
                         "["
@@ -272,6 +323,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         "Percent of this year : " + (barre) + str("\n")
                     )
                     print(Percentage.barrMoon)
+                    Percentage.barrMoonHTML = (
+                            "Percent of this year : " + (barre) + ("<br />")
+                    )
             except:
                 d0Year = years_ago[:4]
                 d0Year = int(d0Year)
@@ -339,6 +393,15 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             )
                         )
                         print(Percentage.moon)
+                        Percentage.moonHTML = (
+                                ("Satelite : Moon")
+                                + ("<br />")
+                                + str(("Day of the year : ") + str("Day ") + str(new))
+                                + ("<br />")
+                                + str(
+                            ("Year progress : ") + str(Percentage.MoonResult) + str("%")+ ("<br />")
+                        )
+                        )
 
                         percent = Percentage.MoonResult
                         barre = (
@@ -351,7 +414,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             "Percent of this year : " + (barre) + str("\n")
                         )
                         print(Percentage.barrMoon)
-
+                        Percentage.barrMoonHTML = (
+                                "Percent of this year : " + (barre) + ("<br />")
+                        )
 
 def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
@@ -441,7 +506,15 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     )
                 )
                 print(Percentage.mercury)
-
+                Percentage.mercuryHTML = (
+                        ("Planet : Mercury")
+                        + ("<br />")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + ("<br />")
+                        + str(
+                    ("Year progress : ") + str(Percentage.MercuryResult) + str("%")
+                )
+                )
                 percent = Percentage.MercuryResult
                 barre = (
                     "["
@@ -451,6 +524,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 Percentage.barrMercury = "Percent of this year : " + (barre) + str("\n")
                 print(Percentage.barrMercury)
+                Percentage.barrMercuryHTML = "Percent of this year : " + (barre) + ("<br />")+ ("<br />")
         except:
             try:
                 for i in thisYear:
@@ -515,6 +589,15 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     )
                 )
                 print(Percentage.mercury)
+                Percentage.mercuryHTML = (
+                        ("Planet : Mercury")
+                        + ("<br />")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + ("<br />")
+                        + str(
+                    ("Year progress : ") + str(Percentage.MercuryResult) + str("%")+ ("<br />")
+                )
+                )
 
                 percent = Percentage.MercuryResult
                 barre = (
@@ -525,6 +608,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 Percentage.barrMercury = "Percent of this year : " + (barre) + str("\n")
                 print(Percentage.barrMercury)
+                Percentage.barrMercuryHTML = "Percent of this year : " + (barre) + ("<br />")
 
             except:
                 d0Year = years_ago[:4]
@@ -591,7 +675,15 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         )
                     )
                     print(Percentage.mercury)
-
+                    Percentage.mercuryHTML = (
+                            ("Planet : Mercury")
+                            + ("<br />")
+                            + str(("Day of the year : ") + str("Day ") + str(new))
+                            + ("<br />")
+                            + str(
+                        ("Year progress : ") + str(Percentage.MercuryResult) + str("%")+ ("<br />")
+                    )
+                    )
                     percent = Percentage.MercuryResult
                     barre = (
                         "["
@@ -603,6 +695,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         "Percent of this year : " + (barre) + str("\n")
                     )
                     print(Percentage.barrMercury)
+                    Percentage.barrMercuryHTML = "Percent of this year : " + (barre) + ("<br />")
     """
 
     Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
@@ -648,11 +741,19 @@ indexFile.write(startHtml)
 indexFile.close()
 
 contentHtml = open("index.html", "a")
-contentHtml.write(Percentage.earth)
-contentHtml.write(Percentage.BarrEarth)
-contentHtml.write(Percentage.moon)
-contentHtml.write(Percentage.barrMoon)
-contentHtml.write(Percentage.mercury)
-contentHtml.write(Percentage.barrMercury)
+#contentHtml.write(Percentage.motdResultHTML)
+contentHtml.write(Percentage.earthHTML)
+contentHtml.write(Percentage.BarrEarthHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write(Percentage.moonHTML)
+contentHtml.write(Percentage.barrMoonHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write(Percentage.mercuryHTML)
+contentHtml.write(Percentage.barrMercuryHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write("Developer : Hamdy Abou El Anein - https://github.com/hamdyaea")
 contentHtml.write(endHTML)
 contentHtml.close()
