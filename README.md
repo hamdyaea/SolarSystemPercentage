@@ -16,24 +16,25 @@
     |_|\___|\__,_|_|    /_/ (_)
 
 
-
 Planet : Earth
-Day of the year : Day 343
-Year progress : 93.97%
-Percent of this year : [##############################################---]
-
+Day of the year : Day 345
+Year progress : 94.52%
+Percent of this year : [###############################################____]
 
 Satelite : Moon
-Day of the year : Day 17
-Year progress : 65.38%
-Percent of this year : [################################-----------------]
-
+Day of the year : Day 19
+Year progress : 73.08%
+Percent of this year : [####################################__________________________]
 
 Planet : Mercury
-Day of the year : Day 24
-Year progress : 26.97%
-Percent of this year : [#############------------------------------------]
+Day of the year : Day 26
+Year progress : 29.21%
+Percent of this year : [##############______________________________________________________________________]
 
+Planet : Venus
+Day of the year : Day 115
+Year progress : 53.49%
+Percent of this year : [##########################______________________________________________]
 
 
 ```
