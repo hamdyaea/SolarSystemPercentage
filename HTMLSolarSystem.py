@@ -130,7 +130,7 @@ def Earth():
     barre = (
         "["
         + "#" * int((50 / 100) * percent)
-        + "__" * int((50 / 100) * (100 - percent))
+        + "_" * int((50 / 100) * (100 - percent))
         + "]"
     )
     Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n")
@@ -240,7 +240,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     barre = (
                         "["
                         + "#" * int((50 / 100) * percent)
-                        + "__" * int((50 / 100) * (100 - percent))
+                        + "_" * int((50 / 100) * (100 - percent))
                         + "]"
                     )
                     Percentage.barrMoon = (
@@ -330,7 +330,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     barre = (
                         "["
                         + "#" * int((50 / 100) * percent)
-                        + "__" * int((50 / 100) * (100 - percent))
+                        + "_" * int((50 / 100) * (100 - percent))
                         + "]"
                     )
                     Percentage.barrMoon = (
@@ -424,7 +424,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         barre = (
                             "["
                             + "#" * int((50 / 100) * percent)
-                            + "__" * int((50 / 100) * (100 - percent))
+                            + "_" * int((50 / 100) * (100 - percent))
                             + "]"
                         )
                         Percentage.barrMoon = (
@@ -537,7 +537,7 @@ def Mercury():  # d0 = first perihelaperihelion
                 barre = (
                     "["
                     + "#" * int((50 / 100) * percent)
-                    + "__" * int((50 / 100) * (100 - percent))
+                    + "_" * int((50 / 100) * (100 - percent))
                     + "]"
                 )
                 Percentage.barrMercury = "Percent of this year : " + (barre) + str("\n")
@@ -626,7 +626,7 @@ def Mercury():  # d0 = first perihelaperihelion
                 barre = (
                     "["
                     + "#" * int((50 / 100) * percent)
-                    + "__" * int((50 / 100) * (100 - percent))
+                    + "_" * int((50 / 100) * (100 - percent))
                     + "]"
                 )
                 Percentage.barrMercury = "Percent of this year : " + (barre) + str("\n")
@@ -716,7 +716,7 @@ def Mercury():  # d0 = first perihelaperihelion
                     barre = (
                         "["
                         + "#" * int((50 / 100) * percent)
-                        + "__" * int((50 / 100) * (100 - percent))
+                        + "_" * int((50 / 100) * (100 - percent))
                         + "]"
                     )
                     Percentage.barrMercury = (
@@ -833,7 +833,7 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 barre = (
                         "["
                         + "#" * int((50 / 100) * percent)
-                        + "__" * int((50 / 100) * (100 - percent))
+                        + "_" * int((50 / 100) * (100 - percent))
                         + "]"
                 )
                 Percentage.barrVenus = (
@@ -935,7 +935,7 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         barre = (
                                 "["
                                 + "#" * int((50 / 100) * percent)
-                                + "__" * int((50 / 100) * (100 - percent))
+                                + "_" * int((50 / 100) * (100 - percent))
                                 + "]"
                         )
                         Percentage.barrVenus = (
@@ -1016,7 +1016,7 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             barre = (
                                     "["
                                     + "#" * int((50 / 100) * percent)
-                                    + "__" * int((50 / 100) * (100 - percent))
+                                    + "_" * int((50 / 100) * (100 - percent))
                                     + "]"
                             )
                             print("Percent of this year : " + (barre))
@@ -1037,7 +1037,7 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             barre = (
                                     "["
                                     + "#" * int((50 / 100) * percent)
-                                    + "__" * int((50 / 100) * (100 - percent))
+                                    + "_" * int((50 / 100) * (100 - percent))
                                     + "]"
                             )
                             Percentage.barrVenus = (
@@ -1072,6 +1072,8 @@ startHtml = (
     + str("body {")
     + str("\n")
     + str("background-image: url('nightsky.jpg');")
+    +str("\n")
+    +str("<basefont face = 'Monospace'>")
     + str("\n")
     + str("}")
     + str("\n")
@@ -1083,6 +1085,7 @@ startHtml = (
     + str("\n")
     + str('<font color="white">')
     + str("\n")
+    + str("<font face = 'Monospace' size ='6' color='white'>")+str("\n")
     + str("<p>")
     + str("\n")
     + str(
@@ -1122,7 +1125,7 @@ contentHtml.write(Percentage.VenusHTML)
 contentHtml.write(Percentage.barrVenusHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write("Developer : Hamdy Abou El Anein - https://github.com/hamdyaea")
+contentHtml.write("Developer : Hamdy Abou El Anein - https://github.com/hamdyaea/SolarSystemPercentage")
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write("<br />")
