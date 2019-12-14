@@ -1406,6 +1406,8 @@ startHtml = (
     + str("\n")
     + str("background-image: url('nightsky.jpg');")
     +str("\n")
+    +str("background-size: 1920px 1920px;")
+    + str("\n")
     +str("<basefont face = 'Monospace'>")
     + str("\n")
     + str("}")
