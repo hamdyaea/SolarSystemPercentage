@@ -10,33 +10,39 @@ Put the pictures and the json file in the same directory to make it run.
 
 ```sh
 
- __     __               _   __
- \ \   / /              (_) / /
-  \ \_/ /__  __ _ _ __     / / 
+ __     __               _   __                                                                                                       
+ \ \   / /              (_) / /                                                                                                       
+  \ \_/ /__  __ _ _ __     / /                                                                                                        
    \   / _ \/ _` | '__|   / /  
     | |  __/ (_| | |     / / _ 
     |_|\___|\__,_|_|    /_/ (_)
 
 
 Planet : Earth
-Day of the year : Day 345
-Year progress : 94.52%
-Percent of this year : [###############################################____]
+Day of the year : Day 349
+Year progress : 95.62%
+Percent of this year : [###############################################__]
 
 Satelite : Moon
-Day of the year : Day 19
-Year progress : 73.08%
-Percent of this year : [####################################__________________________]
+Day of the year : Day 23
+Year progress : 88.46%
+Percent of this year : [############################################_____]
 
 Planet : Mercury
-Day of the year : Day 26
-Year progress : 29.21%
-Percent of this year : [##############______________________________________________________________________]
+Day of the year : Day 30
+Year progress : 33.71%
+Percent of this year : [################_________________________________]
 
 Planet : Venus
-Day of the year : Day 115
-Year progress : 53.49%
-Percent of this year : [##########################______________________________________________]
+Day of the year : Day 119
+Year progress : 55.35%
+Percent of this year : [###########################______________________]
+
+
+Planet : Mars
+Day of the year : Day 456
+Year progress : 66.28%
+Percent of this year : [#################################________________]
 
 
 ```
