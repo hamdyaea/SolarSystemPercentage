@@ -10,9 +10,10 @@ Put the pictures and the json file in the same directory to make it run.
 
 ```sh
 
- __     __               _   __                                                                                                       
- \ \   / /              (_) / /                                                                                                       
-  \ \_/ /__  __ _ _ __     / /                                                                                                        
+
+ __     __               _   __
+ \ \   / /              (_) / /
+  \ \_/ /__  __ _ _ __     / / 
    \   / _ \/ _` | '__|   / /  
     | |  __/ (_| | |     / / _ 
     |_|\___|\__,_|_|    /_/ (_)
@@ -43,6 +44,14 @@ Planet : Mars
 Day of the year : Day 456
 Year progress : 66.28%
 Percent of this year : [#################################________________]
+
+
+Planet : Jupiter
+Day of the year : Day 3195
+Year progress : 73.82%
+Percent of this year : [####################################-------------]
+
+
 
 
 ```
