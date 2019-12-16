@@ -105,8 +105,8 @@ def Earth():
     d2 = date(Percentage.current_year, 12, 31)
     d3 = d2 - d0
     d3 = str(d3)
-    d3 = d3[:3]
-    d3 = int(d3)
+    d3 = d3.split()
+    d3 = int(d3[0])
     d3 = d3 + 1
     ValuePercent = d3 / 100
     delta = d1 - d0
@@ -208,8 +208,8 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     d1 = d1 + timedelta(days=1)
                     d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
                     d3 = str(d3)
-                    d3 = d3[:3]
-                    d3 = int(d3)
+                    d3 = d3.split()
+                    d3 = int(d3[0])
                     d3 = d3 + 1
                     ValuePercent = d3 / 100
                     delta = d1 - Percentage.MoonPerihelion
@@ -389,8 +389,8 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         )
                         d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
                         d3 = str(d3)
-                        d3 = d3[:3]
-                        d3 = int(d3)
+                        d3 = d3.split()
+                        d3 = int(d3[0])
                         d3 = d3 + 1
                         ValuePercent = d3 / 100
                         delta = d1 - Percentage.MoonPerihelion
@@ -507,8 +507,8 @@ def Mercury():  # d0 = first perihelaperihelion
                 )
                 d3 = Percentage.NewMercuryPerihelion - Percentage.MercuryPerihelion
                 d3 = str(d3)
-                d3 = d3[:3]
-                d3 = int(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.MercuryPerihelion
@@ -593,8 +593,8 @@ def Mercury():  # d0 = first perihelaperihelion
                 d1 = d1 + timedelta(days=1)
                 d3 = Percentage.NewMercuryPerihelion - Percentage.MercuryPerihelion
                 d3 = str(d3)
-                d3 = d3[:3]
-                d3 = int(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.MercuryPerihelion
@@ -682,8 +682,8 @@ def Mercury():  # d0 = first perihelaperihelion
                     )
                     d3 = Percentage.NewMercuryPerihelion - Percentage.MercuryPerihelion
                     d3 = str(d3)
-                    d3 = d3[:3]
-                    d3 = int(d3)
+                    d3 = d3.split()
+                    d3 = int(d3[0])
                     d3 = d3 + 1
                     ValuePercent = d3 / 100
                     delta = d1 - Percentage.MercuryPerihelion
@@ -799,8 +799,8 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 d3 = Percentage.NewVenusPerihelion - Percentage.VenusPerihelion
                 d3 = str(d3)
-                d3 = d3[:3]
-                d3 = int(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.VenusPerihelion
@@ -894,8 +894,8 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         d1 = d1 + timedelta(days=1)
                         d3 = Percentage.NewVenusPerihelion - Percentage.VenusPerihelion
                         d3 = str(d3)
-                        d3 = d3[:3]
-                        d3 = int(d3)
+                        d3 = d3.split()
+                        d3 = int(d3[0])
                         d3 = d3 + 1
                         ValuePercent = d3 / 100
                         delta = d1 - Percentage.VenusPerihelion
@@ -997,8 +997,8 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                                 - Percentage.VenusPerihelion
                             )
                             d3 = str(d3)
-                            d3 = d3[:3]
-                            d3 = int(d3)
+                            d3 = d3.split()
+                            d3 = int(d3[0])
                             d3 = d3 + 1
                             ValuePercent = d3 / 100
                             delta = d1 - Percentage.VenusPerihelion
@@ -1121,8 +1121,8 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 d3 = Percentage.NewMarsPerihelion - Percentage.MarsPerihelion
                 d3 = str(d3)
-                d3 = d3[:3]
-                d3 = int(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.MarsPerihelion
@@ -1215,8 +1215,8 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         d1 = d1 + timedelta(days=1)
                         d3 = Percentage.NewMarsPerihelion - Percentage.MarsPerihelion
                         d3 = str(d3)
-                        d3 = d3[:3]
-                        d3 = int(d3)
+                        d3 = d3.split()
+                        d3 = int(d3[0])
                         d3 = d3 + 1
                         ValuePercent = d3 / 100
                         delta = d1 - Percentage.MarsPerihelion
@@ -1315,8 +1315,8 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                                 Percentage.NewMarsPerihelion - Percentage.MarsPerihelion
                             )
                             d3 = str(d3)
-                            d3 = d3[:3]
-                            d3 = int(d3)
+                            d3 = d3.split()
+                            d3 = int(d3[0])
                             d3 = d3 + 1
                             ValuePercent = d3 / 100
                             delta = d1 - Percentage.MarsPerihelion
@@ -1431,8 +1431,8 @@ def Jupiter():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 d3 = Percentage.NewJupiterPerihelion - Percentage.JupiterPerihelion
                 d3 = str(d3)
-                d3 = d3[:4]
-                d3 = int(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.JupiterPerihelion
@@ -1539,8 +1539,8 @@ def Saturn():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 d3 = Percentage.NewSaturnPerihelion - Percentage.SaturnPerihelion
                 d3 = str(d3)
-                d3 = d3[:5]
-                d3 = int(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.SaturnPerihelion
