@@ -55,6 +55,12 @@ class Percentage:
         self.SaturnResult
         self.SaturnPerihelion
         self.NewSaturnPerihelion
+        self.UranusResult
+        self.UranusPerihelion
+        self.NewUranusPerihelion
+        self.NeptuneResult
+        self.NeptunePerihelion
+        self.NewNeptunePerihelion
 
 
 Percentage.current_year = date.today().year
@@ -1589,6 +1595,222 @@ def Saturn():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 Percentage.barrSaturnHTML = (
                         "Percent of this year : " + (barre) + ("<br />")
                 )
+
+def Uranus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+
+    # Rotation year before this year
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_ago_full = str(years_ago_full)
+    years_ago = years_ago_full[:4]
+    years_ago = int(years_ago)  # result
+
+    # Next rotation year
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_after_full = str(years_after_full)
+    years_after = years_after_full[:4]
+    years_after = int(years_after)  # result
+
+    with open("/var/www/html/Orbit.json", "r") as O:
+        orbit = json.load(O)
+        thisYear = orbit["Uranus"]  # This year
+        # years_ago = orbit["Uranus"][str(years_ago)][-1]
+        # years_after = orbit["Uranus"][str(years_after)][0]
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 >= d1 - timedelta(days=32850) and d0 <= d1
+            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                Percentage.UranusPerihelion = d0
+
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 <= d1 + timedelta(days=32850) and d0 >= d1
+            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                Percentage.NewUranusPerihelion = d0
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
+                d3 = Percentage.NewUranusPerihelion - Percentage.UranusPerihelion
+                d3 = str(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
+                d3 = d3 + 1
+                ValuePercent = d3 / 100
+                delta = d1 - Percentage.UranusPerihelion
+                new = re.sub("[^0-9]", "", str(delta))
+                new = str(new)
+                new = new[:4]
+                new = int(new)
+                Percentage.UranusResult = new / ValuePercent
+                Percentage.UranusResult = round(Percentage.UranusResult, 2)
+
+                # Add graph progress #####
+
+                print("Planet : Uranus")
+                print(("Day of the year : ") + str("Day ") + str(new))
+                print(("Year progress : ") + str(Percentage.UranusResult) + str("%"))
+
+                percent = Percentage.UranusResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                print("Percent of this year : " + (barre))
+                print("\n")
+                Percentage.UranusHTML = (
+                        ("Planet : Uranus")
+                        + ("<br />")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + ("<br />")
+                        + str(
+                    ("Year progress : ")
+                    + str(Percentage.UranusResult)
+                    + str("%")
+                    + ("<br />")
+                )
+                )
+                percent = Percentage.UranusResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "_" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                Percentage.barrUranus = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrUranusHTML = (
+                        "Percent of this year : " + (barre) + ("<br />")
+                )
+
+def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+
+    # Rotation year before this year
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_ago_full = str(years_ago_full)
+    years_ago = years_ago_full[:4]
+    years_ago = int(years_ago)  # result
+
+    # Next rotation year
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_after_full = str(years_after_full)
+    years_after = years_after_full[:4]
+    years_after = int(years_after)  # result
+
+    with open("/var/www/html/Orbit.json", "r") as O:
+        orbit = json.load(O)
+        thisYear = orbit["Neptune"]  # This year
+        # years_ago = orbit["Neptune"][str(years_ago)][-1]
+        # years_after = orbit["Neptune"][str(years_after)][0]
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 >= d1 - timedelta(days=62000) and d0 <= d1
+            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                Percentage.NeptunePerihelion = d0
+
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 <= d1 + timedelta(days=62000) and d0 >= d1
+            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                Percentage.NewNeptunePerihelion = d0
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
+                d3 = Percentage.NewNeptunePerihelion - Percentage.NeptunePerihelion
+                d3 = str(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
+                d3 = d3 + 1
+                ValuePercent = d3 / 100
+                delta = d1 - Percentage.NeptunePerihelion
+                new = re.sub("[^0-9]", "", str(delta))
+                new = str(new)
+                new = new[:4]
+                new = int(new)
+                Percentage.NeptuneResult = new / ValuePercent
+                Percentage.NeptuneResult = round(Percentage.NeptuneResult, 2)
+
+                # Add graph progress #####
+
+                print("Planet : Neptune")
+                print(("Day of the year : ") + str("Day ") + str(new))
+                print(("Year progress : ") + str(Percentage.NeptuneResult) + str("%"))
+
+                percent = Percentage.NeptuneResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                print("Percent of this year : " + (barre))
+                print("\n")
+                Percentage.NeptuneHTML = (
+                        ("Planet : Neptune")
+                        + ("<br />")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + ("<br />")
+                        + str(
+                    ("Year progress : ")
+                    + str(Percentage.NeptuneResult)
+                    + str("%")
+                    + ("<br />")
+                )
+                )
+                percent = Percentage.NeptuneResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "_" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                Percentage.barrNeptune = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrNeptuneHTML = (
+                        "Percent of this year : " + (barre) + ("<br />")
+                )
     """
 
     Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
@@ -1603,6 +1825,8 @@ Venus()
 Mars()
 Jupiter()
 Saturn()
+Uranus()
+Neptune()
 
 startHtml = (
     str("<!DOCTYPE html>")
@@ -1684,6 +1908,14 @@ contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(Percentage.SaturnHTML)
 contentHtml.write(Percentage.barrSaturnHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write(Percentage.UranusHTML)
+contentHtml.write(Percentage.barrUranusHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write(Percentage.NeptuneHTML)
+contentHtml.write(Percentage.barrNeptuneHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
