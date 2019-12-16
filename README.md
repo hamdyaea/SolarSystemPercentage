@@ -55,6 +55,6 @@ Percent of this year : [####################################-------------]
 
 
 ```
-# http://astrometry.ml/
+# http://astrometry.ch/
 
 ![Screenshot](screenshot.png)
