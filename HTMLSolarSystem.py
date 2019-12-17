@@ -1873,14 +1873,14 @@ startHtml = (
 )
 endHTML = str("</p>") + str("\n") + str("</font>") + str("\n") + str("</body>")
 
-indexFile = open("/var/www/html/index.html", "w")
+indexFile = open("/var/www/html/main.html", "w")
 indexFile.write(startHtml)
 indexFile.close()
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
-contentHtml = open("/var/www/html/index.html", "a")
+contentHtml = open("/var/www/html/main.html", "a")
 # contentHtml.write(Percentage.motdResultHTML)
 contentHtml.write(Percentage.earthHTML)
 contentHtml.write(Percentage.BarrEarthHTML)
