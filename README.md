@@ -10,7 +10,6 @@ Put the pictures and the json file in the same directory to make it run.
 
 ```sh
 
-
  __     __               _   __
  \ \   / /              (_) / /
   \ \_/ /__  __ _ _ __     / / 
@@ -20,37 +19,54 @@ Put the pictures and the json file in the same directory to make it run.
 
 
 Planet : Earth
-Day of the year : Day 349
-Year progress : 95.62%
-Percent of this year : [###############################################__]
+Day of the year : Day 351
+Year progress : 96.16%
+Percent of this year : [################################################_]
 
 Satelite : Moon
-Day of the year : Day 23
-Year progress : 88.46%
-Percent of this year : [############################################_____]
+Day of the year : Day 25
+Year progress : 96.15%
+Percent of this year : [################################################_]
 
 Planet : Mercury
-Day of the year : Day 30
-Year progress : 33.71%
-Percent of this year : [################_________________________________]
+Day of the year : Day 32
+Year progress : 35.96%
+Percent of this year : [#################________________________________]
 
 Planet : Venus
-Day of the year : Day 119
-Year progress : 55.35%
-Percent of this year : [###########################______________________]
+Day of the year : Day 121
+Year progress : 56.28%
+Percent of this year : [############################_____________________]
 
 
 Planet : Mars
-Day of the year : Day 456
-Year progress : 66.28%
+Day of the year : Day 458
+Year progress : 66.57%
 Percent of this year : [#################################________________]
 
 
 Planet : Jupiter
-Day of the year : Day 3195
-Year progress : 73.82%
+Day of the year : Day 3197
+Year progress : 73.87%
 Percent of this year : [####################################-------------]
 
+
+Planet : Saturn
+Day of the year : Day 5988
+Year progress : 55.86%
+Percent of this year : [###########################----------------------]
+
+
+Planet : Uranus
+Day of the year : Day 1919
+Year progress : 6.25%
+Percent of this year : [###----------------------------------------------]
+
+
+Planet : Neptune
+Day of the year : Day 3486
+Year progress : 5.65%
+Percent of this year : [##-----------------------------------------------]
 
 
 
