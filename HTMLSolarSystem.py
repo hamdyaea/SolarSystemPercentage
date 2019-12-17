@@ -1857,7 +1857,7 @@ startHtml = (
     + str("\n")
     + str('<font color="white">')
     + str("\n")
-    + str("<font face = 'Monospace' size ='3' color='white'>")
+    + str("<font face = 'Monospace' size ='6' color='white'>")
     + str("\n")
     + str("<p>")
     + str("\n")
