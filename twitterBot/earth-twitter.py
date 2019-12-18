@@ -1838,5 +1838,6 @@ Neptune()
 
 
 message = Percentage.earthHTML + Percentage.BarrEarthHTML + str('\n#Astronomy #Space #Espace #Astrometry')
-
-twitter.update_status(status=message)
+photo = open('/var/www/html/pictures/terre.png', 'rb')
+response = twitter.upload_media(media=photo)
+twitter.update_status(status=message, media_ids=[response['media_id']])

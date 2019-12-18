@@ -1838,5 +1838,6 @@ Neptune()
 
 
 message = Percentage.JupiterHTML + Percentage.barrJupiterHTML + str('\n#Astronomy #Space #Espace #Astrometry')
-
-twitter.update_status(status=message)
+photo = open('/var/www/html/pictures/jupiter.jpg', 'rb')
+response = twitter.upload_media(media=photo)
+twitter.update_status(status=message, media_ids=[response['media_id']])
