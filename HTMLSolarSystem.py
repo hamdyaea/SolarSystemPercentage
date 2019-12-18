@@ -61,6 +61,13 @@ class Percentage:
         self.NeptuneResult
         self.NeptunePerihelion
         self.NewNeptunePerihelion
+        self.PlutoResult
+        self.PlutoPerihelion
+        self.NewPlutoPerihelion
+        self.Pluto
+        self.barrPluto
+        self.PlutoHTML
+        self.barrPlutoHTML
 
 
 Percentage.current_year = date.today().year
@@ -1814,6 +1821,114 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 Percentage.barrNeptuneHTML = (
                     "Percent of this year : " + (barre) + ("<br />")
                 )
+
+def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+
+    # Rotation year before this year
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_ago_full = str(years_ago_full)
+    years_ago = years_ago_full[:4]
+    years_ago = int(years_ago)  # result
+
+    # Next rotation year
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_after_full = str(years_after_full)
+    years_after = years_after_full[:4]
+    years_after = int(years_after)  # result
+
+    with open("/var/www/html/Orbit.json", "r") as O:
+        orbit = json.load(O)
+        thisYear = orbit["Pluto"]  # This year
+        # years_ago = orbit["Pluto"][str(years_ago)][-1]
+        # years_after = orbit["Pluto"][str(years_after)][0]
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 >= d1 - timedelta(days=99000) and d0 <= d1
+            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                Percentage.PlutoPerihelion = d0
+
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 <= d1 + timedelta(days=99000) and d0 >= d1
+            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                Percentage.NewPlutoPerihelion = d0
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
+                d3 = Percentage.NewPlutoPerihelion - Percentage.PlutoPerihelion
+                d3 = str(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
+                d3 = d3 + 1
+                ValuePercent = d3 / 100
+                delta = d1 - Percentage.PlutoPerihelion
+                new = re.sub("[^0-9]", "", str(delta))
+                new = str(new)
+                new = new[:4]
+                new = int(new)
+                Percentage.PlutoResult = new / ValuePercent
+                Percentage.PlutoResult = round(Percentage.PlutoResult, 2)
+
+                # Add graph progress #####
+
+                print("Dwarf planet : Pluto")
+                print(("Day of the year : ") + str("Day ") + str(new))
+                print(("Year progress : ") + str(Percentage.PlutoResult) + str("%"))
+
+                percent = Percentage.PlutoResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                print("Percent of this year : " + (barre))
+                print("\n")
+                Percentage.PlutoHTML = (
+                        ("Dwarf planet : Pluto")
+                        + ("<br />")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + ("<br />")
+                        + str(
+                    ("Year progress : ")
+                    + str(Percentage.PlutoResult)
+                    + str("%")
+                    + ("<br />")
+                )
+                )
+                percent = Percentage.PlutoResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "_" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                Percentage.barrPluto = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrPlutoHTML = (
+                        "Percent of this year : " + (barre) + ("<br />")
+                )
     """
 
     Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
@@ -1830,6 +1945,7 @@ Jupiter()
 Saturn()
 Uranus()
 Neptune()
+Pluto()
 
 startHtml = (
     str("<!DOCTYPE html>")
@@ -1922,6 +2038,10 @@ contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(Percentage.NeptuneHTML)
 contentHtml.write(Percentage.barrNeptuneHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write(Percentage.PlutoHTML)
+contentHtml.write(Percentage.barrPlutoHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
