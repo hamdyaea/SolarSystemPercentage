@@ -1834,7 +1834,7 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     "Percent of this year : " + str("\n")+ (barre)
                 )
 
-def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+def Haumea():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
     years_ago_full = datetime.now() - timedelta(
@@ -1854,9 +1854,9 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     with open("/var/www/html/Orbit.json", "r") as O:
         orbit = json.load(O)
-        thisYear = orbit["Tesla"]  # This year
-        # years_ago = orbit["Tesla"][str(years_ago)][-1]
-        # years_after = orbit["Tesla"][str(years_after)][0]
+        thisYear = orbit["Haumea"]  # This year
+        # years_ago = orbit["Haumea"][str(years_ago)][-1]
+        # years_after = orbit["Haumea"][str(years_after)][0]
         for i in thisYear:
             d0Year = i[:4]
             d0Year = int(d0Year)
@@ -1868,9 +1868,9 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=568) and d0 <= d1
+                    d0 >= d1 - timedelta(days=103774) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
-                Percentage.TeslaPerihelion = d0
+                Percentage.HaumeaPerihelion = d0
 
         for i in thisYear:
             d0Year = i[:4]
@@ -1883,19 +1883,19 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=568) and d0 >= d1
+                    d0 <= d1 + timedelta(days=103774) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
-                Percentage.NewTeslaPerihelion = d0
+                Percentage.NewHaumeaPerihelion = d0
                 d1 = date(
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
-                d3 = Percentage.NewTeslaPerihelion - Percentage.TeslaPerihelion
+                d3 = Percentage.NewHaumeaPerihelion - Percentage.HaumeaPerihelion
                 d3 = str(d3)
                 d3 = d3.split()
                 d3 = int(d3[0])
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
-                delta = d1 - Percentage.TeslaPerihelion
+                delta = d1 - Percentage.HaumeaPerihelion
                 delta = str(delta)
                 delta = delta.split()
                 delta = delta[0]
@@ -1903,16 +1903,16 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 new = str(new)
                 new = new[:4]
                 new = int(new)
-                Percentage.TeslaResult = new / ValuePercent
-                Percentage.TeslaResult = round(Percentage.TeslaResult, 2)
+                Percentage.HaumeaResult = new / ValuePercent
+                Percentage.HaumeaResult = round(Percentage.HaumeaResult, 2)
 
                 # Add graph progress #####
 
-                print("Spacecraft : Tesla")
+                print("Dwarf planet : Haumea")
                 print(("Day of the year : ") + str("Day ") + str(new))
-                print(("Year progress : ") + str(Percentage.TeslaResult) + str("%"))
+                print(("Year progress : ") + str(Percentage.HaumeaResult) + str("%"))
 
-                percent = Percentage.TeslaResult
+                percent = Percentage.HaumeaResult
                 barre = (
                         "["
                         + "#" * int((50 / 100) * percent)
@@ -1921,27 +1921,27 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
-                Percentage.TeslaHTML = (
-                        ("Spacecraft : Tesla")
+                Percentage.HaumeaHTML = (
+                        ("Dwarf planet : Haumea")
                         + str("\n")
                         + str(("Day of the year : ") + str("Day ") + str(new))
                         + str("\n")
                         + str(
                     ("Year progress : ")
-                    + str(Percentage.TeslaResult)
+                    + str(Percentage.HaumeaResult)
                     + str("%")
                     + str("\n")
                 )
                 )
-                percent = Percentage.TeslaResult
+                percent = Percentage.HaumeaResult
                 barre = (
                         "["
                         + "#" * int((50 / 100) * percent)
                         + "_" * int((50 / 100) * (100 - percent))
                         + "]"
                 )
-                Percentage.barrTesla = "Percent of this year : " + (barre) + str("\n")
-                Percentage.barrTeslaHTML = (
+                Percentage.barrHaumea = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrHaumeaHTML = (
                         "Percent of this year : " + str("\n")+ (barre) 
                 )
     """
@@ -1950,11 +1950,11 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
     """
 
 
-Tesla()
+Haumea()
 
 
 
-message = Percentage.TeslaHTML + Percentage. barrTeslaHTML +str('\n#Astronomy #Space #Espace #Astrometry #Tesla')
-photo = open('/var/www/html/pictures/tesla.jpg', 'rb')
+message = Percentage.HaumeaHTML + Percentage. barrHaumeaHTML +str('\n#Astronomy #Space #Espace #Astrometry')
+photo = open('/var/www/html/pictures/haumea.jpg', 'rb')
 response = twitter.upload_media(media=photo)
 twitter.update_status(status=message, media_ids=[response['media_id']])
