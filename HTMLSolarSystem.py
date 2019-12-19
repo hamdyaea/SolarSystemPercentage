@@ -10,6 +10,14 @@
 from datetime import date, datetime, timedelta
 import re
 import json
+import logging
+
+logging.basicConfig(
+    filename="/var/www/html/planets.log",
+    level=logging.DEBUG,
+    format="%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S",
+)  # log to a file
 
 
 class Percentage:
@@ -109,6 +117,7 @@ def motd():
         + ("<br />")
     )
     print(Percentage.motdResult)
+    logging.info(Percentage.motdResult)
 
 
 def Earth():
@@ -139,6 +148,7 @@ def Earth():
         + str(("Year progress : ") + str(Percentage.EarthResult) + str("%"))
     )
     print(Percentage.earth)
+    logging.info(Percentage.earth)
     Percentage.earthHTML = (
         ("Planet : Earth")
         + ("<br />")
@@ -157,6 +167,7 @@ def Earth():
     )
     Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n")
     print(Percentage.BarrEarth)
+    logging.info(Percentage.BarrEarth)
     Percentage.BarrEarthHTML = "Percent of this year : " + (barre) + ("<br />")
 
 
@@ -199,6 +210,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     d0 >= d1 - timedelta(days=25) and d0 <= d1
                 ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                     Percentage.MoonPerihelion = d0
+                    logging.info(Percentage.MoonPerihelion)
                     print(Percentage.MoonPerihelion)
                     print(error)
 
@@ -253,6 +265,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         )
                     )
                     print(Percentage.moon)
+                    logging.info(Percentage.moon)
                     Percentage.moonHTML = (
                         ("Satelite : Moon")
                         + ("<br />")
@@ -276,6 +289,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         "Percent of this year : " + (barre) + str("\n")
                     )
                     print(Percentage.barrMoon)
+                    logging.info(Percentage.barrMoon)
                     Percentage.barrMoonHTML = (
                         "Percent of this year : " + (barre) + ("<br />")
                     )
@@ -346,6 +360,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             )
                         )
                         print(Percentage.moon)
+                        logging.info(Percentage.moon)
                         Percentage.moonHTML = (
                             ("Satelite : Moon")
                             + ("<br />")
@@ -369,6 +384,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             "Percent of this year : " + (barre) + str("\n")
                         )
                         print(Percentage.barrMoon)
+                        logging.info(Percentage.barrMoon)
                         Percentage.barrMoonHTML = (
                             "Percent of this year : " + (barre) + ("<br />")
                         )
@@ -442,6 +458,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             )
                         )
                         print(Percentage.moon)
+                        logging.info(Percentage.moon)
                         Percentage.moonHTML = (
                             ("Satelite : Moon")
                             + ("<br />")
@@ -466,6 +483,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             "Percent of this year : " + (barre) + str("\n")
                         )
                         print(Percentage.barrMoon)
+                        logging.info(Percentage.barrMoon)
                         Percentage.barrMoonHTML = (
                             "Percent of this year : " + (barre) + ("<br />")
                         )
@@ -538,6 +556,9 @@ def Mercury():  # d0 = first perihelaperihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.MercuryPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:2]
@@ -624,6 +645,9 @@ def Mercury():  # d0 = first perihelaperihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.MercuryPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:2]
@@ -713,6 +737,9 @@ def Mercury():  # d0 = first perihelaperihelion
                     d3 = d3 + 1
                     ValuePercent = d3 / 100
                     delta = d1 - Percentage.MercuryPerihelion
+                    delta = str(delta)
+                    delta = delta.split()
+                    delta = delta[0]
                     new = re.sub("[^0-9]", "", str(delta))
                     new = str(new)
                     new = new[:2]
@@ -830,6 +857,9 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.VenusPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:3]
@@ -925,6 +955,9 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         d3 = d3 + 1
                         ValuePercent = d3 / 100
                         delta = d1 - Percentage.VenusPerihelion
+                        delta = str(delta)
+                        delta = delta.split()
+                        delta = delta[0]
                         new = re.sub("[^0-9]", "", str(delta))
                         new = str(new)
                         new = new[:3]
@@ -1028,6 +1061,9 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             d3 = d3 + 1
                             ValuePercent = d3 / 100
                             delta = d1 - Percentage.VenusPerihelion
+                            delta = str(delta)
+                            delta = delta.split()
+                            delta = delta[0]
                             new = re.sub("[^0-9]", "", str(delta))
                             new = str(new)
                             new = new[:3]
@@ -1152,6 +1188,9 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.MarsPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:3]
@@ -1246,6 +1285,9 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         d3 = d3 + 1
                         ValuePercent = d3 / 100
                         delta = d1 - Percentage.MarsPerihelion
+                        delta = str(delta)
+                        delta = delta.split()
+                        delta = delta[0]
                         new = re.sub("[^0-9]", "", str(delta))
                         new = str(new)
                         new = new[:3]
@@ -1346,6 +1388,9 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             d3 = d3 + 1
                             ValuePercent = d3 / 100
                             delta = d1 - Percentage.MarsPerihelion
+                            delta = str(delta)
+                            delta = delta.split()
+                            delta = delta[0]
                             new = re.sub("[^0-9]", "", str(delta))
                             new = str(new)
                             new = new[:3]
@@ -1462,6 +1507,9 @@ def Jupiter():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.JupiterPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:4]
@@ -1571,6 +1619,9 @@ def Saturn():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.SaturnPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:4]
@@ -1680,6 +1731,9 @@ def Uranus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.UranusPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:4]
@@ -1789,6 +1843,9 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.NeptunePerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:4]
@@ -1897,6 +1954,9 @@ def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.PlutoPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:4]
