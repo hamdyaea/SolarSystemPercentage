@@ -1889,6 +1889,9 @@ def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.PlutoPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
                 new = new[:4]
