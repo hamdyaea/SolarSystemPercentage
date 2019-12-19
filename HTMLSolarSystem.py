@@ -10,14 +10,7 @@
 from datetime import date, datetime, timedelta
 import re
 import json
-import logging
 
-logging.basicConfig(
-    filename="/var/www/html/planets.log",
-    level=logging.DEBUG,
-    format="%(asctime)s.%(msecs)03d %(levelname)s %(module)s - %(funcName)s: %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-)  # log to a file
 
 
 class Percentage:
@@ -76,6 +69,13 @@ class Percentage:
         self.barrPluto
         self.PlutoHTML
         self.barrPlutoHTML
+        self.HalleyResult
+        self.HalleyPerihelion
+        self.NewHalleyPerihelion
+        self.Halley
+        self.barrHalley
+        self.HalleyHTML
+        self.barrHalleyHTML
 
 
 Percentage.current_year = date.today().year
@@ -117,7 +117,6 @@ def motd():
         + ("<br />")
     )
     print(Percentage.motdResult)
-    logging.info(Percentage.motdResult)
 
 
 def Earth():
@@ -148,7 +147,6 @@ def Earth():
         + str(("Year progress : ") + str(Percentage.EarthResult) + str("%"))
     )
     print(Percentage.earth)
-    logging.info(Percentage.earth)
     Percentage.earthHTML = (
         ("Planet : Earth")
         + ("<br />")
@@ -167,7 +165,6 @@ def Earth():
     )
     Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n")
     print(Percentage.BarrEarth)
-    logging.info(Percentage.BarrEarth)
     Percentage.BarrEarthHTML = "Percent of this year : " + (barre) + ("<br />")
 
 
@@ -210,7 +207,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     d0 >= d1 - timedelta(days=25) and d0 <= d1
                 ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                     Percentage.MoonPerihelion = d0
-                    logging.info(Percentage.MoonPerihelion)
                     print(Percentage.MoonPerihelion)
 
 
@@ -264,7 +260,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     )
                 )
                 print(Percentage.moon)
-                logging.info(Percentage.moon)
                 Percentage.moonHTML = (
                     ("Satelite : Moon")
                     + ("<br />")
@@ -288,7 +283,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     "Percent of this year : " + (barre) + str("\n")
                 )
                 print(Percentage.barrMoon)
-                logging.info(Percentage.barrMoon)
                 Percentage.barrMoonHTML = (
                     "Percent of this year : " + (barre) + ("<br />")
                 )
@@ -359,7 +353,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             )
                         )
                         print(Percentage.moon)
-                        logging.info(Percentage.moon)
                         Percentage.moonHTML = (
                             ("Satelite : Moon")
                             + ("<br />")
@@ -383,7 +376,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             "Percent of this year : " + (barre) + str("\n")
                         )
                         print(Percentage.barrMoon)
-                        logging.info(Percentage.barrMoon)
                         Percentage.barrMoonHTML = (
                             "Percent of this year : " + (barre) + ("<br />")
                         )
@@ -457,7 +449,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         )
                     )
                     print(Percentage.moon)
-                    logging.info(Percentage.moon)
                     Percentage.moonHTML = (
                         ("Satelite : Moon")
                         + ("<br />")
@@ -482,7 +473,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         "Percent of this year : " + (barre) + str("\n")
                     )
                     print(Percentage.barrMoon)
-                    logging.info(Percentage.barrMoon)
                     Percentage.barrMoonHTML = (
                         "Percent of this year : " + (barre) + ("<br />")
                     )
@@ -2001,6 +1991,117 @@ def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 Percentage.barrPlutoHTML = (
                         "Percent of this year : " + (barre) + ("<br />")
                 )
+
+def Halley():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+
+    # Rotation year before this year
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_ago_full = str(years_ago_full)
+    years_ago = years_ago_full[:4]
+    years_ago = int(years_ago)  # result
+
+    # Next rotation year
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_after_full = str(years_after_full)
+    years_after = years_after_full[:4]
+    years_after = int(years_after)  # result
+
+    with open("/var/www/html/Orbit.json", "r") as O:
+        orbit = json.load(O)
+        thisYear = orbit["Halley"]  # This year
+        # years_ago = orbit["Halley"][str(years_ago)][-1]
+        # years_after = orbit["Halley"][str(years_after)][0]
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 >= d1 - timedelta(days=28000) and d0 <= d1
+            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                Percentage.HalleyPerihelion = d0
+
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 <= d1 + timedelta(days=28000) and d0 >= d1
+            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                Percentage.NewHalleyPerihelion = d0
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
+                d3 = Percentage.NewHalleyPerihelion - Percentage.HalleyPerihelion
+                d3 = str(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
+                d3 = d3 + 1
+                ValuePercent = d3 / 100
+                delta = d1 - Percentage.HalleyPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
+                new = re.sub("[^0-9]", "", str(delta))
+                new = str(new)
+                new = new[:4]
+                new = int(new)
+                Percentage.HalleyResult = new / ValuePercent
+                Percentage.HalleyResult = round(Percentage.HalleyResult, 2)
+
+                # Add graph progress #####
+
+                print("Comet : Halley")
+                print(("Day of the year : ") + str("Day ") + str(new))
+                print(("Year progress : ") + str(Percentage.HalleyResult) + str("%"))
+
+                percent = Percentage.HalleyResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                print("Percent of this year : " + (barre))
+                print("\n")
+                Percentage.HalleyHTML = (
+                        ("Comet : Halley")
+                        + ("<br />")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + ("<br />")
+                        + str(
+                    ("Year progress : ")
+                    + str(Percentage.HalleyResult)
+                    + str("%")
+                    + ("<br />")
+                )
+                )
+                percent = Percentage.HalleyResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "_" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                Percentage.barrHalley = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrHalleyHTML = (
+                        "Percent of this year : " + (barre) + ("<br />")
+                )
     """
 
     Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
@@ -2018,6 +2119,7 @@ Saturn()
 Uranus()
 Neptune()
 Pluto()
+Halley()
 
 startHtml = (
     str("<!DOCTYPE html>")
@@ -2134,6 +2236,12 @@ contentHtml.write('<img src="http://astrometry.ch/pictures/pluto.jpg" alt="pluto
 contentHtml.write("<br />")
 contentHtml.write(Percentage.PlutoHTML)
 contentHtml.write(Percentage.barrPlutoHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write('<img src="http://astrometry.ch/pictures/halley.jpg" alt="pluto" width="100" height="100">')
+contentHtml.write("<br />")
+contentHtml.write(Percentage.HalleyHTML)
+contentHtml.write(Percentage.barrHalleyHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
