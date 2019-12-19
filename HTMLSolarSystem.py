@@ -12,7 +12,6 @@ import re
 import json
 
 
-
 class Percentage:
     def __init__(self):
         self.current_year
@@ -76,6 +75,13 @@ class Percentage:
         self.barrHalley
         self.HalleyHTML
         self.barrHalleyHTML
+        self.TeslaResult
+        self.TeslaPerihelion
+        self.NewTeslaPerihelion
+        self.Tesla
+        self.barrTesla
+        self.TeslaHTML
+        self.barrTeslaHTML
 
 
 Percentage.current_year = date.today().year
@@ -191,7 +197,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
         years_ago = orbit["Moon"][str(years_ago)][-1]
         years_after = orbit["Moon"][str(years_after)][0]
         try:
-            print("B") #try delta splite everywhere
             for i in thisYear:
                 d0Year = i[:4]
                 d0Year = int(d0Year)
@@ -207,8 +212,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     d0 >= d1 - timedelta(days=25) and d0 <= d1
                 ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                     Percentage.MoonPerihelion = d0
-                    print(Percentage.MoonPerihelion)
-
 
             for i in thisYear:
                 d0Year = i[:4]
@@ -225,7 +228,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     d0 <= d1 + timedelta(days=25) and d0 >= d1
                 ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                     Percentage.NewMoonPerihelion = d0
-                    #print(Percentage.NewMoonPerihelion)
+                    # print(Percentage.NewMoonPerihelion)
                 d1 = date(
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
@@ -255,9 +258,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     + str("\n")
                     + str(("Day of the year : ") + str("Day ") + str(new))
                     + str("\n")
-                    + str(
-                        ("Year progress : ") + str(Percentage.MoonResult) + str("%")
-                    )
+                    + str(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
                 )
                 print(Percentage.moon)
                 Percentage.moonHTML = (
@@ -279,9 +280,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     + "_" * int((50 / 100) * (100 - percent))
                     + "]"
                 )
-                Percentage.barrMoon = (
-                    "Percent of this year : " + (barre) + str("\n")
-                )
+                Percentage.barrMoon = "Percent of this year : " + (barre) + str("\n")
                 print(Percentage.barrMoon)
                 Percentage.barrMoonHTML = (
                     "Percent of this year : " + (barre) + ("<br />")
@@ -303,7 +302,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         d0 >= d1 - timedelta(days=25) and d0 <= d1
                     ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                         Percentage.MoonPerihelion = d0
-                        #print(Percentage.MoonPerihelion)
+                        # print(Percentage.MoonPerihelion)
                         d0Year = years_after[:4]
                         d0Year = int(d0Year)
                         d0Month = years_after[5:7]
@@ -312,15 +311,19 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         d0Day = int(d0Day)
                         d0 = date(d0Year, d0Month, d0Day)
                         d1 = date(
-                            Percentage.current_year, Percentage.thisMonth, Percentage.today
+                            Percentage.current_year,
+                            Percentage.thisMonth,
+                            Percentage.today,
                         )
                     if (
                         d0 <= d1 + timedelta(days=25) and d0 >= d1
                     ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                         Percentage.NewMoonPerihelion = d0
-                        #print(Percentage.NewMoonPerihelion)
+                        # print(Percentage.NewMoonPerihelion)
                         d1 = date(
-                            Percentage.current_year, Percentage.thisMonth, Percentage.today
+                            Percentage.current_year,
+                            Percentage.thisMonth,
+                            Percentage.today,
                         )
                         d1 = d1 + timedelta(days=1)
                         d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
@@ -349,7 +352,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             + str(("Day of the year : ") + str("Day ") + str(new))
                             + str("\n")
                             + str(
-                                ("Year progress : ") + str(Percentage.MoonResult) + str("%")
+                                ("Year progress : ")
+                                + str(Percentage.MoonResult)
+                                + str("%")
                             )
                         )
                         print(Percentage.moon)
@@ -413,9 +418,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                         Percentage.NewMoonPerihelion = d0
                     d1 = date(
-                        Percentage.current_year,
-                        Percentage.thisMonth,
-                        Percentage.today,
+                        Percentage.current_year, Percentage.thisMonth, Percentage.today,
                     )
                     d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
                     d3 = str(d3)
@@ -443,9 +446,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         + str(("Day of the year : ") + str("Day ") + str(new))
                         + str("\n")
                         + str(
-                            ("Year progress : ")
-                            + str(Percentage.MoonResult)
-                            + str("%")
+                            ("Year progress : ") + str(Percentage.MoonResult) + str("%")
                         )
                     )
                     print(Percentage.moon)
@@ -1881,6 +1882,7 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     "Percent of this year : " + (barre) + ("<br />")
                 )
 
+
 def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
@@ -1915,7 +1917,7 @@ def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=99000) and d0 <= d1
+                d0 >= d1 - timedelta(days=99000) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.PlutoPerihelion = d0
 
@@ -1930,7 +1932,7 @@ def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=99000) and d0 >= d1
+                d0 <= d1 + timedelta(days=99000) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewPlutoPerihelion = d0
                 d1 = date(
@@ -1961,36 +1963,37 @@ def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.PlutoResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.PlutoHTML = (
-                        ("Dwarf planet : Pluto")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.PlutoResult)
-                    + str("%")
+                    ("Dwarf planet : Pluto")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.PlutoResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.PlutoResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 Percentage.barrPluto = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrPlutoHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
+
 
 def Halley():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
@@ -2026,7 +2029,7 @@ def Halley():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=28000) and d0 <= d1
+                d0 >= d1 - timedelta(days=28000) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.HalleyPerihelion = d0
 
@@ -2041,7 +2044,7 @@ def Halley():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=28000) and d0 >= d1
+                d0 <= d1 + timedelta(days=28000) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewHalleyPerihelion = d0
                 d1 = date(
@@ -2072,6 +2075,117 @@ def Halley():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.HalleyResult
                 barre = (
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
+                )
+                print("Percent of this year : " + (barre))
+                print("\n")
+                Percentage.HalleyHTML = (
+                    ("Comet : Halley")
+                    + ("<br />")
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.HalleyResult)
+                        + str("%")
+                        + ("<br />")
+                    )
+                )
+                percent = Percentage.HalleyResult
+                barre = (
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
+                )
+                Percentage.barrHalley = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrHalleyHTML = (
+                    "Percent of this year : " + (barre) + ("<br />")
+                )
+
+def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+
+    # Rotation year before this year
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_ago_full = str(years_ago_full)
+    years_ago = years_ago_full[:4]
+    years_ago = int(years_ago)  # result
+
+    # Next rotation year
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_after_full = str(years_after_full)
+    years_after = years_after_full[:4]
+    years_after = int(years_after)  # result
+
+    with open("/var/www/html/Orbit.json", "r") as O:
+        orbit = json.load(O)
+        thisYear = orbit["Tesla"]  # This year
+        # years_ago = orbit["Tesla"][str(years_ago)][-1]
+        # years_after = orbit["Tesla"][str(years_after)][0]
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 >= d1 - timedelta(days=568) and d0 <= d1
+            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                Percentage.TeslaPerihelion = d0
+
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 <= d1 + timedelta(days=568) and d0 >= d1
+            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                Percentage.NewTeslaPerihelion = d0
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
+                d3 = Percentage.NewTeslaPerihelion - Percentage.TeslaPerihelion
+                d3 = str(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
+                d3 = d3 + 1
+                ValuePercent = d3 / 100
+                delta = d1 - Percentage.TeslaPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
+                new = re.sub("[^0-9]", "", str(delta))
+                new = str(new)
+                new = new[:4]
+                new = int(new)
+                Percentage.TeslaResult = new / ValuePercent
+                Percentage.TeslaResult = round(Percentage.TeslaResult, 2)
+
+                # Add graph progress #####
+
+                print("Spacecraft : Tesla")
+                print(("Day of the year : ") + str("Day ") + str(new))
+                print(("Year progress : ") + str(Percentage.TeslaResult) + str("%"))
+
+                percent = Percentage.TeslaResult
+                barre = (
                         "["
                         + "#" * int((50 / 100) * percent)
                         + "-" * int((50 / 100) * (100 - percent))
@@ -2079,29 +2193,30 @@ def Halley():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
-                Percentage.HalleyHTML = (
-                        ("Comet : Halley")
+                Percentage.TeslaHTML = (
+                        ("Spacecraft : Tesla")
                         + ("<br />")
                         + str(("Day of the year : ") + str("Day ") + str(new))
                         + ("<br />")
                         + str(
                     ("Year progress : ")
-                    + str(Percentage.HalleyResult)
+                    + str(Percentage.TeslaResult)
                     + str("%")
                     + ("<br />")
                 )
                 )
-                percent = Percentage.HalleyResult
+                percent = Percentage.TeslaResult
                 barre = (
                         "["
                         + "#" * int((50 / 100) * percent)
                         + "_" * int((50 / 100) * (100 - percent))
                         + "]"
                 )
-                Percentage.barrHalley = "Percent of this year : " + (barre) + str("\n")
-                Percentage.barrHalleyHTML = (
+                Percentage.barrTesla = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrTeslaHTML = (
                         "Percent of this year : " + (barre) + ("<br />")
                 )
+
     """
 
     Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
@@ -2120,6 +2235,7 @@ Uranus()
 Neptune()
 Pluto()
 Halley()
+Tesla()
 
 startHtml = (
     str("<!DOCTYPE html>")
@@ -2178,70 +2294,102 @@ dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
 contentHtml = open("/var/www/html/main.html", "a")
 # contentHtml.write(Percentage.motdResultHTML)
-contentHtml.write('<img src="http://astrometry.ch/pictures/terre.png" alt="earth" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/terre.png" alt="earth" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.earthHTML)
 contentHtml.write(Percentage.BarrEarthHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/lune.jpg" alt="moon" width="130" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/lune.jpg" alt="moon" width="130" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.moonHTML)
 contentHtml.write(Percentage.barrMoonHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/mercury.png" alt="mercury" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/mercury.png" alt="mercury" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.mercuryHTML)
 contentHtml.write(Percentage.barrMercuryHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/venus.jpg" alt="venus" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/venus.jpg" alt="venus" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.VenusHTML)
 contentHtml.write(Percentage.barrVenusHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/mars.jpg" alt="mars" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/mars.jpg" alt="mars" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.MarsHTML)
 contentHtml.write(Percentage.barrMarsHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/jupiter.jpg" alt="jupiter" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/jupiter.jpg" alt="jupiter" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.JupiterHTML)
 contentHtml.write(Percentage.barrJupiterHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/saturn.jpg" alt="saturn" width="130" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/saturn.jpg" alt="saturn" width="130" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.SaturnHTML)
 contentHtml.write(Percentage.barrSaturnHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/uranus.jpg" alt="uranus" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/uranus.jpg" alt="uranus" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.UranusHTML)
 contentHtml.write(Percentage.barrUranusHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/neptune.jpg" alt="neptune" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/neptune.jpg" alt="neptune" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.NeptuneHTML)
 contentHtml.write(Percentage.barrNeptuneHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/pluto.jpg" alt="pluto" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/pluto.jpg" alt="pluto" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.PlutoHTML)
 contentHtml.write(Percentage.barrPlutoHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
-contentHtml.write('<img src="http://astrometry.ch/pictures/halley.jpg" alt="pluto" width="100" height="100">')
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/halley.jpg" alt="pluto" width="100" height="100">'
+)
 contentHtml.write("<br />")
 contentHtml.write(Percentage.HalleyHTML)
 contentHtml.write(Percentage.barrHalleyHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/tesla.jpg" alt="pluto" width="130" height="100">'
+)
+contentHtml.write("<br />")
+contentHtml.write(Percentage.TeslaHTML)
+contentHtml.write(Percentage.barrTeslaHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
