@@ -1825,16 +1825,16 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
     """
 
 
-motd()
+#motd()
 Earth()
-Moon()
-Mercury()
-Venus()
-Mars()
-Jupiter()
-Saturn()
-Uranus()
-Neptune()
+#Moon()
+#Mercury()
+#Venus()
+#Mars()
+#Jupiter()
+#Saturn()
+#Uranus()
+#Neptune()
 
 
 message = Percentage.earthHTML + Percentage.BarrEarthHTML + str('\n#Astronomy #Space #Espace #Astrometry')

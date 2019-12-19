@@ -183,7 +183,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
         years_ago = orbit["Moon"][str(years_ago)][-1]
         years_after = orbit["Moon"][str(years_after)][0]
         try:
-            print("B")
+            print("B") #try delta splite everywhere
             for i in thisYear:
                 d0Year = i[:4]
                 d0Year = int(d0Year)
