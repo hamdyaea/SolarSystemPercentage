@@ -24,4 +24,5 @@ class Peri(Resource):
 
 api.add_resource(Peri, "/perihelion", "/perihelion/", "/perihelion/<int:id>")
 if __name__ == '__main__':
-    app.run(debug=True)
+    #app.run(debug=True)
+    app.run(host='0.0.0.0')
