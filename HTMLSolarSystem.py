@@ -2134,6 +2134,7 @@ def Halley():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     "Percent of this year : " + (barre) + ("<br />")
                 )
 
+
 def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
@@ -2168,7 +2169,7 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=568) and d0 <= d1
+                d0 >= d1 - timedelta(days=568) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.TeslaPerihelion = d0
 
@@ -2183,7 +2184,7 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=568) and d0 >= d1
+                d0 <= d1 + timedelta(days=568) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewTeslaPerihelion = d0
                 d1 = date(
@@ -2214,36 +2215,37 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.TeslaResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.TeslaHTML = (
-                        ("Spacecraft : Tesla")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.TeslaResult)
-                    + str("%")
+                    ("Spacecraft : Tesla")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.TeslaResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.TeslaResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 Percentage.barrTesla = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrTeslaHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
+
 
 def Ceres():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
@@ -2279,7 +2281,7 @@ def Ceres():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=1683) and d0 <= d1
+                d0 >= d1 - timedelta(days=1683) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.CeresPerihelion = d0
 
@@ -2294,7 +2296,7 @@ def Ceres():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=1683) and d0 >= d1
+                d0 <= d1 + timedelta(days=1683) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewCeresPerihelion = d0
                 d1 = date(
@@ -2325,36 +2327,37 @@ def Ceres():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.CeresResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.CeresHTML = (
-                        ("Dwarf planet : Ceres")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.CeresResult)
-                    + str("%")
+                    ("Dwarf planet : Ceres")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.CeresResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.CeresResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 Percentage.barrCeres = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrCeresHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
+
 
 def Haumea():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
@@ -2390,7 +2393,7 @@ def Haumea():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=103774) and d0 <= d1
+                d0 >= d1 - timedelta(days=103774) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.HaumeaPerihelion = d0
 
@@ -2405,7 +2408,7 @@ def Haumea():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=103774) and d0 >= d1
+                d0 <= d1 + timedelta(days=103774) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewHaumeaPerihelion = d0
                 d1 = date(
@@ -2436,36 +2439,37 @@ def Haumea():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.HaumeaResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.HaumeaHTML = (
-                        ("Dwarf planet : Haumea")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.HaumeaResult)
-                    + str("%")
+                    ("Dwarf planet : Haumea")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.HaumeaResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.HaumeaResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 Percentage.barrHaumea = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrHaumeaHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
+
 
 def Makemake():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
@@ -2501,7 +2505,7 @@ def Makemake():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=112330) and d0 <= d1
+                d0 >= d1 - timedelta(days=112330) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.MakemakePerihelion = d0
 
@@ -2516,7 +2520,7 @@ def Makemake():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=112330) and d0 >= d1
+                d0 <= d1 + timedelta(days=112330) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewMakemakePerihelion = d0
                 d1 = date(
@@ -2547,36 +2551,39 @@ def Makemake():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.MakemakeResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.MakemakeHTML = (
-                        ("Dwarf planet : Makemake")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.MakemakeResult)
-                    + str("%")
+                    ("Dwarf planet : Makemake")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.MakemakeResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.MakemakeResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
-                Percentage.barrMakemake = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrMakemake = (
+                    "Percent of this year : " + (barre) + str("\n")
+                )
                 Percentage.barrMakemakeHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
+
 
 def Eris():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
@@ -2612,7 +2619,7 @@ def Eris():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=203661) and d0 <= d1
+                d0 >= d1 - timedelta(days=203661) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.ErisPerihelion = d0
 
@@ -2627,7 +2634,7 @@ def Eris():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=203661) and d0 >= d1
+                d0 <= d1 + timedelta(days=203661) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewErisPerihelion = d0
                 d1 = date(
@@ -2658,35 +2665,35 @@ def Eris():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.ErisResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.ErisHTML = (
-                        ("Dwarf planet : Eris")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.ErisResult)
-                    + str("%")
+                    ("Dwarf planet : Eris")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.ErisResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.ErisResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 Percentage.barrEris = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrErisHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
 
     """
