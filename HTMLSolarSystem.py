@@ -2696,6 +2696,117 @@ def Eris():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     "Percent of this year : " + (barre) + ("<br />")
                 )
 
+def Encke():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+
+    # Rotation year before this year
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_ago_full = str(years_ago_full)
+    years_ago = years_ago_full[:4]
+    years_ago = int(years_ago)  # result
+
+    # Next rotation year
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_after_full = str(years_after_full)
+    years_after = years_after_full[:4]
+    years_after = int(years_after)  # result
+
+    with open("/var/www/html/Orbit.json", "r") as O:
+        orbit = json.load(O)
+        thisYear = orbit["Encke"]  # This year
+        # years_ago = orbit["Encke"][str(years_ago)][-1]
+        # years_after = orbit["Encke"][str(years_after)][0]
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 >= d1 - timedelta(days=1203) and d0 <= d1
+            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                Percentage.EnckePerihelion = d0
+
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 <= d1 + timedelta(days=1203) and d0 >= d1
+            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                Percentage.NewEnckePerihelion = d0
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
+                d3 = Percentage.NewEnckePerihelion - Percentage.EnckePerihelion
+                d3 = str(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
+                d3 = d3 + 1
+                ValuePercent = d3 / 100
+                delta = d1 - Percentage.EnckePerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
+                new = re.sub("[^0-9]", "", str(delta))
+                new = str(new)
+                new = new[:4]
+                new = int(new)
+                Percentage.EnckeResult = new / ValuePercent
+                Percentage.EnckeResult = round(Percentage.EnckeResult, 2)
+
+                # Add graph progress #####
+
+                print("Comet : Encke")
+                print(("Day of the year : ") + str("Day ") + str(new))
+                print(("Year progress : ") + str(Percentage.EnckeResult) + str("%"))
+
+                percent = Percentage.EnckeResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                print("Percent of this year : " + (barre))
+                print("\n")
+                Percentage.EnckeHTML = (
+                        ("Comet : Encke")
+                        + ("<br />")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + ("<br />")
+                        + str(
+                    ("Year progress : ")
+                    + str(Percentage.EnckeResult)
+                    + str("%")
+                    + ("<br />")
+                )
+                )
+                percent = Percentage.EnckeResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "_" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                Percentage.barrEncke = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrEnckeHTML = (
+                        "Percent of this year : " + (barre) + ("<br />")
+                )
+
     """
 
     Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
@@ -2719,6 +2830,7 @@ Ceres()
 Haumea()
 Makemake()
 Eris()
+Encke()
 
 startHtml = (
     str("<!DOCTYPE html>")
@@ -2882,7 +2994,7 @@ contentHtml.write(Percentage.barrCeresHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
-    '<img src="http://astrometry.ch/pictures/makemake.jpg" alt="makemake" width="100" height="100">'
+    '<img src="http://astrometry.ch/pictures/makemake.jpg" alt="makemake" width="100ay be" height="100">'
 )
 contentHtml.write("<br />")
 contentHtml.write(Percentage.MakemakeHTML)
@@ -2903,6 +3015,14 @@ contentHtml.write(
 contentHtml.write("<br />")
 contentHtml.write(Percentage.ErisHTML)
 contentHtml.write(Percentage.barrErisHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/encke.jpg" alt="eris" width="100" height="100">'
+)
+contentHtml.write("<br />")
+contentHtml.write(Percentage.EnckeHTML)
+contentHtml.write(Percentage.barrEnckeHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
