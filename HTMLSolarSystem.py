@@ -2696,6 +2696,7 @@ def Eris():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     "Percent of this year : " + (barre) + ("<br />")
                 )
 
+
 def Encke():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
@@ -2730,7 +2731,7 @@ def Encke():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=1203) and d0 <= d1
+                d0 >= d1 - timedelta(days=1203) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.EnckePerihelion = d0
 
@@ -2745,7 +2746,7 @@ def Encke():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=1203) and d0 >= d1
+                d0 <= d1 + timedelta(days=1203) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewEnckePerihelion = d0
                 d1 = date(
@@ -2776,36 +2777,37 @@ def Encke():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.EnckeResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.EnckeHTML = (
-                        ("Comet : Encke")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.EnckeResult)
-                    + str("%")
+                    ("Comet : Encke")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.EnckeResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.EnckeResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 Percentage.barrEncke = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrEnckeHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
+
 
 def Faye():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
@@ -2841,7 +2843,7 @@ def Faye():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=2706) and d0 <= d1
+                d0 >= d1 - timedelta(days=2706) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.FayePerihelion = d0
 
@@ -2856,7 +2858,7 @@ def Faye():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=2706) and d0 >= d1
+                d0 <= d1 + timedelta(days=2706) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewFayePerihelion = d0
                 d1 = date(
@@ -2887,35 +2889,35 @@ def Faye():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.FayeResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.FayeHTML = (
-                        ("Comet : Faye")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.FayeResult)
-                    + str("%")
+                    ("Comet : Faye")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.FayeResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.FayeResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 Percentage.barrFaye = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrFayeHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
 
     """
@@ -2951,7 +2953,9 @@ startHtml = (
     + str("\n")
     + str("<head>")
     + str("\n")
-    + str('<script data-ad-client="ca-pub-2332306020792478" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>')
+    + str(
+        '<script data-ad-client="ca-pub-2332306020792478" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>'
+    )
     + str("\n")
     + str("<title>Percent Progress of the Solar System</title>")
     + str("\n")
