@@ -17,6 +17,7 @@ from twython import Twython
 
 twitter = Twython(consumer_key, consumer_secret, access_token, access_token_secret)
 
+
 class Percentage:
     def __init__(self):
         self.current_year
@@ -155,7 +156,7 @@ def Earth():
     )
     Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n")
     print(Percentage.BarrEarth)
-    Percentage.BarrEarthHTML = "Percent of this year : "+ str("\n") + (barre)
+    Percentage.BarrEarthHTML = "Percent of this year : " + str("\n") + (barre)
 
 
 def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
@@ -268,7 +269,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     )
                     print(Percentage.barrMoon)
                     Percentage.barrMoonHTML = (
-                        "Percent of this year : "+ str("\n") + (barre)
+                        "Percent of this year : " + str("\n") + (barre)
                     )
         except:
             try:
@@ -358,7 +359,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     )
                     print(Percentage.barrMoon)
                     Percentage.barrMoonHTML = (
-                        "Percent of this year : "+ str("\n") + (barre)
+                        "Percent of this year : " + str("\n") + (barre)
                     )
             except:
                 d0Year = years_ago[:4]
@@ -452,7 +453,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                         )
                         print(Percentage.barrMoon)
                         Percentage.barrMoonHTML = (
-                            "Percent of this year : "+ str("\n") + (barre)
+                            "Percent of this year : " + str("\n") + (barre)
                         )
 
 
@@ -550,7 +551,10 @@ def Mercury():  # d0 = first perihelaperihelion
                     + str(("Day of the year : ") + str("Day ") + str(new))
                     + str("\n")
                     + str(
-                        ("Year progress : ") + str(Percentage.MercuryResult) + str("%")+ str("\n")
+                        ("Year progress : ")
+                        + str(Percentage.MercuryResult)
+                        + str("%")
+                        + str("\n")
                     )
                 )
                 percent = Percentage.MercuryResult
@@ -652,7 +656,7 @@ def Mercury():  # d0 = first perihelaperihelion
                 Percentage.barrMercury = "Percent of this year : " + (barre) + str("\n")
                 print(Percentage.barrMercury)
                 Percentage.barrMercuryHTML = (
-                    "Percent of this year : "+ str("\n") + (barre)
+                    "Percent of this year : " + str("\n") + (barre)
                 )
 
             except:
@@ -744,7 +748,7 @@ def Mercury():  # d0 = first perihelaperihelion
                     )
                     print(Percentage.barrMercury)
                     Percentage.barrMercuryHTML = (
-                        "Percent of this year : "+ str("\n") + (barre)
+                        "Percent of this year : " + str("\n") + (barre)
                     )
 
 
@@ -862,7 +866,7 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 Percentage.barrVenus = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrVenusHTML = (
-                    "Percent of this year : "+ str("\n") + (barre)
+                    "Percent of this year : " + str("\n") + (barre)
                 )
         except:
             try:
@@ -967,7 +971,7 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             "Percent of this year : " + (barre) + str("\n")
                         )
                         Percentage.barrVenusHTML = (
-                            "Percent of this year : "+ str("\n") + (barre)
+                            "Percent of this year : " + str("\n") + (barre)
                         )
             except:
                 d0Year = years_ago[:4]
@@ -1072,7 +1076,7 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                                 "Percent of this year : " + (barre) + str("\n")
                             )
                             Percentage.barrVenusHTML = (
-                                "Percent of this year : "+ str("\n") + (barre)
+                                "Percent of this year : " + str("\n") + (barre)
                             )
 
 
@@ -1193,7 +1197,7 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 Percentage.barrMars = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrMarsHTML = (
-                    "Percent of this year : "+ str("\n") + (barre)
+                    "Percent of this year : " + str("\n") + (barre)
                 )
         except:
             try:
@@ -1295,7 +1299,7 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                             "Percent of this year : " + (barre) + str("\n")
                         )
                         Percentage.barrMarsHTML = (
-                            "Percent of this year : "+ str("\n") + (barre)
+                            "Percent of this year : " + str("\n") + (barre)
                         )
             except:
                 d0Year = years_ago[:4]
@@ -1399,7 +1403,7 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                                 "Percent of this year : " + (barre) + str("\n")
                             )
                             Percentage.barrMarsHTML = (
-                                "Percent of this year : "+ str("\n") + (barre)
+                                "Percent of this year : " + str("\n") + (barre)
                             )
 
 
@@ -1617,7 +1621,7 @@ def Saturn():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 Percentage.barrSaturn = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrSaturnHTML = (
-                    "Percent of this year : "+ str("\n") + (barre)
+                    "Percent of this year : " + str("\n") + (barre)
                 )
 
 
@@ -1726,7 +1730,7 @@ def Uranus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 Percentage.barrUranus = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrUranusHTML = (
-                    "Percent of this year : "+ str("\n") + (barre)
+                    "Percent of this year : " + str("\n") + (barre)
                 )
 
 
@@ -1838,7 +1842,7 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 Percentage.barrNeptune = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrNeptuneHTML = (
-                    "Percent of this year : " + str("\n")+ (barre)
+                    "Percent of this year : " + str("\n") + (barre)
                 )
     """
 
@@ -1849,8 +1853,11 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 Venus()
 
 
-
-message = Percentage.VenusHTML + Percentage. barrVenusHTML +str('\n#Astronomy #Space #Espace #Astrometry')
-photo = open('/var/www/html/pictures/venus.jpg', 'rb')
+message = (
+    Percentage.VenusHTML
+    + Percentage.barrVenusHTML
+    + str("\n#Astronomy #Space #Espace #Astrometry")
+)
+photo = open("/var/www/html/pictures/venus.jpg", "rb")
 response = twitter.upload_media(media=photo)
-twitter.update_status(status=message, media_ids=[response['media_id']])
+twitter.update_status(status=message, media_ids=[response["media_id"]])

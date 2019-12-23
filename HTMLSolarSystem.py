@@ -3138,7 +3138,7 @@ contentHtml.write(Percentage.barrEnckeHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
-    '<img src="http://astrometry.ch/pictures/faye.jpg" alt="eris" width="100" height="100">'
+    '<img src="http://astrometry.ch/pictures/fayein.jpg" alt="eris" width="100" height="100">'
 )
 contentHtml.write("<br />")
 contentHtml.write(Percentage.FayeHTML)
