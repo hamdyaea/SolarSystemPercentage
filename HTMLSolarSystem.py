@@ -2951,6 +2951,8 @@ startHtml = (
     + str("\n")
     + str("<head>")
     + str("\n")
+    + str('<script data-ad-client="ca-pub-2332306020792478" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>')
+    + str("\n")
     + str("<title>Percent Progress of the Solar System</title>")
     + str("\n")
     + str(
