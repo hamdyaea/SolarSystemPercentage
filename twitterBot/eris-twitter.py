@@ -1954,7 +1954,7 @@ Eris()
 
 
 
-message = Percentage.ErisHTML + Percentage. barrErisHTML +str('\n#Astronomy #Space #Espace #Astrometry')
+message = Percentage.ErisHTML + Percentage.barrErisHTML +str('\n#Astronomy #Space #Espace #Astrometry')
 photo = open('/var/www/html/pictures/eris.jpg', 'rb')
 response = twitter.upload_media(media=photo)
 twitter.update_status(status=message, media_ids=[response['media_id']])

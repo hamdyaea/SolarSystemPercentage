@@ -1947,7 +1947,7 @@ Pluto()
 
 
 
-message = Percentage.PlutoHTML + Percentage. barrPlutoHTML +str('\n#Astronomy #Space #Espace #Astrometry')
+message = Percentage.PlutoHTML + Percentage.barrPlutoHTML +str('\n#Astronomy #Space #Espace #Astrometry')
 photo = open('/var/www/html/pictures/pluto.jpg', 'rb')
 response = twitter.upload_media(media=photo)
 twitter.update_status(status=message, media_ids=[response['media_id']])
