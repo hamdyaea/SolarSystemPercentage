@@ -1842,6 +1842,6 @@ Uranus()
 
 
 
-client.create_photo(blogName, state="published", tags=[Percentage.MarsHTML + Percentage.barrMarsHTML], format="markdown",
+client.create_photo(blogName, state="published", tags=[Percentage.UranusHTML + Percentage.barrUranusHTML], format="markdown",
                     data=["/var/www/html/pictures/uranus.jpg"],
                     caption="#Astronomy #Space #Espace #Astrometry")
