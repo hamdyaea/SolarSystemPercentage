@@ -1,0 +1,42 @@
+2019-12-19 08:10:09.741 INFO HTMLSolarSystem - motd: 
+
+ __     __               _   __
+ \ \   / /              (_) / /
+  \ \_/ /__  __ _ _ __     / / 
+   \   / _ \/ _` | '__|   / /  
+    | |  __/ (_| | |     / / _ 
+    |_|\___|\__,_|_|    /_/ (_)
+
+
+2019-12-19 08:10:09.742 INFO HTMLSolarSystem - Earth: Planet : Earth
+Day of the year : Day 353
+Year progress : 96.71%
+2019-12-19 08:10:09.742 INFO HTMLSolarSystem - Earth: Percent of this year : [################################################_]
+
+2019-12-19 08:10:09.742 INFO HTMLSolarSystem - Moon: 2019-12-18
+2019-12-19 08:10:09.742 INFO HTMLSolarSystem - Moon: Satelite : Moon
+Day of the year : Day 2
+Year progress : 7.41%
+2019-12-19 08:10:09.743 INFO HTMLSolarSystem - Moon: Percent of this year : [###______________________________________________]
+
+2019-12-19 08:39:04.683 INFO HTMLSolarSystem - motd: 
+
+ __     __               _   __
+ \ \   / /              (_) / /
+  \ \_/ /__  __ _ _ __     / / 
+   \   / _ \/ _` | '__|   / /  
+    | |  __/ (_| | |     / / _ 
+    |_|\___|\__,_|_|    /_/ (_)
+
+
+2019-12-19 08:39:04.683 INFO HTMLSolarSystem - Earth: Planet : Earth
+Day of the year : Day 353
+Year progress : 96.71%
+2019-12-19 08:39:04.683 INFO HTMLSolarSystem - Earth: Percent of this year : [################################################_]
+
+2019-12-19 08:39:04.685 INFO HTMLSolarSystem - Moon: 2019-12-18
+2019-12-19 08:39:04.685 INFO HTMLSolarSystem - Moon: Satelite : Moon
+Day of the year : Day 2
+Year progress : 7.41%
+2019-12-19 08:39:04.686 INFO HTMLSolarSystem - Moon: Percent of this year : [###______________________________________________]
+
