@@ -1,9 +1,12 @@
 ![Awesome](awesome.svg) ![Python](python.png)  
 # SolarSystemPercentage  
+
+# http://astrometry.ch/
+
+![Screenshot](screenshot.png) 
  
  Developer : Hamdy Abou El Anein     
  hamdy.aea@protonmail.com   
- This programm is not finish, I am working on it    
 
 The index.html page is created in /var/www/html/    
 Put the pictures and the json file in the same directory to make it run.
@@ -71,6 +74,3 @@ Percent of this year : [##-----------------------------------------------]
 
 
 ```
-# http://astrometry.ch/
-
-![Screenshot](screenshot.png)
