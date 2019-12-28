@@ -17,6 +17,7 @@
 0 12 * * 2 python3 /root/SolarSystemPercentage/twitterBot/eris-twitter.py
 0 12 * * 3 python3 /root/SolarSystemPercentage/twitterBot/encke-twitter.py
 0 12 * * 4 python3 /root/SolarSystemPercentage/twitterBot/faye-twitter.py
+0 12 * * 5 python3 /root/SolarSystemPercentage/twitterBot/hale-bopp-twitter.py
 0 10 * * 1 python3 /root/SolarSystemPercentage/tumblr/ceres-tumblr.py
 0 10 * * 2 python3 /root/SolarSystemPercentage/tumblr/eris-tumblr.py
 0 10 * * 3 python3 /root/SolarSystemPercentage/tumblr/haumea-tumblr.py
@@ -35,4 +36,4 @@
 0  9 * * 2 python3 /root/SolarSystemPercentage/tumblr/halley-tumblr.py
 0  9 * * 3 python3 /root/SolarSystemPercentage/tumblr/makemake-tumblr.py
 0  9 * * 4 python3 /root/SolarSystemPercentage/tumblr/moon-tumblr.py
-
+0  9 * * 5 python3 /root/SolarSystemPercentage/tumblr/hale-bopp-tumblr.py
