@@ -2920,6 +2920,117 @@ def Faye():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     "Percent of this year : " + (barre) + ("<br />")
                 )
 
+def HaleBopp():  # d0 = first perihelion , d1 = today , d2 = next perihelion
+
+    # Rotation year before this year
+    years_ago_full = datetime.now() - timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_ago_full = str(years_ago_full)
+    years_ago = years_ago_full[:4]
+    years_ago = int(years_ago)  # result
+
+    # Next rotation year
+    years_after_full = datetime.now() + timedelta(
+        days=1 * 365
+    )  # adapt to the number of years
+    years_after_full = str(years_after_full)
+    years_after = years_after_full[:4]
+    years_after = int(years_after)  # result
+
+    with open("/var/www/html/Orbit.json", "r") as O:
+        orbit = json.load(O)
+        thisYear = orbit["Hale-Bopp"]  # This year
+        # years_ago = orbit["Hale-Bopp"][str(years_ago)][-1]
+        # years_after = orbit["Hale-Bopp"][str(years_after)][0]
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 >= d1 - timedelta(days=10000) and d0 <= d1
+            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
+                Percentage.HaleBoppPerihelion = d0
+
+        for i in thisYear:
+            d0Year = i[:4]
+            d0Year = int(d0Year)
+            d0Month = i[5:7]
+            d0Month = int(d0Month)
+            d0Day = i[8:10]
+            d0Day = int(d0Day)
+            d0 = date(d0Year, d0Month, d0Day)
+            d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
+            d1 = d1 + timedelta(days=1)
+            if (
+                    d0 <= d1 + timedelta(days=866140) and d0 >= d1
+            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
+                Percentage.NewHaleBoppPerihelion = d0
+                d1 = date(
+                    Percentage.current_year, Percentage.thisMonth, Percentage.today
+                )
+                d3 = Percentage.NewHaleBoppPerihelion - Percentage.HaleBoppPerihelion
+                d3 = str(d3)
+                d3 = d3.split()
+                d3 = int(d3[0])
+                d3 = d3 + 1
+                ValuePercent = d3 / 100
+                delta = d1 - Percentage.HaleBoppPerihelion
+                delta = str(delta)
+                delta = delta.split()
+                delta = delta[0]
+                new = re.sub("[^0-9]", "", str(delta))
+                new = str(new)
+                new = new[:4]
+                new = int(new)
+                Percentage.HaleBoppResult = new / ValuePercent
+                Percentage.HaleBoppResult = round(Percentage.HaleBoppResult, 2)
+
+                # Add graph progress #####
+
+                print("Comet : Hale-Bopp")
+                print(("Day of the year : ") + str("Day ") + str(new))
+                print(("Year progress : ") + str(Percentage.HaleBoppResult) + str("%"))
+
+                percent = Percentage.HaleBoppResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "-" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                print("Percent of this year : " + (barre))
+                print("\n")
+                Percentage.HaleBoppHTML = (
+                        ("Comet : Hale-Bopp")
+                        + ("<br />")
+                        + str(("Day of the year : ") + str("Day ") + str(new))
+                        + ("<br />")
+                        + str(
+                    ("Year progress : ")
+                    + str(Percentage.HaleBoppResult)
+                    + str("%")
+                    + ("<br />")
+                )
+                )
+                percent = Percentage.HaleBoppResult
+                barre = (
+                        "["
+                        + "#" * int((50 / 100) * percent)
+                        + "_" * int((50 / 100) * (100 - percent))
+                        + "]"
+                )
+                Percentage.barrHaleBopp = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrHaleBoppHTML = (
+                        "Percent of this year : " + (barre) + ("<br />")
+                )
+
     """
 
     Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
@@ -2945,6 +3056,7 @@ Makemake()
 Eris()
 Encke()
 Faye()
+HaleBopp()
 
 startHtml = (
     str("<!DOCTYPE html>")
@@ -3149,6 +3261,14 @@ contentHtml.write(
 contentHtml.write("<br />")
 contentHtml.write(Percentage.FayeHTML)
 contentHtml.write(Percentage.barrFayeHTML)
+contentHtml.write("<br />")
+contentHtml.write("<br />")
+contentHtml.write(
+    '<img src="http://astrometry.ch/pictures/hale-bopp.jpg" alt="hale-bopp" width="100" height="100">'
+)
+contentHtml.write("<br />")
+contentHtml.write(Percentage.HaleBoppHTML)
+contentHtml.write(Percentage.barrHaleBoppHTML)
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
