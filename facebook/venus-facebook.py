@@ -1847,4 +1847,4 @@ Venus()
 
 graph = facebook.GraphAPI(access_token=[token], version="3.1")
 
-graph.put_photo(image=open("/var/www/html/pictures/venus.png", 'rb'), message=Percentage.VenusHTML + Percentage.barrVenusHTML + str('\n#Astronomy #Space #Espace #Astrometry'))
+graph.put_photo(image=open("/var/www/html/pictures/venus.jpg", 'rb'), message=Percentage.VenusHTML + Percentage.barrVenusHTML + str('\n#Astronomy #Space #Espace #Astrometry'))
