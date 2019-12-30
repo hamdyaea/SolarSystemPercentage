@@ -2920,6 +2920,7 @@ def Faye():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     "Percent of this year : " + (barre) + ("<br />")
                 )
 
+
 def HaleBopp():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
@@ -2954,7 +2955,7 @@ def HaleBopp():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 >= d1 - timedelta(days=10000) and d0 <= d1
+                d0 >= d1 - timedelta(days=10000) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.HaleBoppPerihelion = d0
 
@@ -2969,7 +2970,7 @@ def HaleBopp():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                    d0 <= d1 + timedelta(days=866140) and d0 >= d1
+                d0 <= d1 + timedelta(days=866140) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewHaleBoppPerihelion = d0
                 d1 = date(
@@ -3000,35 +3001,37 @@ def HaleBopp():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
                 percent = Percentage.HaleBoppResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "-" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "-" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
                 print("Percent of this year : " + (barre))
                 print("\n")
                 Percentage.HaleBoppHTML = (
-                        ("Comet : Hale-Bopp")
-                        + ("<br />")
-                        + str(("Day of the year : ") + str("Day ") + str(new))
-                        + ("<br />")
-                        + str(
-                    ("Year progress : ")
-                    + str(Percentage.HaleBoppResult)
-                    + str("%")
+                    ("Comet : Hale-Bopp")
                     + ("<br />")
-                )
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("<br />")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.HaleBoppResult)
+                        + str("%")
+                        + ("<br />")
+                    )
                 )
                 percent = Percentage.HaleBoppResult
                 barre = (
-                        "["
-                        + "#" * int((50 / 100) * percent)
-                        + "_" * int((50 / 100) * (100 - percent))
-                        + "]"
+                    "["
+                    + "#" * int((50 / 100) * percent)
+                    + "_" * int((50 / 100) * (100 - percent))
+                    + "]"
                 )
-                Percentage.barrHaleBopp = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrHaleBopp = (
+                    "Percent of this year : " + (barre) + str("\n")
+                )
                 Percentage.barrHaleBoppHTML = (
-                        "Percent of this year : " + (barre) + ("<br />")
+                    "Percent of this year : " + (barre) + ("<br />")
                 )
 
     """
