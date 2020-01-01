@@ -171,7 +171,7 @@ def Earth():
     delta = delta[:6]
     new = re.sub("[^0-9]", "", str(delta))
     new = str(new)
-    new = new[:3]
+    new = new[:6] #:3
     new = int(new)
     #print(new) = 100
     Percentage.EarthResult = new / ValuePercent  # 365 / 100 = 3.65
@@ -273,7 +273,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.MoonResult = new / ValuePercent
                 Percentage.MoonResult = round(Percentage.MoonResult, 2)
@@ -386,7 +386,7 @@ def Mercury():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6] #:4
                 new = int(new)
                 Percentage.MercuryResult = new / ValuePercent
                 Percentage.MercuryResult = round(Percentage.MercuryResult, 2)
@@ -500,7 +500,7 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.VenusResult = new / ValuePercent
                 Percentage.VenusResult = round(Percentage.VenusResult, 2)
@@ -614,7 +614,7 @@ def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.MarsResult = new / ValuePercent
                 Percentage.MarsResult = round(Percentage.MarsResult, 2)
@@ -727,7 +727,7 @@ def Jupiter():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.JupiterResult = new / ValuePercent
                 Percentage.JupiterResult = round(Percentage.JupiterResult, 2)
@@ -839,7 +839,7 @@ def Saturn():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.SaturnResult = new / ValuePercent
                 Percentage.SaturnResult = round(Percentage.SaturnResult, 2)
@@ -921,7 +921,6 @@ def Uranus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d0 >= d1 - timedelta(days=32850) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.UranusPerihelion = d0
-
         for i in thisYear:
             d0Year = i[:4]
             d0Year = int(d0Year)
@@ -951,7 +950,7 @@ def Uranus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]
                 new = int(new)
                 Percentage.UranusResult = new / ValuePercent
                 Percentage.UranusResult = round(Percentage.UranusResult, 2)
@@ -1063,7 +1062,7 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.NeptuneResult = new / ValuePercent
                 Percentage.NeptuneResult = round(Percentage.NeptuneResult, 2)
@@ -1175,7 +1174,7 @@ def Pluto():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.PlutoResult = new / ValuePercent
                 Percentage.PlutoResult = round(Percentage.PlutoResult, 2)
@@ -1287,7 +1286,7 @@ def Halley():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.HalleyResult = new / ValuePercent
                 Percentage.HalleyResult = round(Percentage.HalleyResult, 2)
@@ -1399,7 +1398,7 @@ def Tesla():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.TeslaResult = new / ValuePercent
                 Percentage.TeslaResult = round(Percentage.TeslaResult, 2)
@@ -1511,7 +1510,7 @@ def Ceres():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.CeresResult = new / ValuePercent
                 Percentage.CeresResult = round(Percentage.CeresResult, 2)
@@ -1623,7 +1622,7 @@ def Haumea():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.HaumeaResult = new / ValuePercent
                 Percentage.HaumeaResult = round(Percentage.HaumeaResult, 2)
@@ -1735,7 +1734,7 @@ def Makemake():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.MakemakeResult = new / ValuePercent
                 Percentage.MakemakeResult = round(Percentage.MakemakeResult, 2)
@@ -1849,7 +1848,7 @@ def Eris():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.ErisResult = new / ValuePercent
                 Percentage.ErisResult = round(Percentage.ErisResult, 2)
@@ -1961,7 +1960,7 @@ def Encke():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.EnckeResult = new / ValuePercent
                 Percentage.EnckeResult = round(Percentage.EnckeResult, 2)
@@ -2073,7 +2072,7 @@ def Faye():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.FayeResult = new / ValuePercent
                 Percentage.FayeResult = round(Percentage.FayeResult, 2)
@@ -2185,7 +2184,7 @@ def HaleBopp():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]#:4
                 new = int(new)
                 Percentage.HaleBoppResult = new / ValuePercent
                 Percentage.HaleBoppResult = round(Percentage.HaleBoppResult, 2)
