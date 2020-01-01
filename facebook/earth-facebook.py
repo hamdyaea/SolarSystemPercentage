@@ -124,7 +124,7 @@ def Earth():
     delta = delta[:6]
     new = re.sub("[^0-9]", "", str(delta))
     new = str(new)
-    new = new[:3]
+    new = new[:6]
     new = int(new)
     #print(new) = 100
     Percentage.EarthResult = new / ValuePercent  # 365 / 100 = 3.65

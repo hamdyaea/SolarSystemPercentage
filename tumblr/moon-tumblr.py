@@ -139,7 +139,7 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:4]
+                new = new[:6]
                 new = int(new)
                 Percentage.MoonResult = new / ValuePercent
                 Percentage.MoonResult = round(Percentage.MoonResult, 2)

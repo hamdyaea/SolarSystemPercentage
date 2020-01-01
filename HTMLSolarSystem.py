@@ -1029,7 +1029,7 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                d0 >= d1 - timedelta(days=62000) and d0 <= d1
+                d0 >= d1 - timedelta(days=60000) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.NeptunePerihelion = d0
 
@@ -1044,7 +1044,7 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             d1 = d1 + timedelta(days=1)
             if (
-                d0 <= d1 + timedelta(days=62000) and d0 >= d1
+                d0 <= d1 + timedelta(days=60000) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewNeptunePerihelion = d0
                 d1 = date(
