@@ -121,10 +121,13 @@ def Earth():
     d3 = d3 + 1
     ValuePercent = d3 / 100
     delta = d1 - d0
+    delta = str(delta)
+    delta = delta[:6]
     new = re.sub("[^0-9]", "", str(delta))
     new = str(new)
     new = new[:3]
     new = int(new)
+    #print(new) = 100
     Percentage.EarthResult = new / ValuePercent  # 365 / 100 = 3.65
     Percentage.EarthResult = round(Percentage.EarthResult, 2)
 
@@ -155,8 +158,7 @@ def Earth():
     )
     Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n")
     print(Percentage.BarrEarth)
-    Percentage.BarrEarthHTML = "Percent of this year : "+ str("\n") + (barre)
-
+    Percentage.BarrEarthHTML = "Percent of this year : " + (barre) + str("\n")
 
 def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
     # Rotation year before this year
