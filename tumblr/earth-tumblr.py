@@ -14,7 +14,8 @@ import pytumblr
 from tumblrkeys import *
 
 
-blogName = 'astrometrych.tumblr.com'
+blogName = "astrometrych.tumblr.com"
+
 
 class Percentage:
     def __init__(self):
@@ -126,7 +127,7 @@ def Earth():
     new = str(new)
     new = new[:6]
     new = int(new)
-    #print(new) = 100
+    # print(new) = 100
     Percentage.EarthResult = new / ValuePercent  # 365 / 100 = 3.65
     Percentage.EarthResult = round(Percentage.EarthResult, 2)
 
@@ -158,6 +159,7 @@ def Earth():
     Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n")
     print(Percentage.BarrEarth)
     Percentage.BarrEarthHTML = "Percent of this year : " + (barre) + str("\n")
+
 
 def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
     # Rotation year before this year
@@ -1818,7 +1820,7 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 )
                 Percentage.barrNeptune = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrNeptuneHTML = (
-                    "Percent of this year : " + str("\n")+ (barre)
+                    "Percent of this year : " + str("\n") + (barre)
                 )
     """
 
@@ -1826,19 +1828,23 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
     """
 
 
-#motd()
+# motd()
 Earth()
-#Moon()
-#Mercury()
-#Venus()
-#Mars()
-#Jupiter()
-#Saturn()
-#Uranus()
-#Neptune()
+# Moon()
+# Mercury()
+# Venus()
+# Mars()
+# Jupiter()
+# Saturn()
+# Uranus()
+# Neptune()
 
 
-
-client.create_photo(blogName, state="published", tags=[Percentage.earthHTML + Percentage.BarrEarthHTML], format="markdown",
-                    data=["/var/www/html/pictures/terre.png"],
-                    caption="#Astronomy #Space #Espace #Astrometry")
+client.create_photo(
+    blogName,
+    state="published",
+    tags=[Percentage.earthHTML + Percentage.BarrEarthHTML],
+    format="markdown",
+    data=["/var/www/html/pictures/terre.png"],
+    caption="#Astronomy #Space #Espace #Astrometry",
+)
