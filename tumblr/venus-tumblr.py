@@ -14,7 +14,7 @@ import pytumblr
 from tumblrkeys import *
 
 
-blogName = 'astrometrych.tumblr.com'
+blogName = "astrometrych.tumblr.com"
 
 
 class Percentage:
@@ -750,6 +750,7 @@ def Mercury():  # d0 = first perihelaperihelion
                         "Percent of this year : " + str("\n") + (barre)
                     )
 
+
 def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 
     # Rotation year before this year
@@ -856,13 +857,10 @@ def Venus():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                     + "_" * int((50 / 100) * (100 - percent))
                     + "]"
                 )
-                Percentage.barrVenus = (
-                    "Percent of this year : " + (barre) + str("\n")
-                )
+                Percentage.barrVenus = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrVenusHTML = (
                     "Percent of this year : " + (barre) + str("\n")
                 )
-
 
 
 def Mars():  # d0 = first perihelion , d1 = today , d2 = next perihelion
@@ -1638,8 +1636,11 @@ def Neptune():  # d0 = first perihelion , d1 = today , d2 = next perihelion
 Venus()
 
 
-
-
-client.create_photo(blogName, state="published", tags=[Percentage.VenusHTML + Percentage.barrVenusHTML], format="markdown",
-                    data=["/var/www/html/pictures/venus.jpg"],
-                    caption="#Astronomy #Space #Espace #Astrometry")
+client.create_photo(
+    blogName,
+    state="published",
+    tags=[Percentage.VenusHTML + Percentage.barrVenusHTML],
+    format="markdown",
+    data=["/var/www/html/pictures/venus.jpg"],
+    caption="#Astronomy #Space #Espace #Astrometry",
+)
