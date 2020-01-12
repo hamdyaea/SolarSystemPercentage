@@ -246,7 +246,6 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
                 d3 = str(d3)
                 d3 = d3.split()
                 d3 = int(d3[0])
-                d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.MoonPerihelion
                 delta = str(delta)
