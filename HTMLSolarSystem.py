@@ -208,28 +208,10 @@ def Earth():
 
 
 def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
-
-    # Rotation year before this year
-    years_ago_full = datetime.now() - timedelta(
-        days=1 * 365
-    )  # adapt to the number of years
-    years_ago_full = str(years_ago_full)
-    years_ago = years_ago_full[:4]
-    years_ago = int(years_ago)  # result
-
-    # Next rotation year
-    years_after_full = datetime.now() + timedelta(
-        days=1 * 365
-    )  # adapt to the number of years
-    years_after_full = str(years_after_full)
-    years_after = years_after_full[:4]
-    years_after = int(years_after)  # result
-
     with open("/var/www/html/Orbit.json", "r") as O:
         orbit = json.load(O)
         thisYear = orbit["Moon"]  # This year
-        # years_ago = orbit["Moon"][str(years_ago)][-1]
-        # years_after = orbit["Moon"][str(years_after)][0]
+        count = 0
         for i in thisYear:
             d0Year = i[:4]
             d0Year = int(d0Year)
@@ -239,12 +221,11 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d0Day = int(d0Day)
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            d1 = d1 + timedelta(days=1)
+            #d1 = d1 + timedelta(days=1)
             if (
-                d0 >= d1 - timedelta(days=26) and d0 <= d1
+                d0 >= d1 - timedelta(days=28) and d0 <= d1
             ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
                 Percentage.MoonPerihelion = d0
-
         for i in thisYear:
             d0Year = i[:4]
             d0Year = int(d0Year)
@@ -254,9 +235,8 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d0Day = int(d0Day)
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            d1 = d1 + timedelta(days=1)
             if (
-                d0 <= d1 + timedelta(days=26) and d0 >= d1
+                d0 <= d1 + timedelta(days=28) and d0 >= d1
             ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
                 Percentage.NewMoonPerihelion = d0
                 d1 = date(
