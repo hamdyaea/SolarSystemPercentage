@@ -3,7 +3,7 @@
     {
       "info": "Satelite",
       "Picture": "http://astrometry.ch/pictures/lune.jpg",
-      "PicW": "100",
+      "PicW": "130",
       "PicH": "100",
       "Peri": [
         "2018,12,24",
@@ -301,7 +301,7 @@
     {
       "info": "Planet",
       "Picture": "http://astrometry.ch/pictures/saturn.jpg",
-      "PicW": "100",
+      "PicW": "130",
       "PicH": "100",
       "Peri": [
         "2003,07,26",
@@ -361,7 +361,7 @@
     {
       "info": "Spacecraft",
       "Picture": "http://astrometry.ch/pictures/tesla.jpg",
-      "PicW": "100",
+      "PicW": "130",
       "PicH": "100",
       "Peri": [
         "2018,01,20",
@@ -381,7 +381,7 @@
     {
       "info": "Dwarf planet",
       "Picture": "http://astrometry.ch/pictures/ceres.jpg",
-      "PicW": "100",
+      "PicW": "130",
       "PicH": "100",
       "Peri": [
         "2018,04,30",
