@@ -83,14 +83,14 @@ startHtml = (
         + str("<br />")
     )
 )
-indexFile = open("main.html", "w")
+indexFile = open("/var/www/html/main.html", "w")
 indexFile.write(startHtml)
 indexFile.close()
 
 def Earth():
     with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
-        contentHtml = open("main.html", "a")
+        contentHtml = open("/var/www/html/main.html", "a")
         picture = orbit["Earth"][0]["Picture"]
         W = orbit["Earth"][0]["PicW"]
         H = orbit["Earth"][0]["PicH"]
@@ -150,7 +150,7 @@ def Earth():
 
 
 def perihelion(object, years1, years):
-    indexFile = open("main.html", "a")
+    indexFile = open("/var/www/html/main.html", "a")
     with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
         thisYear = orbit[object][0]["Peri"]
@@ -273,7 +273,7 @@ endHTML = str("</p>") + str("\n") + str("</font>") + str("\n") + str("</body>")
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 
-contentHtml = open("main.html", "a")
+contentHtml = open("/var/www/html/main.html", "a")
 contentHtml.write("<br />")
 contentHtml.write("<br />")
 contentHtml.write(
