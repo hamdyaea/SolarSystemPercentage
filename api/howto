@@ -1,0 +1,10 @@
+# Developer : Hamdy Abou El Anein
+# hamdy.aea@protonmail.com
+
+To start the api :
+
+forever start -c python3 api-astrometry.py
+
+To stop the api :
+
+forever stop -c python3 api-astrometry.py
