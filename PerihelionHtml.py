@@ -87,6 +87,7 @@ indexFile = open("/var/www/html/main.html", "w")
 indexFile.write(startHtml)
 indexFile.close()
 
+
 def Earth():
     with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
@@ -141,7 +142,20 @@ def Earth():
         print(Percentage.BarrEarth)
         Percentage.BarrEarthHTML = "Percent of this year : " + (barre) + ("<br />")
         contentHtml.write(
-            str('<img src=')+str('\"') + str(picture) +str('\" ')+str('alt="object" width='+str('\"')+str(W)+str('\"')+str(" height=")+str('\"')+str(H)+str('\">'))
+            str("<img src=")
+            + str('"')
+            + str(picture)
+            + str('" ')
+            + str(
+                'alt="object" width='
+                + str('"')
+                + str(W)
+                + str('"')
+                + str(" height=")
+                + str('"')
+                + str(H)
+                + str('">')
+            )
         )
         contentHtml.write("<br />")
         contentHtml.write(Percentage.earthHTML)
@@ -238,7 +252,20 @@ def perihelion(object, years1, years):
                 indexFile.write("<br />")
                 indexFile.write("<br />")
                 indexFile.write(
-                    str('<img src=')+str('\"') + str(picture) +str('\" ')+str('alt="object" width='+str('\"')+str(W)+str('\"')+str(" height=")+str('\"')+str(H)+str('\">'))
+                    str("<img src=")
+                    + str('"')
+                    + str(picture)
+                    + str('" ')
+                    + str(
+                        'alt="object" width='
+                        + str('"')
+                        + str(W)
+                        + str('"')
+                        + str(" height=")
+                        + str('"')
+                        + str(H)
+                        + str('">')
+                    )
                 )
 
                 indexFile.write("<br />")
