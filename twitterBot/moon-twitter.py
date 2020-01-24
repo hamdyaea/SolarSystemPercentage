@@ -126,6 +126,6 @@ perihelion("Moon", 27, 27)
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
 
-photo = open('/var/www/html/pictures/lune.jpg', 'rb')
+photo = open("/var/www/html/pictures/lune.jpg", "rb")
 response = twitter.upload_media(media=photo)
-twitter.update_status(status=message, media_ids=[response['media_id']])
+twitter.update_status(status=message, media_ids=[response["media_id"]])
