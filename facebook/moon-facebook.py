@@ -7,6 +7,8 @@
 # Lunar Perigee and Apogee Calculator : https://www.fourmilab.ch/earthview/pacalc.html
 # Mercury and others : https://in-the-sky.org/newscalyear.php
 
+
+
 from datetime import date, datetime, timedelta
 import re
 import json
@@ -14,55 +16,22 @@ import json
 from keys import *
 import facebook
 
+
 class Percentage:
     def __init__(self):
         self.current_year
         self.today
         self.thisMonth
         self.EarthResult
-        self.todayFull
-        self.MoonResult
-        self.MoonPerihelion
-        self.NewMoonPerihelion
-        self.MercuryResult
-        self.MercuryPerihelion
-        self.NewMercuryPerihelion
-        self.earth
         self.earthHTML
         self.BarrEarth
         self.BarrEarthHTML
-        self.moon
-        self.barrMoon
-        self.moonHTML
-        self.barrMoonHTML
-        self.mercury
-        self.barrMercury
-        self.mercuryHTML
-        self.barrMercuryHTML
-        self.motdResult
-        self.motdResultHTML
-        self.Venus
-        self.barrVenus
-        self.VenusHTML
-        self.barrVenusHTML
-        self.VenusResult
-        self.VenusPerihelion
-        self.NewVenusPerihelion
-        self.MarsResult
-        self.MarsPerihelion
-        self.NewMarsPerihelion
-        self.JupiterResult
-        self.JupiterPerihelion
-        self.NewJupiterPerihelion
-        self.SaturnResult
-        self.SaturnPerihelion
-        self.NewSaturnPerihelion
-        self.UranusResult
-        self.UranusPerihelion
-        self.NewUranusPerihelion
-        self.NeptuneResult
-        self.NeptunePerihelion
-        self.NewNeptunePerihelion
+        self.NewobjectPerihelion
+        self.objectPerihelion
+        self.objectResult
+        self.objectHTML
+        self.barrobject
+        self.barrobjectHTML
 
 
 Percentage.current_year = date.today().year
@@ -70,29 +39,13 @@ Percentage.today = int(datetime.today().strftime("%d"))
 Percentage.thisMonth = int(datetime.today().strftime("%m"))
 
 
-def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
-
-    # Rotation year before this year
-    years_ago_full = datetime.now() - timedelta(
-        days=1 * 365
-    )  # adapt to the number of years
-    years_ago_full = str(years_ago_full)
-    years_ago = years_ago_full[:4]
-    years_ago = int(years_ago)  # result
-
-    # Next rotation year
-    years_after_full = datetime.now() + timedelta(
-        days=1 * 365
-    )  # adapt to the number of years
-    years_after_full = str(years_after_full)
-    years_after = years_after_full[:4]
-    years_after = int(years_after)  # result
-
-    with open("/var/www/html/Orbit.json", "r") as O:
+def perihelion(object, years1, years):
+    with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
-        thisYear = orbit["Moon"]  # This year
-        # years_ago = orbit["Moon"][str(years_ago)][-1]
-        # years_after = orbit["Moon"][str(years_after)][0]
+        thisYear = orbit[object][0]["Peri"]
+        picture = orbit[object][0]["Picture"]
+        W = orbit[object][0]["PicW"]
+        H = orbit[object][0]["PicH"]
         for i in thisYear:
             d0Year = i[:4]
             d0Year = int(d0Year)
@@ -102,12 +55,9 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d0Day = int(d0Day)
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            d1 = d1 + timedelta(days=1)
-            if (
-                d0 >= d1 - timedelta(days=25) and d0 <= d1
-            ):  # i is bigger or equal today - 30 days and smaller or equal today : First day of rotation
-                Percentage.MoonPerihelion = d0
-
+            # d1 = d1 + timedelta(days=1)
+            if d0 > d1 - timedelta(days=years1) and d0 < d1:
+                Percentage.objectPerihelion = d0
         for i in thisYear:
             d0Year = i[:4]
             d0Year = int(d0Year)
@@ -117,91 +67,60 @@ def Moon():  # d0 = first perihelion , d1 = today , d2 = next perihelion
             d0Day = int(d0Day)
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            d1 = d1 + timedelta(days=1)
-            if (
-                d0 <= d1 + timedelta(days=25) and d0 >= d1
-            ):  # i is smaller or equal today + 30 days and bigger or equalt today : Next Perihelion
-                Percentage.NewMoonPerihelion = d0
+            if d0 <= d1 + timedelta(days=years) and d0 >= d1:
+                Percentage.NewobjectPerihelion = d0
                 d1 = date(
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
                 )
-                d3 = Percentage.NewMoonPerihelion - Percentage.MoonPerihelion
+                d3 = Percentage.NewobjectPerihelion - Percentage.objectPerihelion
                 d3 = str(d3)
                 d3 = d3.split()
                 d3 = int(d3[0])
-                d3 = d3 + 1
                 ValuePercent = d3 / 100
-                delta = d1 - Percentage.MoonPerihelion
+                delta = d1 - Percentage.objectPerihelion
                 delta = str(delta)
                 delta = delta.split()
                 delta = delta[0]
                 new = re.sub("[^0-9]", "", str(delta))
                 new = str(new)
-                new = new[:6]
+                new = new[:6]  #:4
                 new = int(new)
-                Percentage.MoonResult = new / ValuePercent
-                Percentage.MoonResult = round(Percentage.MoonResult, 2)
+                Percentage.objectResult = new / ValuePercent
+                Percentage.objectResult = round(Percentage.objectResult, 2)
 
-                # Add graph progress #####
-
-                print("Satelite : Moon")
+                print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
                 print(("Day of the year : ") + str("Day ") + str(new))
-                print(("Year progress : ") + str(Percentage.MoonResult) + str("%"))
+                print(("Year progress : ") + str(Percentage.objectResult) + str("%"))
 
-                percent = Percentage.MoonResult
-                barre = (
-                    "["
-                    + "#" * int((50 / 100) * percent)
-                    + "-" * int((50 / 100) * (100 - percent))
-                    + "]"
-                )
-                print("Percent of this year : " + (barre))
-                print("\n")
-                Percentage.MoonHTML = (
-                    ("Satelite : Moon")
-                    + str("\n")
-                    + str(("Day of the year : ") + str("Day ") + str(new))
-                    + str("\n")
-                    + str(
-                        ("Year progress : ")
-                        + str(Percentage.MoonResult)
-                        + str("%")
-                        + str("\n")
-                    )
-                )
-                percent = Percentage.MoonResult
+                percent = Percentage.objectResult
                 barre = (
                     "["
                     + "#" * int((50 / 100) * percent)
                     + "_" * int((50 / 100) * (100 - percent))
                     + "]"
                 )
-                Percentage.barrMoon = (
-                    "Percent of this year : " + (barre) + str("\n")
+                print("Percent of this year : " + (barre))
+                print("\n")
+
+                Percentage.objectHTML = (
+                    (str(orbit[object][0]["info"]) + str(" : ") + str(object))
+                    + ("\n")
+                    + str(("Day of the year : ") + str("Day ") + str(new))
+                    + ("\n")
+                    + str(
+                        ("Year progress : ")
+                        + str(Percentage.objectResult)
+                        + str("%")
+                        + ("\n")
+                        + str(barre)
+                    )
                 )
-                Percentage.barrMoonHTML = (
-                    "Percent of this year : " + (barre) + str("\n")
-                )
 
+                Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
+                Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
 
-    """
-
-    Do the same for the moon and other solar system planets, natural satelites, ISS, of all the solar system. 
-    """
-
-
-#motd()
-#Earth()
-Moon()
-#Mercury()
-#Venus()
-#Mars()
-#Jupiter()
-#Saturn()
-#Uranus()
-#Neptune()
-
+perihelion("Moon", 27, 27)
 
 graph = facebook.GraphAPI(access_token=[token], version="3.0")
 
-graph.put_photo(image=open("/var/www/html/pictures/lune.jpg", 'rb'), message= Percentage.MoonHTML + Percentage.barrMoonHTML + str('\n#Astronomy #Space #Espace #Astrometry'))
+graph.put_photo(image=open("/var/www/html/pictures/lune.jpg", 'rb'), message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry") + str('\n#Astronomy #Space #Espace #Astrometry'))
