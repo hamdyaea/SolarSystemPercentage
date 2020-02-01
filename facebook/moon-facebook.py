@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-
-# Developer : Hamdy Abou El Anein
-# hamdy.aea@protonmail.com
 
 # percentage of the year for the earth, the moon, jupiter, Saturn, etc...
 # Lunar Perigee and Apogee Calculator : https://www.fourmilab.ch/earthview/pacalc.html
