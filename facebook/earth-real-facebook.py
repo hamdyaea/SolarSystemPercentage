@@ -127,5 +127,4 @@ graph.put_photo(
     image=open("/var/www/html/pictures/terre.png", "rb"),
     message=str(Percentage.objectHTML)
     + str("\n#Astronomy #Space #Espace #Astrometry")
-    + str("\n#Astronomy #Space #Espace #Astrometry"),
 )
