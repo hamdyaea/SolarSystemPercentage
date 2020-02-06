@@ -58,3 +58,6 @@
 0 20 * * 4 python3 /root/SolarSystemPercentage/facebook/moon-facebook.py
 0 20 * * 5 python3 /root/SolarSystemPercentage/facebook/hale-bopp-facebook.py
 0 20 * * 6 python3 /root/SolarSystemPercentage/facebook/earth-real-facebook.py
+############################## AIDE 
+01 21 * * * /usr/sbin/aide --check > /root/aide_result
+01 07 * * * /usr/sbin/aide --check > /root/aide_result
