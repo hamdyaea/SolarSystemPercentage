@@ -121,7 +121,7 @@ def perihelion(object, years1, years):
                 Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
 
-perihelion("Mercury", 89, 89)
+perihelion("Mercury", 89, 88)
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
 photo = open('/var/www/html/pictures/mercury.png', 'rb')

@@ -114,7 +114,7 @@ def perihelion(object, years1, years):
                 Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
 
 
-perihelion("Mercury", 89, 89)
+perihelion("Mercury", 89, 88)
 
 graph = facebook.GraphAPI(access_token=[token], version="3.0")
 
