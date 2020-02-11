@@ -128,6 +128,6 @@ client.create_photo(
     state="published",
     tags=[Percentage.objectHTML],
     format="markdown",
-    data=["/var/www/html/pictures/halley.jpg"],
+    data=["/var/www/html/pictures/mercury.png"],
     caption="#Astronomy #Space #Espace #Astrometry",
 )
