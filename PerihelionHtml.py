@@ -211,6 +211,7 @@ def perihelion(object, years1, years):
                 new = str(new)
                 new = new[:6]  #:4
                 new = int(new)
+                new = new + 1
                 Percentage.objectResult = new / ValuePercent
                 Percentage.objectResult = round(Percentage.objectResult, 2)
 
