@@ -78,6 +78,7 @@ def perihelion(object, years1, years):
                 d3 = str(d3)
                 d3 = d3.split()
                 d3 = int(d3[0])
+                d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.objectPerihelion
                 delta = str(delta)
@@ -87,6 +88,7 @@ def perihelion(object, years1, years):
                 new = str(new)
                 new = new[:6]  #:4
                 new = int(new)
+                new = new + 1
                 Percentage.objectResult = new / ValuePercent
                 Percentage.objectResult = round(Percentage.objectResult, 2)
 

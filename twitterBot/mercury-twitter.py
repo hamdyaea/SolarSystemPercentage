@@ -58,7 +58,7 @@ def perihelion(object, years1, years):
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             # d1 = d1 + timedelta(days=1)
-            if d0 > d1 - timedelta(days=years1) and d0 < d1:
+            if d0 >= d1 - timedelta(days=years1) and d0 <= d1:
                 Percentage.objectPerihelion = d0
         for i in thisYear:
             d0Year = i[:4]
@@ -69,7 +69,7 @@ def perihelion(object, years1, years):
             d0Day = int(d0Day)
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            if d0 <= d1 + timedelta(days=years) and d0 >= d1:
+            if d0 <= d1 + timedelta(days=years) and d0 > d1:
                 Percentage.NewobjectPerihelion = d0
                 d1 = date(
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
@@ -78,6 +78,7 @@ def perihelion(object, years1, years):
                 d3 = str(d3)
                 d3 = d3.split()
                 d3 = int(d3[0])
+                d3 = d3 + 1
                 ValuePercent = d3 / 100
                 delta = d1 - Percentage.objectPerihelion
                 delta = str(delta)
@@ -87,6 +88,7 @@ def perihelion(object, years1, years):
                 new = str(new)
                 new = new[:6]  #:4
                 new = int(new)
+                new = new + 1
                 Percentage.objectResult = new / ValuePercent
                 Percentage.objectResult = round(Percentage.objectResult, 2)
 
@@ -121,7 +123,7 @@ def perihelion(object, years1, years):
                 Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
 
-perihelion("Mercury", 89, 88)
+perihelion("Mercury", 88, 88)
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
 photo = open('/var/www/html/pictures/mercury.png', 'rb')
