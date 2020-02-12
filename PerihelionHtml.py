@@ -181,7 +181,7 @@ def perihelion(object, years1, years):
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
             # d1 = d1 + timedelta(days=1)
-            if d0 > d1 - timedelta(days=years1) and d0 < d1:
+            if d0 >= d1 - timedelta(days=years1) and d0 <= d1:
                 Percentage.objectPerihelion = d0
         for i in thisYear:
             d0Year = i[:4]
@@ -192,7 +192,7 @@ def perihelion(object, years1, years):
             d0Day = int(d0Day)
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            if d0 <= d1 + timedelta(days=years) and d0 >= d1:
+            if d0 <= d1 + timedelta(days=years) and d0 > d1:
                 Percentage.NewobjectPerihelion = d0
                 d1 = date(
                     Percentage.current_year, Percentage.thisMonth, Percentage.today
@@ -275,7 +275,7 @@ def perihelion(object, years1, years):
 
 
 Earth()
-perihelion("Mercury", 89, 88)
+perihelion("Mercury", 88, 88)
 perihelion("Venus", 215, 215)
 perihelion("Earth", 364, 364)
 perihelion("Moon", 28, 28)
