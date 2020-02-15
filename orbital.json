@@ -490,15 +490,15 @@
       ]
     }
   ],
-  "2015_TG387_The_Gobelin": [
+  "Gobelin": [
     {
       "info": "Dwarf planet",
       "Picture": "http://astrometry.ch/pictures/thegobelin.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
-        "2078,06,06",
-        "-2522,06,06"
+        "1000,01,01",
+        "5600,01,01"
       ]
     }
   ]

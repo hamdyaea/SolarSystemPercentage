@@ -87,7 +87,6 @@ indexFile = open("/var/www/html/main.html", "w")
 indexFile.write(startHtml)
 indexFile.close()
 
-
 def Earth():
     with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
@@ -180,9 +179,10 @@ def perihelion(object, years1, years):
             d0Day = int(d0Day)
             d0 = date(d0Year, d0Month, d0Day)
             d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
-            # d1 = d1 + timedelta(days=1)
+
             if d0 >= d1 - timedelta(days=years1) and d0 <= d1:
                 Percentage.objectPerihelion = d0
+
         for i in thisYear:
             d0Year = i[:4]
             d0Year = int(d0Year)
@@ -292,11 +292,11 @@ perihelion("Ceres", 1684, 1684)
 perihelion("Haumea", 103775, 103775)
 perihelion("Makemake", 112330, 112330)
 perihelion("Eris", 203651, 203651)
-#perihelion("2015_TG387_The_Gobelin",167900,167900)
 perihelion("Encke", 1204, 1204)
 perihelion("Faye", 2660, 2660)
 perihelion("Hale-Bopp", 729117, 866718)
 perihelion("Halley", 27564, 27564)
+
 
 endHTML = str("</p>") + str("\n") + str("</font>") + str("\n") + str("</body>")
 
