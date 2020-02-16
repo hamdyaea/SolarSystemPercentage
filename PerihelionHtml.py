@@ -87,6 +87,95 @@ indexFile = open("/var/www/html/main.html", "w")
 indexFile.write(startHtml)
 indexFile.close()
 
+def goblin(object):
+    Percentage.Goblin_current_year = date.today().year + 3522
+    Percentage.Goblin_today = int(datetime.today().strftime("%d"))
+    Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
+    indexFile = open("/var/www/html/main.html", "a")
+    with open("/var/www/html/orbital.json", "r") as O:
+        orbit = json.load(O)
+        picture = orbit[object][0]["Picture"]
+        W = orbit[object][0]["PicW"]
+        H = orbit[object][0]["PicH"]
+        d2 = date(1000, 1, 1)
+        d1 = date(Percentage.Goblin_current_year, Percentage.Goblin_thisMonth, Percentage.Goblin_today)
+        d0 = date(5600, 1, 1)
+        d3 = d0 - d2
+        d3 = str(d3)
+        d3 = d3.split()
+        d3 = int(d3[0])
+        d3 = d3 + 1
+        ValuePercent = d3 / 100
+        delta = d1 - d2
+        delta = str(delta)
+        delta = delta.split()
+        delta = delta[0]
+        new = re.sub("[^0-9]", "", str(delta))
+        new = int(new)
+        new = new + 1
+        Percentage.objectResult = new / ValuePercent
+        Percentage.objectResult = round(Percentage.objectResult, 2)
+
+        print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
+        print(("Day of the year : ") + str("Day ") + str(new))
+        print(("Year progress : ") + str(Percentage.objectResult) + str("%"))
+
+        percent = Percentage.objectResult
+        barre = (
+            "["
+            + "#" * int((50 / 100) * percent)
+            + "-" * int((50 / 100) * (100 - percent))
+            + "]"
+        )
+        print("Percent of this year : " + (barre))
+        print("\n")
+        Percentage.objectHTML = (
+            (str(orbit[object][0]["info"]) + str(" : ") + str(object))
+            + ("<br />")
+            + str(("Day of the year : ") + str("Day ") + str(new))
+            + ("<br />")
+            + str(
+                ("Year progress : ")
+                + str(Percentage.objectResult)
+                + str("%")
+                + ("<br />")
+            )
+        )
+        percent = Percentage.objectResult
+        barre = (
+            "["
+            + "#" * int((50 / 100) * percent)
+            + "_" * int((50 / 100) * (100 - percent))
+            + "]"
+        )
+        Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
+        Percentage.barrobjectHTML = (
+            "Percent of this year : " + (barre) + ("<br />")
+        )
+        indexFile.write("<br />")
+        indexFile.write("<br />")
+        indexFile.write(
+        str("<img src=")
+        + str('"')
+        + str(picture)
+        + str('" ')
+        + str(
+            'alt="object" width='
+            + str('"')
+            + str(W)
+            + str('"')
+            + str(" height=")
+            + str('"')
+            + str(H)
+            + str('">')
+        )
+        )
+
+        indexFile.write("<br />")
+        indexFile.write(Percentage.objectHTML)
+        indexFile.write(Percentage.barrobjectHTML)
+        indexFile.close()
+
 def Earth():
     with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
@@ -292,6 +381,7 @@ perihelion("Ceres", 1684, 1684)
 perihelion("Haumea", 103775, 103775)
 perihelion("Makemake", 112330, 112330)
 perihelion("Eris", 203651, 203651)
+goblin("2015 TG387 The Gobelin")
 perihelion("Encke", 1204, 1204)
 perihelion("Faye", 2660, 2660)
 perihelion("Hale-Bopp", 729117, 866718)
