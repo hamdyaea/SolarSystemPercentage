@@ -62,7 +62,6 @@ def Earth():
         new = str(new)
         new = new[:6]
         new = int(new)
-        new = new + 1
         Percentage.EarthResult = new / ValuePercent
         Percentage.EarthResult = round(Percentage.EarthResult, 2)
         Percentage.earth = (
