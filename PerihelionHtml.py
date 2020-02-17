@@ -88,7 +88,7 @@ indexFile.write(startHtml)
 indexFile.close()
 
 def goblin(object):
-    Percentage.Goblin_current_year = date.today().year + 3522
+    Percentage.Goblin_current_year = date.today().year + 2522
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
     indexFile = open("/var/www/html/main.html", "a")
@@ -99,7 +99,7 @@ def goblin(object):
         H = orbit[object][0]["PicH"]
         d2 = date(1000, 1, 1)
         d1 = date(Percentage.Goblin_current_year, Percentage.Goblin_thisMonth, Percentage.Goblin_today)
-        d0 = date(5600, 1, 1)
+        d0 = date(4600, 1, 1)
         d3 = d0 - d2
         d3 = str(d3)
         d3 = d3.split()
