@@ -115,6 +115,7 @@ def goblin(object):
         new = new + 1
         Percentage.objectResult = new / ValuePercent
         Percentage.objectResult = round(Percentage.objectResult, 2)
+        new = new + 11826001
 
         print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
         print(("Day of the year : ") + str("Day ") + str(new))
