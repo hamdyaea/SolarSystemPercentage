@@ -87,6 +87,7 @@ indexFile = open("/var/www/html/main.html", "w")
 indexFile.write(startHtml)
 indexFile.close()
 
+
 def goblin(object):
     Percentage.Goblin_current_year = date.today().year + 2522
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
@@ -98,7 +99,11 @@ def goblin(object):
         W = orbit[object][0]["PicW"]
         H = orbit[object][0]["PicH"]
         d2 = date(1000, 1, 1)
-        d1 = date(Percentage.Goblin_current_year, Percentage.Goblin_thisMonth, Percentage.Goblin_today)
+        d1 = date(
+            Percentage.Goblin_current_year,
+            Percentage.Goblin_thisMonth,
+            Percentage.Goblin_today,
+        )
         d0 = date(4600, 1, 1)
         d3 = d0 - d2
         d3 = str(d3)
@@ -150,32 +155,31 @@ def goblin(object):
             + "]"
         )
         Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
-        Percentage.barrobjectHTML = (
-            "Percent of this year : " + (barre) + ("<br />")
-        )
+        Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("<br />")
         indexFile.write("<br />")
         indexFile.write("<br />")
         indexFile.write(
-        str("<img src=")
-        + str('"')
-        + str(picture)
-        + str('" ')
-        + str(
-            'alt="object" width='
+            str("<img src=")
             + str('"')
-            + str(W)
-            + str('"')
-            + str(" height=")
-            + str('"')
-            + str(H)
-            + str('">')
-        )
+            + str(picture)
+            + str('" ')
+            + str(
+                'alt="object" width='
+                + str('"')
+                + str(W)
+                + str('"')
+                + str(" height=")
+                + str('"')
+                + str(H)
+                + str('">')
+            )
         )
 
         indexFile.write("<br />")
         indexFile.write(Percentage.objectHTML)
         indexFile.write(Percentage.barrobjectHTML)
         indexFile.close()
+
 
 def Earth():
     with open("/var/www/html/orbital.json", "r") as O:
