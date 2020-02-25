@@ -1,8 +1,6 @@
-
 # percentage of the year for the earth, the moon, jupiter, Saturn, etc...
 # Lunar Perigee and Apogee Calculator : https://www.fourmilab.ch/earthview/pacalc.html
 # Mercury and others : https://in-the-sky.org/newscalyear.php
-
 
 
 from datetime import date, datetime, timedelta
@@ -117,8 +115,14 @@ def perihelion(object, years1, years):
                 Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
 
+
 perihelion("Moon", 28, 28)
 
 graph = facebook.GraphAPI(access_token=[token], version="3.0")
 
-graph.put_photo(image=open("/var/www/html/pictures/lune.jpg", 'rb'), message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry") + str('\n#Astronomy #Space #Espace #Astrometry'))
+graph.put_photo(
+    image=open("/var/www/html/pictures/lune.jpg", "rb"),
+    message=str(Percentage.objectHTML)
+    + str("\n#Astronomy #Space #Espace #Astrometry")
+    + str("\n#Astronomy #Space #Espace #Astrometry"),
+)

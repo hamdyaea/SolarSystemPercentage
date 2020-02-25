@@ -494,8 +494,9 @@
     {
       "info": "Dwarf planet",
       "Picture": "http://astrometry.ch/pictures/thegobelin.jpg",
-      "PicW": "140",
-      "PicH": "100",
+      "PicW": "14
+
+      c"PicH": "100",
       "Peri": [
         "-33922,01,01",
         "2078,01,01"
