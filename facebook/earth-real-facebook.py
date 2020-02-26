@@ -127,6 +127,5 @@ graph = facebook.GraphAPI(access_token=[token], version="3.0")
 
 graph.put_photo(
     image=open("/var/www/html/pictures/terre.png", "rb"),
-    message=str(Percentage.objectHTML)
-    + str("\n#Astronomy #Space #Espace #Astrometry")
+    message=str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry"),
 )
