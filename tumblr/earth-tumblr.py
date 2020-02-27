@@ -19,7 +19,6 @@ from tumblrkeys import *
 blogName = "astrometrych.tumblr.com"
 
 
-
 class Percentage:
     def __init__(self):
         self.current_year
@@ -78,10 +77,10 @@ def Earth():
         print(Percentage.earth)
         percent = Percentage.EarthResult
         barre = (
-                "["
-                + "%" * int((50 / 100) * percent)
-                + "_" * int((50 / 100) * (100 - percent))
-                + "]"
+            "["
+            + "%" * int((50 / 100) * percent)
+            + "_" * int((50 / 100) * (100 - percent))
+            + "]"
         )
         Percentage.earthHTML = (
             ("Planet : Earth")
@@ -96,6 +95,7 @@ def Earth():
         Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n\n")
         print(Percentage.BarrEarth)
         Percentage.BarrEarthHTML = "Percent of this year : " + (barre) + ("<br />")
+
 
 Earth()
 
