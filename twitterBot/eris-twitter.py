@@ -126,6 +126,6 @@ def perihelion(object, years1, years):
 perihelion("Eris", 203651, 203651)
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
-photo = open('/var/www/html/pictures/eris.jpg', 'rb')
+photo = open("/var/www/html/pictures/eris.jpg", "rb")
 response = twitter.upload_media(media=photo)
-twitter.update_status(status=message, media_ids=[response['media_id']])
+twitter.update_status(status=message, media_ids=[response["media_id"]])
