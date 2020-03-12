@@ -123,10 +123,11 @@ def perihelion(object, years1, years):
                 Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
 
+
 perihelion("Makemake", 112330, 112330)
 
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
-photo = open('/var/www/html/pictures/makemake.jpg', 'rb')
+photo = open("/var/www/html/pictures/makemake.jpg", "rb")
 response = twitter.upload_media(media=photo)
-twitter.update_status(status=message, media_ids=[response['media_id']])
+twitter.update_status(status=message, media_ids=[response["media_id"]])
