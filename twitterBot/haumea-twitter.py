@@ -126,6 +126,6 @@ def perihelion(object, years1, years):
 perihelion("Haumea", 103775, 103775)
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
-photo = open('/var/www/html/pictures/haumea.jpg', 'rb')
+photo = open("/var/www/html/pictures/haumea.jpg", "rb")
 response = twitter.upload_media(media=photo)
-twitter.update_status(status=message, media_ids=[response['media_id']])
+twitter.update_status(status=message, media_ids=[response["media_id"]])
