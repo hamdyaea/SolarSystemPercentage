@@ -1,6 +1,6 @@
 # Developer : Hamdy Abou El Anein
 # hamdy.aea@protonmail.com
-
+# Forever is a node app
 To start the api :
 
 forever start -c python3 api-astrometry.py
