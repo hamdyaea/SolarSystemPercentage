@@ -6,7 +6,7 @@
 ![Screenshot](screenshot.png) 
  
  Developer : Hamdy Abou El Anein     
- hamdy.aea@protonmail.com   
+ hamdy.aea@protonmail.com    
 
 The index.html page is created in /var/www/html/    
 Put the pictures and the json file in the same directory to make it run.
