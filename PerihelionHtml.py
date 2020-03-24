@@ -372,7 +372,7 @@ def perihelion(object, years1, years):
 
 Earth()
 perihelion("Mercury", 88, 88)
-perihelion("Venus", 215, 215)
+perihelion("Venus", 225, 225)
 perihelion("Earth", 364, 364)
 perihelion("Moon", 28, 28)
 perihelion("Mars", 688, 688)
