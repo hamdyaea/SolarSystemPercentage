@@ -36,11 +36,11 @@ class Percentage:
 
 
 
-def atlas(object):
-    Percentage.Goblin_current_year = date.today().year + 3380
+def goblin(object):
+    Percentage.Goblin_current_year = date.today().year + 2522
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
-
+    indexFile = open("/var/www/html/main.html", "a")
     with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
@@ -52,7 +52,7 @@ def atlas(object):
             Percentage.Goblin_thisMonth,
             Percentage.Goblin_today,
         )
-        d0 = date(5400, 5, 31)
+        d0 = date(4600, 1, 1)
         d3 = d0 - d2
         d3 = str(d3)
         d3 = d3.split()
@@ -68,7 +68,7 @@ def atlas(object):
         new = new + 1
         Percentage.objectResult = new / ValuePercent
         Percentage.objectResult = round(Percentage.objectResult, 2)
-        new = new + 1608020
+        new = new + 11826001
 
         print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
         print(("Day of the year : ") + str("Day ") + str(new))
@@ -96,22 +96,15 @@ def atlas(object):
                 + str(barre)
             )
         )
-        percent = Percentage.objectResult
-        barre = (
-            "["
-            + "#" * int((50 / 100) * percent)
-            + "_" * int((50 / 100) * (100 - percent))
-            + "]"
-        )
+
         Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
-        Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
+        Percentage.barrobjectHTML = "Percent of this year : " + str(barre) + str("\n")
 
 
 
-
-atlas("C/2019 Y4 ATLAS")
+goblin("2015 TG387 The Gobelin")
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
-photo = open("/var/www/html/pictures/atlas.jpg", "rb")
+photo = open("/var/www/html/pictures/thegobelin.jpg", "rb")
 response = twitter.upload_media(media=photo)
 twitter.update_status(status=message, media_ids=[response["media_id"]])
