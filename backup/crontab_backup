@@ -1,4 +1,5 @@
 0 * * * * python3 /root/SolarSystemPercentage/PerihelionHtml.py
+0 16 * * 2 python3 /root/SolarSystemPercentage/twitterBot/gobelin-twitter.py
 0 16 * * 1 python3 /root/SolarSystemPercentage/twitterBot/atlas-twitter.py 
 0 17 * * 1 python3 /root/SolarSystemPercentage/twitterBot/earth-twitter.py
 0 17 * * 2 python3 /root/SolarSystemPercentage/twitterBot/moon-twitter.py
