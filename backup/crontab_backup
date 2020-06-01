@@ -60,10 +60,14 @@
 0 20 * * 4 python3 /root/SolarSystemPercentage/facebook/moon-facebook.py
 0 20 * * 5 python3 /root/SolarSystemPercentage/facebook/hale-bopp-facebook.py
 0 20 * * 6 python3 /root/SolarSystemPercentage/facebook/earth-real-facebook.py
-############################## AIDE 
-01 21 * * * /usr/sbin/aide --check >> /root/aide_result
+0 16 * * 1 python3 /root/SolarSystemPercentage/facebook/gobelin-facebook.py
+############################# Monitoring checks ############################
+############################################################################ 
+02 21 * * * /usr/sbin/aide --check >> /root/aide_result
+01 21 * * * /root/updatecheck.bsh
 00 21 * * * /root/needrst.bash
 00 07 * * * /root/needrst.bash
-01 07 * * * /usr/sbin/aide --check >> /root/aide_result
+02 07 * * * /usr/sbin/aide --check >> /root/aide_result
+01 07 * * * /root/updatecheck.bsh
 10 21 * * * python3 /root/mailer.py
 10 07 * * * python3 /root/mailer.py

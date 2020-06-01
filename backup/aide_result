@@ -1,0 +1,33 @@
+06/01/20 07:00:01
+No core libraries or services have been updated since boot-up.
+Reboot should not be necessary.
+
+
+06/01/20 07:01:01
+Last metadata expiration check: 0:52:52 ago on Mon 01 Jun 2020 06:08:11 AM CEST.
+
+exim.x86_64                           4.93-3.el8                            epel
+
+
+Start timestamp: 2020-06-01 07:02:01 +0200 (AIDE 0.16)
+AIDE found NO differences between database and filesystem. Looks okay!!
+
+Number of entries:	99594
+
+---------------------------------------------------
+The attributes of the (uncompressed) database(s):
+---------------------------------------------------
+
+/var/lib/aide/aide.db.gz
+  MD5      : JE3rxzOq1v6uuogB8qxJZg==
+  SHA1     : 4QAxAZ2V+RBgaFXzNxj1mgSVodU=
+  RMD160   : 1Mzwn5qmREu0MtQLw6iufB/dYP4=
+  TIGER    : V4WA+GYo2MewPzwt+P0QBZ5VVdGST3H7
+  SHA256   : hlYhcANu67T5QGWwytI/oX1CwJDG/std
+             QRrCBFQRDUE=
+  SHA512   : 1okrNDtA024sNPwT+oP4V/4W/sxZuyYQ
+             xBt5tMRCD2BLtNQSqRy/m9ffXh8Jnj4R
+             f/C0xDDKXs9Gps4sjt4SqQ==
+
+
+End timestamp: 2020-06-01 07:03:03 +0200 (run time: 1m 2s)
