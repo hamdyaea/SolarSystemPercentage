@@ -5,8 +5,8 @@
 
 from mailjet_rest import Client
 import os
-api_key = 'e4f0f77b8d018813623d4290b9a73101'
-api_secret = '2b6c3935a0e1ba19879f66c58ec09e88'
+api_key = 'XXXXXXXXXXXXXX'
+api_secret = 'XXXXX'
 mailjet = Client(auth=(api_key, api_secret), version='v3.1')
 
 with open('/root/aide_result', 'r') as myfile:
