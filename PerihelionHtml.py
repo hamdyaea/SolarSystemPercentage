@@ -88,7 +88,7 @@ indexFile.write(startHtml)
 indexFile.close()
 
 def atlas(object):
-    Percentage.Goblin_current_year = date.today().year + 3380
+    Percentage.Goblin_current_year = date.today().year
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
     indexFile = open("/var/www/html/main.html", "a")
@@ -97,13 +97,13 @@ def atlas(object):
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
         H = orbit[object][0]["PicH"]
-        d2 = date(1000, 1, 1)
+        d2 = date(2020, 5, 31)
         d1 = date(
             Percentage.Goblin_current_year,
             Percentage.Goblin_thisMonth,
             Percentage.Goblin_today,
         )
-        d0 = date(5400, 5, 31)
+        d0 = date(6420, 6, 6)
         d3 = d0 - d2
         d3 = str(d3)
         d3 = d3.split()
@@ -119,7 +119,6 @@ def atlas(object):
         new = new + 1
         Percentage.objectResult = new / ValuePercent
         Percentage.objectResult = round(Percentage.objectResult, 2)
-        new = new + 1608020
 
         print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
         print(("Day of the year : ") + str("Day ") + str(new))
