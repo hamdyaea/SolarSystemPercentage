@@ -47,13 +47,13 @@ def neowise(object):
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
         H = orbit[object][0]["PicH"]
-        d2 = date(2020, 5, 31)
+        d2 = date(2020, 7, 3)
         d1 = date(
             Percentage.Goblin_current_year,
             Percentage.Goblin_thisMonth,
             Percentage.Goblin_today,
         )
-        d0 = date(6420, 6, 6)
+        d0 = date(8800, 7, 3)
         d3 = d0 - d2
         d3 = str(d3)
         d3 = d3.split()
