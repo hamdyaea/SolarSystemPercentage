@@ -513,5 +513,17 @@
         "6420,06,06"
       ]
     }
+  ],
+  "C/2020 F3 NEOWISE": [                                                                                                               
+      {
+        "info":"Comet",
+        "Picture": "http://astrometry.ch/pictures/neowise.jpg",
+        "PicW":"100",
+        "PicH":"100",
+        "Peri": [
+          "2020,07,03",
+          "8800,07,03"
+        ]                                   
+      } 
   ]
 }
