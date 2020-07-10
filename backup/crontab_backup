@@ -21,6 +21,7 @@
 0 12 * * 4 python3 /root/SolarSystemPercentage/twitterBot/faye-twitter.py
 0 12 * * 5 python3 /root/SolarSystemPercentage/twitterBot/hale-bopp-twitter.py
 0 13 * * 5 python3 /root/SolarSystemPercentage/twitterBot/earth-real-twitter.py
+0 13 * * 6 python3 /root/SolarSystemPercentage/twitterBot/neowise-twitter.py
 0 10 * * 1 python3 /root/SolarSystemPercentage/tumblr/ceres-tumblr.py
 0 10 * * 2 python3 /root/SolarSystemPercentage/tumblr/eris-tumblr.py
 0 10 * * 3 python3 /root/SolarSystemPercentage/tumblr/haumea-tumblr.py
