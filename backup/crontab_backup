@@ -71,6 +71,7 @@
 0 16 * * 2 python3 /root/SolarSystemPercentage/facebook/atlas-facebook.py
 0 16 * * 3 python3 /root/SolarSystemPercentage/facebook/neowise-facebook.py
 0 16 * * 4 python3 /root/SolarSystemPercentage/facebook/apophis-facebook.py
+0 16 * * 5 python3 /root/SolarSystemPercentage/facebook/vp1-facebook.py
 ############################# Monitoring checks ############################
 ############################################################################ 
 02 21 * * * /usr/sbin/aide --check >> /root/aide_result
