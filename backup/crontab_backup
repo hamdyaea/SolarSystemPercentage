@@ -84,4 +84,3 @@
 10 07 * * * python3 /root/mailer.py
 ########################### Automatic github random push number ############
 0 07 * * * /root/RandomNumber/random.bsh
-
