@@ -123,7 +123,7 @@ def perihelion(object, years1, years):
                 Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
 
 
-perihelion("Moon", 28, 28)
+perihelion("Moon", 27, 27)
 
 client.create_photo(
     blogName,
