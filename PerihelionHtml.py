@@ -576,6 +576,7 @@ atlas("C/2019 Y4 ATLAS")
 neowise("C/2020 F3 NEOWISE")
 perihelion("99942 Apophis", 324, 324)
 perihelion("2018 VP1",731, 731)
+perihelion("2020 SO",387, 387)
 
 endHTML = str("</p>") + str("\n") + str("</font>") + str("\n") + str("</body>")
 
