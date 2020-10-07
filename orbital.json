@@ -2,7 +2,7 @@
   "Moon": [
     {
       "info": "Satelite",
-      "Picture": "http://astrometry.ch/pictures/lune.jpg",
+      "Picture": "https://astrometry.ch/pictures/lune.jpg",
       "PicW": "130",
       "PicH": "100",
       "Peri": [
@@ -175,7 +175,7 @@
   "Mercury": [
     {
       "info": "Planet",
-      "Picture": "http://astrometry.ch/pictures/mercury.png",
+      "Picture": "https://astrometry.ch/pictures/mercury.png",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -237,7 +237,7 @@
   "Venus": [
     {
       "info": "Planet",
-      "Picture": "http://astrometry.ch/pictures/venus.jpg",
+      "Picture": "https://astrometry.ch/pictures/venus.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -269,7 +269,7 @@
   "Mars": [
     {
       "info": "Planet",
-      "Picture": "http://astrometry.ch/pictures/mars.jpg",
+      "Picture": "https://astrometry.ch/pictures/mars.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -287,7 +287,7 @@
   "Jupiter": [
     {
       "info": "Planet",
-      "Picture": "http://astrometry.ch/pictures/jupiter.jpg",
+      "Picture": "https://astrometry.ch/pictures/jupiter.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -300,7 +300,7 @@
   "Saturn": [
     {
       "info": "Planet",
-      "Picture": "http://astrometry.ch/pictures/saturn.jpg",
+      "Picture": "https://astrometry.ch/pictures/saturn.jpg",
       "PicW": "130",
       "PicH": "100",
       "Peri": [
@@ -312,7 +312,7 @@
   "Uranus": [
     {
       "info": "Planet",
-      "Picture": "http://astrometry.ch/pictures/uranus.jpg",
+      "Picture": "https://astrometry.ch/pictures/uranus.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -324,7 +324,7 @@
   "Neptune": [
     {
       "info": "Planet",
-      "Picture": "http://astrometry.ch/pictures/neptune.jpg",
+      "Picture": "https://astrometry.ch/pictures/neptune.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -336,7 +336,7 @@
   "Pluto": [
     {
       "info": "Planet",
-      "Picture": "http://astrometry.ch/pictures/pluto.jpg",
+      "Picture": "https://astrometry.ch/pictures/pluto.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -348,7 +348,7 @@
   "Halley": [
     {
       "info": "Comet",
-      "Picture": "http://astrometry.ch/pictures/halley.jpg",
+      "Picture": "https://astrometry.ch/pictures/halley.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -360,7 +360,7 @@
   "Tesla": [
     {
       "info": "Spacecraft",
-      "Picture": "http://astrometry.ch/pictures/tesla.jpg",
+      "Picture": "https://astrometry.ch/pictures/tesla.jpg",
       "PicW": "130",
       "PicH": "100",
       "Peri": [
@@ -380,7 +380,7 @@
   "Ceres": [
     {
       "info": "Dwarf planet",
-      "Picture": "http://astrometry.ch/pictures/ceres.jpg",
+      "Picture": "https://astrometry.ch/pictures/ceres.jpg",
       "PicW": "130",
       "PicH": "100",
       "Peri": [
@@ -392,7 +392,7 @@
   "Haumea": [
     {
       "info": "Dwarf planet",
-      "Picture": "http://astrometry.ch/pictures/haumea.jpg",
+      "Picture": "https://astrometry.ch/pictures/haumea.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -404,7 +404,7 @@
   "Makemake": [
     {
       "info": "Dwarf planet",
-      "Picture": "http://astrometry.ch/pictures/makemake.jpg",
+      "Picture": "https://astrometry.ch/pictures/makemake.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -416,7 +416,7 @@
   "Eris": [
     {
       "info": "Dwarf planet",
-      "Picture": "http://astrometry.ch/pictures/eris.jpg",
+      "Picture": "https://astrometry.ch/pictures/eris.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -428,7 +428,7 @@
   "Earth": [
     {
       "info": "Planet, real Perihelion",
-      "Picture": "http://astrometry.ch/pictures/terre.png",
+      "Picture": "https://astrometry.ch/pictures/terre.png",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -450,7 +450,7 @@
   "Encke": [
     {
       "info": "Comet",
-      "Picture": "http://astrometry.ch/pictures/encke.jpg",
+      "Picture": "https://astrometry.ch/pictures/encke.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -466,7 +466,7 @@
   "Faye": [
     {
       "info": "Comet",
-      "Picture": "http://astrometry.ch/pictures/faye.jpg",
+      "Picture": "https://astrometry.ch/pictures/faye.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -481,7 +481,7 @@
   "Hale-Bopp": [
     {
       "info": "Comet",
-      "Picture": "http://astrometry.ch/pictures/hale-bopp.jpg",
+      "Picture": "https://astrometry.ch/pictures/hale-bopp.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -493,7 +493,7 @@
   "2015 TG387 The Gobelin": [
     {
       "info": "Dwarf planet",
-      "Picture": "http://astrometry.ch/pictures/thegobelin.jpg",
+      "Picture": "https://astrometry.ch/pictures/thegobelin.jpg",
       "PicW": "140",
       "PicH": "100",
       "Peri": [
@@ -505,7 +505,7 @@
   "C/2019 Y4 ATLAS": [
     {
       "info": "Comet",
-      "Picture": "http://astrometry.ch/pictures/atlas.jpg",
+      "Picture": "https://astrometry.ch/pictures/atlas.jpg",
       "PicW": "100",
       "PicH": "100",
       "Peri": [
@@ -517,7 +517,7 @@
   "C/2020 F3 NEOWISE": [                                                                                                               
       {
         "info":"Comet",
-        "Picture": "http://astrometry.ch/pictures/neowise.jpg",
+        "Picture": "https://astrometry.ch/pictures/neowise.jpg",
         "PicW":"100",
         "PicH":"100",
         "Peri": [
@@ -529,7 +529,7 @@
   "99942 Apophis": [
       {
         "info":"Near-Earth asteroid",
-        "Picture": "http://astrometry.ch/pictures/apophis.jpg",
+        "Picture": "https://astrometry.ch/pictures/apophis.jpg",
         "PicW":"100",
         "PicH":"100",
         "Peri": [
@@ -552,7 +552,7 @@
   "2018 VP1": [
       {
         "info":"Near-Earth asteroid",
-        "Picture": "http://astrometry.ch/pictures/vp1.jpg",
+        "Picture": "https://astrometry.ch/pictures/vp1.jpg",
         "PicW":"100",
         "PicH":"100",
         "Peri": [
@@ -569,7 +569,7 @@
   "2020 SO": [
       {
         "info":"near-Earth asteroid or artificial object",
-        "Picture": "http://astrometry.ch/pictures/2020SO.jpg",
+        "Picture": "https://astrometry.ch/pictures/2020SO.jpg",
         "PicW":"100",
         "PicH":"100",
         "Peri": [
