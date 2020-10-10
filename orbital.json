@@ -5,6 +5,7 @@
       "Picture": "https://astrometry.ch/pictures/lune.jpg",
       "PicW": "130",
       "PicH": "100",
+      "orperiod": "27 days",
       "Peri": [
         "2018,12,24",
         "2019,11,23",
@@ -178,6 +179,7 @@
       "Picture": "https://astrometry.ch/pictures/mercury.png",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "88 days",
       "Peri": [
         "2018,12,01",
         "2019,11,16",
@@ -240,6 +242,7 @@
       "Picture": "https://astrometry.ch/pictures/venus.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "225 days",
       "Peri": [
         "2018,05,16",
         "2019,08,19",
@@ -272,6 +275,7 @@
       "Picture": "https://astrometry.ch/pictures/mars.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "687 days",
       "Peri": [
         "2018,09,16",
         "2020,08,03",
@@ -290,6 +294,7 @@
       "Picture": "https://astrometry.ch/pictures/jupiter.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "12 years",
       "Peri": [
         "2011,03,17",
         "2023,01,20",
@@ -303,6 +308,7 @@
       "Picture": "https://astrometry.ch/pictures/saturn.jpg",
       "PicW": "130",
       "PicH": "100",
+      "orperiod": "29 years",
       "Peri": [
         "2003,07,26",
         "2032,11,28"
@@ -315,6 +321,7 @@
       "Picture": "https://astrometry.ch/pictures/uranus.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "84 years",
       "Peri": [
         "1966,05,21",
         "2050,08,16"
@@ -327,6 +334,7 @@
       "Picture": "https://astrometry.ch/pictures/neptune.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "165 years",
       "Peri": [
         "1876,08,26",
         "2042,09,03"
@@ -339,6 +347,7 @@
       "Picture": "https://astrometry.ch/pictures/pluto.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "248 years",
       "Peri": [
         "1989,09,05",
         "2237,09,15"
@@ -351,6 +360,7 @@
       "Picture": "https://astrometry.ch/pictures/halley.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "75 years",
       "Peri": [
         "1986,02,09",
         "2061,07,28"
@@ -363,6 +373,7 @@
       "Picture": "https://astrometry.ch/pictures/tesla.jpg",
       "PicW": "130",
       "PicH": "100",
+      "orperiod": "4,72 years",
       "Peri": [
         "2018,01,20",
         "2019,08,12",
@@ -383,6 +394,7 @@
       "Picture": "https://astrometry.ch/pictures/ceres.jpg",
       "PicW": "130",
       "PicH": "100",
+      "orperiod": "4,61 years",
       "Peri": [
         "2018,04,30",
         "2022,12,08"
@@ -395,6 +407,7 @@
       "Picture": "https://astrometry.ch/pictures/haumea.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "284 years",
       "Peri": [
         "1848,09,01",
         "2132,10,16"
@@ -407,6 +420,7 @@
       "Picture": "https://astrometry.ch/pictures/makemake.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "306 years",
       "Peri": [
         "1879,04,07",
         "2186,10,23"
@@ -419,6 +433,7 @@
       "Picture": "https://astrometry.ch/pictures/eris.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "558 years",
       "Peri": [
         "1701,03,21",
         "2258,10,17"
@@ -431,6 +446,7 @@
       "Picture": "https://astrometry.ch/pictures/terre.png",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "1 year",
       "Peri": [
         "2020,01,05",
         "2021,01,02",
@@ -453,6 +469,7 @@
       "Picture": "https://astrometry.ch/pictures/encke.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "3,30 years",
       "Peri": [
         "2017,03,10",
         "2020,06,25",
@@ -469,6 +486,7 @@
       "Picture": "https://astrometry.ch/pictures/faye.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "7,55 years",
       "Peri": [
         "2006,11,15",
         "2014,05,29",
@@ -484,6 +502,7 @@
       "Picture": "https://astrometry.ch/pictures/hale-bopp.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "2533 years",
       "Peri": [
         "1997,04,01",
         "4370,01,01"
@@ -496,6 +515,7 @@
       "Picture": "https://astrometry.ch/pictures/thegobelin.jpg",
       "PicW": "140",
       "PicH": "100",
+      "orperiod": "36 years",
       "Peri": [
         "-33922,01,01",
         "2078,01,01"
@@ -508,6 +528,7 @@
       "Picture": "https://astrometry.ch/pictures/atlas.jpg",
       "PicW": "100",
       "PicH": "100",
+      "orperiod": "4400 years",
       "Peri": [
         "2020,05,31",
         "6420,06,06"
@@ -520,6 +541,7 @@
         "Picture": "https://astrometry.ch/pictures/neowise.jpg",
         "PicW":"100",
         "PicH":"100",
+        "orperiod": "6766 years",
         "Peri": [
           "2020,07,03",
           "8800,07,03"
@@ -532,6 +554,7 @@
         "Picture": "https://astrometry.ch/pictures/apophis.jpg",
         "PicW":"100",
         "PicH":"100",
+        "orperiod": "324 days",
         "Peri": [
           "2019,10,15",
           "2020,09,03",
@@ -555,6 +578,7 @@
         "Picture": "https://astrometry.ch/pictures/vp1.jpg",
         "PicW":"100",
         "PicH":"100",
+        "orperiod": "2 years",
         "Peri": [
          "2018,11,3",
           "2020,11,2",
@@ -572,6 +596,7 @@
         "Picture": "https://astrometry.ch/pictures/2020SO.jpg",
         "PicW":"100",
         "PicH":"100",
+        "orperiod": "387 days",
         "Peri": [
           "2019,11,20",
           "2020,12,10",
