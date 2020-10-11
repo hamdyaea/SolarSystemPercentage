@@ -606,7 +606,7 @@ def perihelion(object, years1, years):
                 print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
                 print(("Day of the year : ") + str("Day ") + str(new))
                 print("Last perihelion : " + str(Percentage.objectPerihelion))
-                print("Next perihelion : " + str(d1))
+                print("Next perihelion : " + str(d0))
                 print(str("Orbital period : ") + str(orbit[object][0]["orperiod"]))
                 print(("Year progress : ") + str(Percentage.objectResult) + str("%"))
                 percent = Percentage.objectResult
