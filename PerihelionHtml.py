@@ -206,7 +206,9 @@ def neowise(object):
 
         print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
         print(("Day of the year : ") + str("Day ") + str(new))
-        print(str("Orbital period : ")+str(orbit[object][0]["orperiod"]))
+        print("Last perihelion : " + str(orbit[object][0]["Peri"][0]))
+        print("Next perihelion : " + str(orbit[object][0]["Peri"][1]))
+        print(str("Orbital period : ") + str(orbit[object][0]["orperiod"]))
         print(("Year progress : ") + str(Percentage.objectResult) + str("%"))
 
         percent = Percentage.objectResult
@@ -243,7 +245,13 @@ def neowise(object):
         indexFile.write(
             str("Day of the year : Day ")
             + str(new)
-            + str("<br />")+str("Orbital period : ")+str(orbit[object][0]["orperiod"])
+            + str("<br />Last perihelion : ")
+            + str(orbit[object][0]["Peri"][0])
+            + str("<br />Next perihelion : ")
+            + str(orbit[object][0]["Peri"][1])
+            + str("<br />")
+            + str("Orbital period : ")
+            + str(orbit[object][0]["orperiod"])
             + str("<br />Year progress : ")
             + str(Percentage.objectResult)
             + str("%")
@@ -294,7 +302,9 @@ def atlas(object):
 
         print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
         print(("Day of the year : ") + str("Day ") + str(new))
-        print(str("Orbital period : ")+str(orbit[object][0]["orperiod"]))
+        print("Last perihelion : " + str(orbit[object][0]["Peri"][0]))
+        print("Next perihelion : " + str(orbit[object][0]["Peri"][1]))
+        print(str("Orbital period : ") + str(orbit[object][0]["orperiod"]))
         print(("Year progress : ") + str(Percentage.objectResult) + str("%"))
 
         percent = Percentage.objectResult
@@ -331,7 +341,13 @@ def atlas(object):
         indexFile.write(
             str("Day of the year : Day ")
             + str(new)
-            + str("<br />")+str("Orbital period : ")+str(orbit[object][0]["orperiod"])
+            + str("<br />Last perihelion : ")
+            + str(orbit[object][0]["Peri"][0])
+            + str("<br />Next perihelion : ")
+            + str(orbit[object][0]["Peri"][1])
+            + str("<br />")
+            + str("Orbital period : ")
+            + str(orbit[object][0]["orperiod"])
             + str("<br />Year progress : ")
             + str(Percentage.objectResult)
             + str("%")
@@ -383,7 +399,9 @@ def goblin(object):
 
         print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
         print(("Day of the year : ") + str("Day ") + str(new))
-        print(str("Orbital period : ")+str(orbit[object][0]["orperiod"]))
+        print("Last perihelion : " + str(orbit[object][0]["Peri"][0]))
+        print("Next perihelion : " + str(orbit[object][0]["Peri"][1]))
+        print(str("Orbital period : ") + str(orbit[object][0]["orperiod"]))
         print(("Year progress : ") + str(Percentage.objectResult) + str("%"))
 
         percent = Percentage.objectResult
@@ -420,7 +438,13 @@ def goblin(object):
         indexFile.write(
             str("Day of the year : Day ")
             + str(new)
-            + str("<br />")+str("Orbital period : ")+str(orbit[object][0]["orperiod"])
+            + str("<br />Last perihelion : ")
+            + str(orbit[object][0]["Peri"][0])
+            + str("<br />Next perihelion : ")
+            + str(orbit[object][0]["Peri"][1])
+            + str("<br />")
+            + str("Orbital period : ")
+            + str(orbit[object][0]["orperiod"])
             + str("<br />Year progress : ")
             + str(Percentage.objectResult)
             + str("%")
@@ -478,6 +502,8 @@ def Earth():
         )
         Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n\n")
         print(Percentage.earth)
+        print("Last perihelion : " + str(d0))
+        print("Next perihelion : " + str(d2))
         print("Orbital period : 1 year")
         print(Percentage.BarrEarth)
         indexFile.write("<li>")
@@ -503,7 +529,12 @@ def Earth():
         indexFile.write(
             str("Day of the year : Day ")
             + str(new)
-            + str("<br />")+str("Orbital period : 1 year")
+            + str("<br />Last perihelion : ")
+            + str(d0)
+            + str("<br />Next perihelion : ")
+            + str(d2)
+            + str("<br />")
+            + str("Orbital period : 1 year")
             + str("<br />Year progress : ")
             + str(Percentage.EarthResult)
             + str("%")
@@ -574,7 +605,9 @@ def perihelion(object, years1, years):
 
                 print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
                 print(("Day of the year : ") + str("Day ") + str(new))
-                print(str("Orbital period : ")+str(orbit[object][0]["orperiod"]))
+                print("Last perihelion : " + str(orbit[object][0]["Peri"][0]))
+                print("Next perihelion : " + str(orbit[object][0]["Peri"][1]))
+                print(str("Orbital period : ") + str(orbit[object][0]["orperiod"]))
                 print(("Year progress : ") + str(Percentage.objectResult) + str("%"))
                 percent = Percentage.objectResult
                 barre = (
@@ -610,7 +643,13 @@ def perihelion(object, years1, years):
                 indexFile.write(
                     str("Day of the year : Day ")
                     + str(new)
-                    + str("<br />")+str("Orbital period : ")+str(orbit[object][0]["orperiod"])
+                    + str("<br />Last perihelion : ")
+                    + str(orbit[object][0]["Peri"][0])
+                    + str("<br />Next perihelion : ")
+                    + str(orbit[object][0]["Peri"][1])
+                    + str("<br />")
+                    + str("Orbital period : ")
+                    + str(orbit[object][0]["orperiod"])
                     + str("<br />Year progress : ")
                     + str(Percentage.objectResult)
                     + str("%")
