@@ -515,7 +515,7 @@
       "Picture": "https://astrometry.ch/pictures/thegobelin.jpg",
       "PicW": "140",
       "PicH": "100",
-      "orperiod": "36 years",
+      "orperiod": "36000 years",
       "Peri": [
         "-33922,01,01",
         "2078,01,01"
