@@ -459,6 +459,104 @@ def goblin(object):
         indexFile.write("\n")
         indexFile.close()
 
+def sedna(object):
+    Percentage.Goblin_current_year = date.today().year
+    Percentage.Goblin_today = int(datetime.today().strftime("%d"))
+    Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
+    indexFile = open("/var/www/html/index.html", "a")
+    with open("/var/www/html/orbital.json", "r") as O:
+        orbit = json.load(O)
+        picture = orbit[object][0]["Picture"]
+        W = orbit[object][0]["PicW"]
+        H = orbit[object][0]["PicH"]
+        d2 = date(1000, 1, 1)
+        d1 = date(
+            Percentage.Goblin_current_year,
+            Percentage.Goblin_thisMonth,
+            Percentage.Goblin_today,
+        )
+        d0 = date(2076, 6, 1)
+        d3 = d0 - d2
+        d3 = str(d3)
+        d3 = d3.split()
+        d3 = int(d3[0])
+        d3 = d3 + 1
+        ValuePercent = d3 / 100
+        delta = d1 - d2
+        delta = str(delta)
+        delta = delta.split()
+        delta = delta[0]
+        new = re.sub("[^0-9]", "", str(delta))
+        new = int(new)
+        new = new + 1
+        Percentage.objectResult = new / ValuePercent
+        Percentage.objectResult = round(Percentage.objectResult, 2)
+        new = new + 3788167
+
+        print(str(orbit[object][0]["info"]) + str(" : ") + str(object))
+        print(("Day of the year : ") + str("Day ") + str(new))
+        print("Last perihelion : " + str(orbit[object][0]["Peri"][0]))
+        print("Next perihelion : " + str(orbit[object][0]["Peri"][1]))
+        print(str("Orbital period : ") + str(orbit[object][0]["orperiod"]))
+        print(("Year progress : ") + str(Percentage.objectResult) + str("%"))
+
+        percent = Percentage.objectResult
+        barre = (
+            "["
+            + "#" * int((25 / 100) * percent)
+            + "-" * int((25 / 100) * (100 - percent))
+            + "]"
+        )
+        print("Percent of this year : " + (barre))
+        print("\n")
+
+"""
+        indexFile.write("<li>")
+        indexFile.write("\n")
+        indexFile.write(
+            str('<img src="')
+            + str(picture)
+            + str('" alt="Img" height="')
+            + str(H)
+            + str('" width="')
+            + str(W)
+            + str('">')
+        )
+        indexFile.write("\n")
+        indexFile.write(
+            str('<h3><a href="blog.html">')
+            + str(orbit[object][0]["info"])
+            + str(" : ")
+            + str(object)
+            + str("</a></h3><br/>")
+        )
+        indexFile.write("\n")
+        indexFile.write("<p>")
+        indexFile.write("\n")
+        indexFile.write(
+            str("Day of the year : Day ")
+            + str(new)
+            + str("<br />Last perihelion : ")
+            + str(orbit[object][0]["Peri"][0])
+            + str("<br />Next perihelion : ")
+            + str(orbit[object][0]["Peri"][1])
+            + str("<br />")
+            + str("Orbital period : ")
+            + str(orbit[object][0]["orperiod"])
+            + str("<br />Year progress : ")
+            + str(Percentage.objectResult)
+            + str("%")
+            + str("<br />")
+            + str("Percent of this year : ")
+            + str(barre)
+        )
+        indexFile.write("\n")
+        indexFile.write("</p>")
+        indexFile.write("\n")
+        indexFile.write("</li>")
+        indexFile.write("\n")
+        indexFile.close()
+"""
 
 def Earth():
     indexFile = open("/var/www/html/index.html", "a")
@@ -736,7 +834,7 @@ indexFile = open("/var/www/html/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.close()
-
+sedna("90377 Sedna")
 
 indexFile = open("/var/www/html/index.html", "a")
 now = datetime.now()
