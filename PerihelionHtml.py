@@ -830,11 +830,12 @@ indexFile.write("\n")
 indexFile.close()
 perihelion("2018 VP1", 731, 731)
 perihelion("2020 SO", 387, 387)
+sedna("90377 Sedna")
 indexFile = open("/var/www/html/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.close()
-sedna("90377 Sedna")
+
 
 indexFile = open("/var/www/html/index.html", "a")
 now = datetime.now()
