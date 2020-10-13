@@ -459,6 +459,7 @@ def goblin(object):
         indexFile.write("\n")
         indexFile.close()
 
+
 def sedna(object):
     Percentage.Goblin_current_year = date.today().year + 96
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
@@ -510,7 +511,6 @@ def sedna(object):
         print("Percent of this year : " + (barre))
         print("\n")
 
-"""
         indexFile.write("<li>")
         indexFile.write("\n")
         indexFile.write(
@@ -556,7 +556,7 @@ def sedna(object):
         indexFile.write("</li>")
         indexFile.write("\n")
         indexFile.close()
-"""
+
 
 def Earth():
     indexFile = open("/var/www/html/index.html", "a")
