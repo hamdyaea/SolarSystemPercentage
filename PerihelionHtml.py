@@ -460,7 +460,7 @@ def goblin(object):
         indexFile.close()
 
 def sedna(object):
-    Percentage.Goblin_current_year = date.today().year
+    Percentage.Goblin_current_year = date.today().year + 96
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
     indexFile = open("/var/www/html/index.html", "a")
@@ -475,7 +475,7 @@ def sedna(object):
             Percentage.Goblin_thisMonth,
             Percentage.Goblin_today,
         )
-        d0 = date(2076, 6, 1)
+        d0 = date(2140, 1, 1)
         d3 = d0 - d2
         d3 = str(d3)
         d3 = d3.split()
