@@ -480,6 +480,7 @@ def sedna(object):
         d3 = d0 - d2
         d3 = str(d3)
         d3 = d3.split()
+
         d3 = int(d3[0])
         d3 = d3 + 1
         ValuePercent = d3 / 100
@@ -776,7 +777,7 @@ indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
 indexFile.close()
 indexFile = open("/var/www/html/index.html", "a")
-perihelion("Moon", 27, 27)
+perihelion("Moon", 29, 29)
 perihelion("Mars", 688, 688)
 perihelion("Jupiter", 4328, 4328)
 perihelion("Saturn", 10719, 10719)
