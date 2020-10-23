@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Developer : Hamdy Abou El Anein
+#
+# hamdy.abouelanein@protonmail.com
+#
+# Restart the api automatically if the astrometry api in not running.
+
+## Look if node in running for forever.
+pgrep node
+
+## check if the return exit code is 0.
+ret=$?
+
+if [ $ret -ne 0 ]; then
+    /usr/bin/forever start -c python3 api-astrometry.py
+fi
