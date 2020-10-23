@@ -85,3 +85,5 @@
 10 07 * * * python3 /root/mailer.py
 ########################### Automatic github random push number ############
 0 */2 * * * /root/RandomNumber/random.bsh
+########################## Watchdog for the astrometry.ch api ##############
+* * * * * /root/SolarSystemPercentage/api/api-watchdog.bsh 
