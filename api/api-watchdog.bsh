@@ -13,5 +13,5 @@ pgrep node
 ret=$?
 
 if [ $ret -ne 0 ]; then
-    /usr/bin/forever start -c python3 api-astrometry.py
+    /usr/bin/forever start -c python3 /root/SolarSystemPercentage/api/api-astrometry.py
 fi
