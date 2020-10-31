@@ -532,7 +532,7 @@
   ]
 ,"101955 Bennu": [
       {
-      "info":"Near-Earth asteroid",
+      "info":"Asteroid",
       "Picture": "https://astrometry.ch/pictures/bennu.gif",
       "PicW":"100",
       "PicH":"100",
@@ -550,5 +550,17 @@
         "2031,01,27"
       ]
       }
+  ],
+  "16 Psyche": [                                                                               {                                                                                                                              
+    "info":"Asteroid",                                                                                                  
+    "Picture": "https://astrometry.ch/pictures/psyche.jpg",                                                                         
+    "PicW":"100",                                                                                                                  
+    "PicH":"100",                                                                                                                  
+    "orperiod": "1823 days",                                                                                                        
+    "Peri": [                                                                                                                      
+    "2020,04,25",                                                                                                                 
+    "2025,02,04",
+    "2030,04,19" ]                                                                                                                          
+      }  
   ]
 }
