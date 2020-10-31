@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/instagram/instagram_private_api" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/instagram/instapy-cli" vcs="Git" />
   </component>
 </project>
