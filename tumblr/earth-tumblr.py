@@ -47,7 +47,7 @@ def Earth():
         picture = orbit["Earth"][0]["Picture"]
         W = orbit["Earth"][0]["PicW"]
         H = orbit["Earth"][0]["PicH"]
-        indexFile = open("main.html", "a")
+        #indexFile = open("main.html", "a")
         d0 = date(Percentage.current_year, 1, 1)
         d1 = date(Percentage.current_year, Percentage.thisMonth, Percentage.today)
         d1 = d1 + timedelta(days=1)  # Year, month, day

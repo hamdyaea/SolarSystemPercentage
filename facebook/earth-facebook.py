@@ -40,7 +40,7 @@ Percentage.thisMonth = int(datetime.today().strftime("%m"))
 def Earth():
     with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
-        contentHtml = open("/var/www/html/main.html", "a")
+        #contentHtml = open("/var/www/html/main.html", "a")
         picture = orbit["Earth"][0]["Picture"]
         W = orbit["Earth"][0]["PicW"]
         H = orbit["Earth"][0]["PicH"]
@@ -90,7 +90,7 @@ def Earth():
         Percentage.BarrEarth = "Percent of this year : " + (barre) + str("\n\n")
         print(Percentage.BarrEarth)
         Percentage.BarrEarthHTML = "Percent of this year : " + (barre) + ("\n")
-        contentHtml.write(
+        #contentHtml.write(
             str("<img src=")
             + str('"')
             + str(picture)
@@ -106,10 +106,10 @@ def Earth():
                 + str('">')
             )
         )
-        contentHtml.write("\n")
-        contentHtml.write(Percentage.earthHTML)
-        contentHtml.write(Percentage.BarrEarthHTML)
-        contentHtml.close()
+        #contentHtml.write("\n")
+        #contentHtml.write(Percentage.earthHTML)
+        #contentHtml.write(Percentage.BarrEarthHTML)
+        #contentHtml.close()
 
 
 Earth()
