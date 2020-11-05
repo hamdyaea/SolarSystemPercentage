@@ -440,106 +440,106 @@
       ]
     }
   ],
-  "C/2020 F3 NEOWISE": [                                                                                                               
-      {
-        "info":"Comet",
-        "Picture": "https://astrometry.ch/pictures/neowise.jpg",
-        "PicW":"100",
-        "PicH":"100",
-        "orperiod": "6766 years",
-        "Peri": [
-          "2020,07,03",
-          "8800,07,03"
-        ]                                   
-      } 
+  "C/2020 F3 NEOWISE": [
+    {
+      "info": "Comet",
+      "Picture": "https://astrometry.ch/pictures/neowise.jpg",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "6766 years",
+      "Peri": [
+        "2020,07,03",
+        "8800,07,03"
+      ]
+    }
   ],
   "99942 Apophis": [
-      {
-        "info":"Near-Earth asteroid",
-        "Picture": "https://astrometry.ch/pictures/apophis.jpg",
-        "PicW":"100",
-        "PicH":"100",
-        "orperiod": "324 days",
-        "Peri": [
-          "2019,10,15",
-          "2020,09,03",
-          "2021,07,24",
-          "2022,06,13",
-          "2023,05,03",
-          "2024,03,22",
-          "2025,02,09",
-          "2025,12,30",
-          "2026,11,19",
-          "2027,10,09",
-          "2028,08,28",
-          "2029,07,18",
-          "2030,06,07"
-        ]
-      }
+    {
+      "info": "Near-Earth asteroid",
+      "Picture": "https://astrometry.ch/pictures/apophis.jpg",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "324 days",
+      "Peri": [
+        "2019,10,15",
+        "2020,09,03",
+        "2021,07,24",
+        "2022,06,13",
+        "2023,05,03",
+        "2024,03,22",
+        "2025,02,09",
+        "2025,12,30",
+        "2026,11,19",
+        "2027,10,09",
+        "2028,08,28",
+        "2029,07,18",
+        "2030,06,07"
+      ]
+    }
   ],
   "2018 VP1": [
-      {
-        "info":"Near-Earth asteroid",
-        "Picture": "https://astrometry.ch/pictures/vp1.jpg",
-        "PicW":"100",
-        "PicH":"100",
-        "orperiod": "2 years",
-        "Peri": [
-         "2018,11,3",
-          "2020,11,2",
-          "2022,11,2",
-          "2024,11,1",
-          "2026,11,1",
-          "2028,10,31",
-          "2030,10,31"
-        ]
-      }
+    {
+      "info": "Near-Earth asteroid",
+      "Picture": "https://astrometry.ch/pictures/vp1.jpg",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "2 years",
+      "Peri": [
+        "2018,11,3",
+        "2020,11,2",
+        "2022,11,2",
+        "2024,11,1",
+        "2026,11,1",
+        "2028,10,31",
+        "2030,10,31"
+      ]
+    }
   ],
   "2020 SO": [
-      {
-        "info":"Near-Earth asteroid or artificial object",
-        "Picture": "https://astrometry.ch/pictures/2020SO.jpg",
-        "PicW":"100",
-        "PicH":"100",
-        "orperiod": "387 days",
-        "Peri": [
-          "2019,11,20",
-          "2020,12,10",
-          "2021,12,31",
-          "2023,01,21",
-          "2024,02,11",
-          "2025,03,3",
-          "2026,03,24",
-          "2027,04,14",
-          "2028,04,5",
-          "2029,05,15",
-          "2030,06,15"
-        ]
-      }
+    {
+      "info": "Near-Earth asteroid or artificial object",
+      "Picture": "https://astrometry.ch/pictures/2020SO.jpg",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "387 days",
+      "Peri": [
+        "2019,11,20",
+        "2020,12,10",
+        "2021,12,31",
+        "2023,01,21",
+        "2024,02,11",
+        "2025,03,3",
+        "2026,03,24",
+        "2027,04,14",
+        "2028,04,5",
+        "2029,05,15",
+        "2030,06,15"
+      ]
+    }
   ],
   "90377 Sedna": [
-      {
-      "info":"Minor planet",
+    {
+      "info": "Minor planet",
       "Picture": "https://astrometry.ch/pictures/Nasasedna.jpg",
-      "PicW":"100",
-      "PicH":"100",
+      "PicW": "100",
+      "PicH": "100",
       "orperiod": "11456 years",
       "Peri": [
-       "-9380,06,1",
-       "2076,06,1"
+        "-9380,06,1",
+        "2076,06,1"
       ]
-      }
-  ]
-,"101955 Bennu": [
-      {
-      "info":"Asteroid",
+    }
+  ],
+  "101955 Bennu": [
+    {
+      "info": "Asteroid",
       "Picture": "https://astrometry.ch/pictures/bennu.gif",
-      "PicW":"100",
-      "PicH":"100",
+      "PicW": "100",
+      "PicH": "100",
       "orperiod": "438 days",
       "Peri": [
-       "2020,04,12",
-       "2021,06,24",
+        "2020,04,12",
+        "2021,06,24",
         "2022,09,05",
         "2023,11,17",
         "2025,01,28",
@@ -549,18 +549,64 @@
         "2029,11,15",
         "2031,01,27"
       ]
-      }
+    }
   ],
-  "16 Psyche": [                                                                               {                                                                                                                              
-    "info":"Asteroid",                                                                                                  
-    "Picture": "https://astrometry.ch/pictures/psyche.jpg",                                                                         
-    "PicW":"100",                                                                                                                  
-    "PicH":"100",                                                                                                                  
-    "orperiod": "1823 days",                                                                                                        
-    "Peri": [                                                                                                                      
-    "2020,04,25",                                                                                                                 
-    "2025,02,04",
-    "2030,04,19" ]                                                                                                                          
-      }  
+  "16 Psyche": [
+    {
+      "info": "Asteroid",
+      "Picture": "https://astrometry.ch/pictures/psyche.jpg",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "1823 days",
+      "Peri": [
+        "2020,04,25",
+        "2025,02,04",
+        "2030,04,19"
+      ]
+    }
+  ],
+  "(89959) 2002 NT7": [
+    {
+      "info": "Near-Earth asteroid",
+      "Picture": "https://astrometry.ch/pictures/nt7.gif",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "236 days",
+      "Peri": [
+        "2020,07,19",
+        "2021,03,12",
+        "2021,11,03",
+        "2022,06,27",
+        "2023,02,18",
+        "2023,10,12",
+        "2024,06,04",
+        "2025,01,25",
+        "2025,09,19",
+        "2026,05,13",
+        "2027,01,04",
+        "2027,08,28",
+        "2028,04,20",
+        "2028,12,12",
+        "2029,08,05",
+        "2030,03,29"
+      ]
+    }
+  ],
+  "(NEO) 2020 TY1": [
+    {
+      "info": "Near-Earth asteroid",
+      "Picture": "https://astrometry.ch/pictures/ty1.png",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "944 days",
+      "Peri": [
+        "2018,05,16",
+        "2020,12,15",
+        "2023,07,17",
+        "2026,02,15",
+        "2028,09,16",
+        "2031,04,18"
+      ]
+    }
   ]
 }
