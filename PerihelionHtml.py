@@ -849,6 +849,13 @@ perihelion("(162173) Ryugu",474,474)
 indexFile = open("/var/www/html/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
+indexFile.write('<ul id="featured" class="wrapper clearfix">')
+indexFile.write("\n")
+indexFile = open("/var/www/html/index.html", "a")
+perihelion("C/2020 M3 Atlas",50768,50768)
+indexFile = open("/var/www/html/index.html", "a")
+indexFile.write("</ul>")
+indexFile.write("\n")
 indexFile.close()
 
 

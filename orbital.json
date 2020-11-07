@@ -628,5 +628,18 @@
         "2030,02,05"
       ]
     }
+  ],
+  "C/2020 M3 Atlas": [
+    {
+      "info": "Comet",
+      "Picture": "https://astrometry.ch/pictures/2020m3Atlas.jpg",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "139 years",
+      "Peri": [
+        "2020,10,25",
+        "2159,10,25"
+      ]
+    }
   ]
 }
