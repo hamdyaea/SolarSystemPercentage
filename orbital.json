@@ -641,5 +641,25 @@
         "2159,10,25"
       ]
     }
-  ]
+  ],
+  "3200 Phaeton": [
+     {
+       "info": "Potentially hazardous asteroid",
+       "Picture": "https://astrometry.ch/pictures/phaeton.gif",
+       "PicW": "100",
+       "PicH": "100",
+       "orperiod": "524 days",
+       "Peri": [
+         "2019,07,02",
+         "2020,12,07",
+         "2022,05,15",
+         "2023,10,21",
+         "2025,03,28",
+         "2026,09,03",
+         "2028,02,09",
+         "2029,07,17",
+         "2030,12,23"
+       ]
+     }
+   ]
 }
