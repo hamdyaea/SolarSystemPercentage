@@ -661,5 +661,23 @@
          "2030,12,23"
        ]
      }
-   ]
+   ],
+ "1862 Apollo": [
+      {
+        "info": "Potentially hazardous asteroid",
+        "Picture": "https://astrometry.ch/pictures/1862Apollo.png",
+        "PicW": "100",
+        "PicH": "100",
+        "orperiod": "652 days",
+        "Peri": [
+          "2019,12,28",
+          "2021,10,10",
+          "2023,07,24",
+          "2025,05,06",
+          "2027,02,17",
+          "2028,11,30",
+          "2030,09,13"
+        ]
+      }
+    ]
 }
