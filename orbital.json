@@ -702,5 +702,19 @@
            "2030,04,30"
          ]
        }
-     ]
+     ],
+"C/2020 S3 Erasmus": [
+        {
+          "info": "Comet",
+          "Picture": "https://astrometry.ch/pictures/erasmus.jpg",
+          "PicW": "100",
+          "PicH": "100",
+          "orperiod": "2512 years",
+          "Peri": [
+            "1000,12,12",
+            "2020,12,12",
+            "3040,12,12"
+          ]
+        }
+      ]
 }

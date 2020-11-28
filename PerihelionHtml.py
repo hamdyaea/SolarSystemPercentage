@@ -659,6 +659,7 @@ def perihelion(object, years1, years):
     indexFile = open("/var/www/html/index.html", "a")
     with open("/var/www/html/orbital.json", "r") as O:
         orbit = json.load(O)
+        thisYear = ""
         thisYear = orbit[object][0]["Peri"]
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -856,6 +857,13 @@ perihelion("C/2020 M3 Atlas",50768,50768)
 perihelion("3200 Phaeton",524,524)
 perihelion("1862 Apollo",652,652)
 perihelion("VT4 2020",349,349)
+indexFile = open("/var/www/html/index.html", "a")
+indexFile.write("</ul>")
+indexFile.write("\n")
+indexFile.write('<ul id="featured" class="wrapper clearfix">')
+indexFile.write("\n")
+indexFile = open("/var/www/html/index.html", "a")
+perihelion("C/2020 S3 Erasmus",372542 ,372542)
 indexFile = open("/var/www/html/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
