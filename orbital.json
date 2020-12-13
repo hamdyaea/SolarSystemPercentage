@@ -715,5 +715,31 @@
             "4532,12,12"
           ]
         }
-      ]
+      ],
+"88P/Howell": [
+         {
+           "info": "Comet",
+           "Picture": "https://astrometry.ch/pictures/88p.jpg",
+           "PicW": "100",
+           "PicH": "100",
+           "orperiod": "2002 days",
+           "Peri": [
+             "2020,09,28",
+             "2026,03,23",
+             "2031,09,15"
+           ]
+         }
+       ],
+       "(31453) Arnaudthiry - Astronogeek": [
+          {
+            "info": "Asteroid",
+            "Picture": "https://astrometry.ch/pictures/thiry.png",
+            "PicW": "100",
+            "PicH": "100",
+            "orperiod": "1715 days",
+            "Peri": [
+              "2020,09,28",
+            ]
+          }
+        ]
 }
