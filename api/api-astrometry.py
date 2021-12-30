@@ -7,9 +7,12 @@
 from flask import Flask
 from flask_restful import Api, Resource
 from data import *
+from flask_sslify import SSLify
+
 
 app = Flask(__name__)
 api = Api(app)
+sslify =SSLify(app)
 
 
 class Peri(Resource):
