@@ -7,12 +7,10 @@
 from flask import Flask
 from flask_restful import Api, Resource
 from data import *
-from flask_sslify import SSLify
 
 
 app = Flask(__name__)
 api = Api(app)
-sslify =SSLify(app)
 
 
 class Peri(Resource):
@@ -28,4 +26,4 @@ class Peri(Resource):
 api.add_resource(Peri, "/perihelion", "/perihelion/", "/perihelion/<int:id>")
 if __name__ == "__main__":
     # app.run(debug=True)
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0",ssl_context=("/etc/letsencrypt/live/astrometry.ch/fullchain.pem","/etc/letsencrypt/live/astrometry.ch/privkey.pem"))
