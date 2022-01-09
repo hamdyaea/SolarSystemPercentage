@@ -90,4 +90,4 @@
 ########################### Automatic github random push number ############
 0 */2 * * * /root/RandomNumber/random.bsh
 ########################## Watchdog for the astrometry.ch api ##############
-* * * * * /root/SolarSystemPercentage/api/api-watchdog.bsh 
+#* * * * * /root/SolarSystemPercentage/api/api-watchdog.bsh   # OLD Depreciated
