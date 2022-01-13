@@ -9,29 +9,35 @@
 
 <url>
   <loc>http://www.astrometry.ch/</loc>
-  <lastmod>2019-12-25T12:05:25+00:00</lastmod>
+  <lastmod>2021-12-25T12:05:25+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>http://www.astrometry.ch/main.html</loc>
-  <lastmod>2019-12-25T13:00:01+00:00</lastmod>
+  <lastmod>2021-12-25T13:00:01+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.astrometry.ch/menu.html</loc>
-  <lastmod>2019-12-20T17:14:53+00:00</lastmod>
+  <lastmod>2021-12-20T17:14:53+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>http://www.astrometry.ch/info.html</loc>
-  <lastmod>2019-12-25T12:03:32+00:00</lastmod>
+  <lastmod>2021-12-25T12:03:32+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>http://www.astrometry.ch/blog.html</loc>
-  <lastmod>2019-12-25T12:07:02+00:00</lastmod>
+  <lastmod>2021-12-25T12:07:02+00:00</lastmod>
   <priority>0.64</priority>
 </url>
+<url>
+  <loc>https://perihelionapi.herokuapp.com/</loc>
+  <lastmod>2022-01-05T12:07:02+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
 
 
 </urlset>
