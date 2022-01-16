@@ -91,3 +91,6 @@
 0 */2 * * * /root/RandomNumber/random.bsh
 ########################## Watchdog for the astrometry.ch api ##############
 #* * * * * /root/SolarSystemPercentage/api/api-watchdog.bsh   # OLD Depreciated
+
+## nextramadan.info 
+30 13 * * 5 python3 /root/NextRamadan/nextRamTwitter.py
