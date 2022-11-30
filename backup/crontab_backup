@@ -52,31 +52,31 @@
 0  8 * * 2 python3 /root/SolarSystemPercentage/tumblr/neowise-tumblr.py
 0  8 * * 3 python3 /root/SolarSystemPercentage/tumblr/apophis-tumblr.py
 0  8 * * 4 python3 /root/SolarSystemPercentage/tumblr/vp1-tumblr.py
-0 12 * * 1 python3 /root/SolarSystemPercentage/facebook/ceres-facebook.py
-0 12 * * 2 python3 /root/SolarSystemPercentage/facebook/eris-facebook.py
-0 12 * * 3 python3 /root/SolarSystemPercentage/facebook/haumea-facebook.py
+#0 12 * * 1 python3 /root/SolarSystemPercentage/facebook/ceres-facebook.py
+#0 12 * * 2 python3 /root/SolarSystemPercentage/facebook/eris-facebook.py
+#0 12 * * 3 python3 /root/SolarSystemPercentage/facebook/haumea-facebook.py
 #0 12 * * 4 python3 /root/SolarSystemPercentage/facebook/facebook.py
-0 12 * * 5 python3 /root/SolarSystemPercentage/facebook/neptune-facebook.py
-0 12 * * 6 python3 /root/SolarSystemPercentage/facebook/saturn-facebook.py
-0 12 * * 0 python3 /root/SolarSystemPercentage/facebook/uranus-facebook.py
-0 15 * * 1 python3 /root/SolarSystemPercentage/facebook/earth-facebook.py
-0 15 * * 2 python3 /root/SolarSystemPercentage/facebook/faye-facebook.py
-0 15 * * 3 python3 /root/SolarSystemPercentage/facebook/jupiter-facebook.py
-0 15 * * 4 python3 /root/SolarSystemPercentage/facebook/mercury-facebook.py
-0 15 * * 5 python3 /root/SolarSystemPercentage/facebook/pluto-facebook.py
-0 15 * * 6 python3 /root/SolarSystemPercentage/facebook/tesla-facebook.py
-0 15 * * 0 python3 /root/SolarSystemPercentage/facebook/venus-facebook.py
-0 20 * * 1 python3 /root/SolarSystemPercentage/facebook/encke-facebook.py
-0 20 * * 2 python3 /root/SolarSystemPercentage/facebook/halley-facebook.py
-0 20 * * 3 python3 /root/SolarSystemPercentage/facebook/makemake-facebook.py
-0 20 * * 4 python3 /root/SolarSystemPercentage/facebook/moon-facebook.py
-0 20 * * 5 python3 /root/SolarSystemPercentage/facebook/hale-bopp-facebook.py
-0 20 * * 6 python3 /root/SolarSystemPercentage/facebook/earth-real-facebook.py
-0 16 * * 1 python3 /root/SolarSystemPercentage/facebook/gobelin-facebook.py
-0 16 * * 2 python3 /root/SolarSystemPercentage/facebook/atlas-facebook.py
-0 16 * * 3 python3 /root/SolarSystemPercentage/facebook/neowise-facebook.py
-0 16 * * 4 python3 /root/SolarSystemPercentage/facebook/apophis-facebook.py
-0 16 * * 5 python3 /root/SolarSystemPercentage/facebook/vp1-facebook.py
+#0 12 * * 5 python3 /root/SolarSystemPercentage/facebook/neptune-facebook.py
+#0 12 * * 6 python3 /root/SolarSystemPercentage/facebook/saturn-facebook.py
+#0 12 * * 0 python3 /root/SolarSystemPercentage/facebook/uranus-facebook.py
+#0 15 * * 1 python3 /root/SolarSystemPercentage/facebook/earth-facebook.py
+#0 15 * * 2 python3 /root/SolarSystemPercentage/facebook/faye-facebook.py
+#0 15 * * 3 python3 /root/SolarSystemPercentage/facebook/jupiter-facebook.py
+#0 15 * * 4 python3 /root/SolarSystemPercentage/facebook/mercury-facebook.py
+#0 15 * * 5 python3 /root/SolarSystemPercentage/facebook/pluto-facebook.py
+#0 15 * * 6 python3 /root/SolarSystemPercentage/facebook/tesla-facebook.py
+#0 15 * * 0 python3 /root/SolarSystemPercentage/facebook/venus-facebook.py
+#0 20 * * 1 python3 /root/SolarSystemPercentage/facebook/encke-facebook.py
+#0 20 * * 2 python3 /root/SolarSystemPercentage/facebook/halley-facebook.py
+#0 20 * * 3 python3 /root/SolarSystemPercentage/facebook/makemake-facebook.py
+#0 20 * * 4 python3 /root/SolarSystemPercentage/facebook/moon-facebook.py
+#0 20 * * 5 python3 /root/SolarSystemPercentage/facebook/hale-bopp-facebook.py
+#0 20 * * 6 python3 /root/SolarSystemPercentage/facebook/earth-real-facebook.py
+#0 16 * * 1 python3 /root/SolarSystemPercentage/facebook/gobelin-facebook.py
+#0 16 * * 2 python3 /root/SolarSystemPercentage/facebook/atlas-facebook.py
+#0 16 * * 3 python3 /root/SolarSystemPercentage/facebook/neowise-facebook.py
+#0 16 * * 4 python3 /root/SolarSystemPercentage/facebook/apophis-facebook.py
+#0 16 * * 5 python3 /root/SolarSystemPercentage/facebook/vp1-facebook.py
 ############################# Monitoring checks ############################
 ############################################################################ 
 02 21 * * * /usr/sbin/aide --check >> /root/aide_result
@@ -94,6 +94,7 @@
 
 ## nextramadan.info 
 30 13 * * 5 python3 /root/NextRamadan/nextRamTwitter.py
+
 
 ## Update rockets launches
 0 */12 * * * /usr/bin/wget -v  -O /var/www/html/rockets.json https://ll.thespacedevs.com/2.2.0/launch/\?format\=json\&last_updated__gte\=\&last_updated__lte\=\&mission__orbit__name\=\&mission__orbit__name__icontains\=\&name\=\&net__gt\=\&net__gte\=\&net__lt\=\&net__lte\=\&r_spacex_api_id\=\&rocket__configuration__full_name\=\&rocket__configuration__full_name__icontains\=\&rocket__configuration__id\=\&rocket__configuration__manufacturer__name\=\&rocket__configuration__manufacturer__name__icontains\=\&rocket__configuration__name\=\&rocket__spacecraftflight__spacecraft__id\=\&rocket__spacecraftflight__spacecraft__name\=\&rocket__spacecraftflight__spacecraft__name__icontains\=\&slug\=\&status\=1\&window_end__gt\=\&window_end__gte\=\&window_end__lt\=\&window_end__lte\=\&window_start__gt\=\&window_start__gte\=\&window_start__lt\=\&window_start__lte\=  -a  /var/log/wget.log
