@@ -42,7 +42,7 @@ def atlas(object):
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
 
-    with open("/var/www/html/orbital.json", "r") as O:
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -115,7 +115,7 @@ atlas("C/2019 Y4 ATLAS")
 graph = facebook.GraphAPI(access_token=[token], version="3.0")
 
 graph.put_photo(
-    image=open("/var/www/html/pictures/atlas.jpg", "rb"),
+    image=open("/var/www/astrometry/pictures/atlas.jpg", "rb"),
     message=str(Percentage.objectHTML)
     + str("\n#Astronomy #Space #Espace #Astrometry")
     + str("\n#Astronomy #Space #Espace #Astrometry"),

@@ -39,7 +39,7 @@ def sedna(object):
     Percentage.Goblin_current_year = date.today().year + 96
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
-    with open("/var/www/html/orbital.json", "r") as O:
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -109,6 +109,6 @@ def sedna(object):
 sedna("90377 Sedna")
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
-photo = open("/var/www/html/pictures/Nasasedna.jpg", "rb")
+photo = open("/var/www/astrometry/pictures/Nasasedna.jpg", "rb")
 response = twitter.upload_media(media=photo)
 twitter.update_status(status=message, media_ids=[response["media_id"]])

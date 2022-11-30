@@ -38,9 +38,9 @@ Percentage.thisMonth = int(datetime.today().strftime("%m"))
 
 
 def Earth():
-    with open("/var/www/html/orbital.json", "r") as O:
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
-        #contentHtml = open("/var/www/html/main.html", "a")
+        #contentHtml = open("/var/www/astrometry/main.html", "a")
         picture = orbit["Earth"][0]["Picture"]
         W = orbit["Earth"][0]["PicW"]
         H = orbit["Earth"][0]["PicH"]
@@ -117,7 +117,7 @@ Earth()
 graph = facebook.GraphAPI(access_token=[token], version="3.1")
 
 graph.put_photo(
-    image=open("/var/www/html/pictures/terre.png", "rb"),
+    image=open("/var/www/astrometry/pictures/terre.png", "rb"),
     message=Percentage.earthHTML
     + Percentage.BarrEarthHTML
     + str("\n#Astronomy #Space #Espace #Astrometry"),

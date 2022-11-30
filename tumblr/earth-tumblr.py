@@ -42,7 +42,7 @@ Percentage.thisMonth = int(datetime.today().strftime("%m"))
 
 
 def Earth():
-    with open("/var/www/html/orbital.json", "r") as O:
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit["Earth"][0]["Picture"]
         W = orbit["Earth"][0]["PicW"]
@@ -104,6 +104,6 @@ client.create_photo(
     state="published",
     tags=[Percentage.earthHTML],
     format="markdown",
-    data=["/var/www/html/pictures/terre.png"],
+    data=["/var/www/astrometry/pictures/terre.png"],
     caption="#Astronomy #Space #Espace #Astrometry",
 )

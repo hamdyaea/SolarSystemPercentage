@@ -42,8 +42,8 @@ def goblin(object):
     Percentage.Goblin_current_year = date.today().year + 2522
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
-    indexFile = open("/var/www/html/main.html", "a")
-    with open("/var/www/html/orbital.json", "r") as O:
+    indexFile = open("/var/www/astrometry/main.html", "a")
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -109,6 +109,6 @@ client.create_photo(
     state="published",
     tags=[Percentage.objectHTML],
     format="markdown",
-    data=["/var/www/html/pictures/thegobelin.jpg"],
+    data=["/var/www/astrometry/pictures/thegobelin.jpg"],
     caption="#Astronomy #Space #Espace #Astrometry",
 )

@@ -39,7 +39,7 @@ Percentage.thisMonth = int(datetime.today().strftime("%m"))
 
 
 def perihelion(object, years1, years):
-    with open("/var/www/html/orbital.json", "r") as O:
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         thisYear = orbit[object][0]["Peri"]
         picture = orbit[object][0]["Picture"]
@@ -126,6 +126,6 @@ perihelion("Earth", 364, 364)
 graph = facebook.GraphAPI(access_token=[token], version="3.0")
 
 graph.put_photo(
-    image=open("/var/www/html/pictures/terre.png", "rb"),
+    image=open("/var/www/astrometry/pictures/terre.png", "rb"),
     message=str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry"),
 )

@@ -41,7 +41,7 @@ Percentage.thisMonth = int(datetime.today().strftime("%m"))
 
 
 def perihelion(object, years1, years):
-    with open("/var/www/html/orbital.json", "r") as O:
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         thisYear = orbit[object][0]["Peri"]
         picture = orbit[object][0]["Picture"]
@@ -127,6 +127,6 @@ perihelion("Earth", 364, 364)
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
 
-photo = open("/var/www/html/pictures/terre.png", "rb")
+photo = open("/var/www/astrometry/pictures/terre.png", "rb")
 response = twitter.upload_media(media=photo)
 twitter.update_status(status=message, media_ids=[response["media_id"]])

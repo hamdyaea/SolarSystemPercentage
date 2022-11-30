@@ -44,7 +44,7 @@ def atlas(object):
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
 
-    with open("/var/www/html/orbital.json", "r") as O:
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -119,6 +119,6 @@ client.create_photo(
     state="published",
     tags=[Percentage.objectHTML],
     format="markdown",
-    data=["/var/www/html/pictures/atlas.jpg"],
+    data=["/var/www/astrometry/pictures/atlas.jpg"],
     caption="#Astronomy #Space #Espace #Astrometry",
 )

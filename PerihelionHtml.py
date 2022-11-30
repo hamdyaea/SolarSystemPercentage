@@ -172,7 +172,7 @@ def start():
         + str("\n")
     )
 
-    indexFile = open("/var/www/html/index.html", "w")
+    indexFile = open("/var/www/astrometry/index.html", "w")
     indexFile.write(startHtml)
     indexFile.close()
 
@@ -181,8 +181,8 @@ def neowise(object):
     Percentage.Goblin_current_year = date.today().year
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
-    indexFile = open("/var/www/html/index.html", "a")
-    with open("/var/www/html/orbital.json", "r") as O:
+    indexFile = open("/var/www/astrometry/index.html", "a")
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -277,8 +277,8 @@ def atlas(object):
     Percentage.Goblin_current_year = date.today().year
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
-    indexFile = open("/var/www/html/index.html", "a")
-    with open("/var/www/html/orbital.json", "r") as O:
+    indexFile = open("/var/www/astrometry/index.html", "a")
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -373,8 +373,8 @@ def goblin(object):
     Percentage.Goblin_current_year = date.today().year + 2522
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
-    indexFile = open("/var/www/html/index.html", "a")
-    with open("/var/www/html/orbital.json", "r") as O:
+    indexFile = open("/var/www/astrometry/index.html", "a")
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -470,8 +470,8 @@ def sedna(object):
     Percentage.Goblin_current_year = date.today().year + 96
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
-    indexFile = open("/var/www/html/index.html", "a")
-    with open("/var/www/html/orbital.json", "r") as O:
+    indexFile = open("/var/www/astrometry/index.html", "a")
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -566,8 +566,8 @@ def sedna(object):
 
 
 def Earth():
-    indexFile = open("/var/www/html/index.html", "a")
-    with open("/var/www/html/orbital.json", "r") as O:
+    indexFile = open("/var/www/astrometry/index.html", "a")
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit["Earth"][0]["Picture"]
         W = orbit["Earth"][0]["PicW"]
@@ -656,8 +656,8 @@ def Earth():
 
 
 def perihelion(object, years1, years):
-    indexFile = open("/var/www/html/index.html", "a")
-    with open("/var/www/html/orbital.json", "r") as O:
+    indexFile = open("/var/www/astrometry/index.html", "a")
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         thisYear = ""
         thisYear = orbit[object][0]["Peri"]
@@ -770,76 +770,76 @@ def perihelion(object, years1, years):
                 indexFile.write("\n")
 
 
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 start()
 Earth()
 perihelion("Mercury", 88, 88)
 perihelion("Venus", 224, 224)
 perihelion("Earth", 364, 364)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 perihelion("Moon", 27, 27)
 perihelion("Mars", 688, 688)
 perihelion("Jupiter", 4328, 4328)
 perihelion("Saturn", 10719, 10719)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 perihelion("Uranus", 30769, 30769)
 perihelion("Neptune", 60639, 60639)
 perihelion("Pluto", 90591, 90591)
 perihelion("Tesla", 559, 559)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 perihelion("Ceres", 1684, 1684)
 perihelion("Haumea", 103775, 103775)
 perihelion("Makemake", 112330, 112330)
 perihelion("Eris", 203651, 203651)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 perihelion("Encke", 1204, 1204)
 goblin("2015 TG387 The Gobelin")
 perihelion("Faye", 2660, 2660)
 perihelion("Hale-Bopp", 729117, 866718)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 atlas("C/2019 Y4 ATLAS")
 perihelion("Halley", 27564, 27564)
 perihelion("(89959) 2002 NT7",236,236)
 perihelion("99942 Apophis", 324, 324)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 perihelion("2018 VP1", 730, 730)
 perihelion("2020 SO", 387, 387)
 sedna("90377 Sedna")
 perihelion("101955 Bennu", 438, 438)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
@@ -849,31 +849,31 @@ perihelion("16 Psyche", 1824, 1824)
 neowise("C/2020 F3 NEOWISE")
 perihelion("(NEO) 2020 TY1",944,944)
 perihelion("(162173) Ryugu",383,383)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 perihelion("C/2020 M3 Atlas",50768,50768)
 perihelion("3200 Phaeton",524,524)
 perihelion("1862 Apollo",652,652)
 perihelion("VT4 2020",349,349)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.write('<ul id="featured" class="wrapper clearfix">')
 indexFile.write("\n")
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 perihelion("C/2020 S3 Erasmus", 700000 ,950000)
 perihelion("88P/Howell", 2002, 2002)
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 indexFile.write("</ul>")
 indexFile.write("\n")
 indexFile.close()
 
 
-indexFile = open("/var/www/html/index.html", "a")
+indexFile = open("/var/www/astrometry/index.html", "a")
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
 

@@ -42,7 +42,7 @@ def neowise(object):
     Percentage.Goblin_today = int(datetime.today().strftime("%d"))
     Percentage.Goblin_thisMonth = int(datetime.today().strftime("%m"))
 
-    with open("/var/www/html/orbital.json", "r") as O:
+    with open("/var/www/astrometry/orbital.json", "r") as O:
         orbit = json.load(O)
         picture = orbit[object][0]["Picture"]
         W = orbit[object][0]["PicW"]
@@ -115,7 +115,7 @@ neowise("C/2020 F3 NEOWISE")
 graph = facebook.GraphAPI(access_token=[token], version="3.0")
 
 graph.put_photo(
-    image=open("/var/www/html/pictures/neowise.jpg", "rb"),
+    image=open("/var/www/astrometry/pictures/neowise.jpg", "rb"),
     message=str(Percentage.objectHTML)
     + str("\n#Astronomy #Space #Espace #Astrometry")
     + str("\n#Astronomy #Space #Espace #Astrometry"),
