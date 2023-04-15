@@ -13,10 +13,7 @@ import json
 
 from keys import *
 
-from twython import Twython
-
-twitter = Twython(consumer_key, consumer_secret, access_token, access_token_secret)
-
+import tweepy
 
 class Percentage:
     def __init__(self):
@@ -118,7 +115,7 @@ def perihelion(object, years1, years):
                         + str(barre)
                     )
                 )
-
+                print(Percentage.objectHTML)
                 Percentage.barrobject = "Percent of this year : " + (barre) + str("\n")
                 Percentage.barrobjectHTML = "Percent of this year : " + (barre) + ("\n")
 
@@ -127,6 +124,10 @@ perihelion("Ceres", 1684, 1684)
 
 message = str(Percentage.objectHTML) + str("\n#Astronomy #Space #Espace #Astrometry")
 
-photo = open("/var/www/astrometry/pictures/ceres.jpg", "rb")
-response = twitter.upload_media(media=photo)
-twitter.update_status(status=message, media_ids=[response["media_id"]])
+photo = '/var/www/astrometry/pictures/ceres.jpg'
+auth = tweepy.OAuth1UserHandler(
+   API_Key, API_Key_Secret, access_token, access_token_secret
+)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth)
+api.update_status_with_media(filename=photo,status=message)
