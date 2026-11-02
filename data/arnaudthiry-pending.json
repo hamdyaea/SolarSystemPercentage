@@ -1,0 +1,16 @@
+{
+  "reason": "Temporarily hidden: no independently verified future perihelion date",
+  "reference": "https://ssd.jpl.nasa.gov/sb/orbits.html",
+  "original": [
+    {
+      "info": "Asteroid",
+      "Picture": "https://astrometry.ch/pictures/thiry.png",
+      "PicW": "100",
+      "PicH": "100",
+      "orperiod": "1715 days",
+      "Peri": [
+        "2020,09,28"
+      ]
+    }
+  ]
+}

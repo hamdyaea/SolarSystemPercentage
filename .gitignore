@@ -1,1 +1,16 @@
+# Developer: Hamdy Abou El Anein
+# SPDX-License-Identifier: GPL-3.0-only
+__pycache__/
+dist/
+*.pyc
+*.log
+.DS_Store
+# Historical integrations are retained only on the old branch.
+backup/
 instagram/
+facebook/
+tumblr/
+twitterBot/
+api/
+old/
+.idea/

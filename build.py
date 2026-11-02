@@ -1,0 +1,63 @@
+#!/usr/bin/env python3
+# Developer: Hamdy Abou El Anein
+# Contact: info@daylightlinux.ch
+# SPDX-License-Identifier: GPL-3.0-only
+"""Static Astrometry generator. Curated dates are not live ephemerides."""
+import argparse,json,os,re,tempfile
+from datetime import date,datetime
+from pathlib import Path
+from html import escape as h
+from urllib.parse import urlparse
+from zoneinfo import ZoneInfo
+HERE=Path(__file__).resolve().parent
+NAV=[("index.html","Overview"),("objects.html","Explore objects"),("methodology.html","Methodology"),("about.html","About")]
+def write(path,data):
+ path.parent.mkdir(parents=True,exist_ok=True)
+ with tempfile.NamedTemporaryFile("w",encoding="utf-8",dir=path.parent,delete=False,prefix=".astro-") as f:f.write(data);tmp=f.name
+ os.chmod(tmp,0o644);os.replace(tmp,path)
+def event(x):
+ if not isinstance(x,str) or not re.fullmatch(r"\d{4},\d{1,2},\d{1,2}",x):return None
+ try:return date(*map(int,x.split(",")))
+ except ValueError:return None
+def normalize(raw,today):
+ out=[]
+ for name,items in raw.items():
+  if not isinstance(name,str) or not isinstance(items,list) or not items or not isinstance(items[0],dict):continue
+  x=items[0];events=sorted(set(d for d in (event(y) for y in x.get("Peri",[])) if d))
+  last=max((d for d in events if d<=today),default=None);nxt=min((d for d in events if d>today),default=None)
+  progress=round(100*(today-last).days/(nxt-last).days,1) if last and nxt else None
+  url=urlparse(str(x.get("Picture","")))
+  pic=url.path if url.hostname in ("astrometry.ch","www.astrometry.ch") and re.fullmatch(r"/pictures/[A-Za-z0-9_.-]+",url.path) else ""
+  out.append(dict(name=name,kind=str(x.get("info","Object")),period=str(x.get("orperiod","Unknown")),image=pic,last=last.isoformat() if last else None,next=nxt.isoformat() if nxt else None,progress=progress))
+ return sorted(out,key=lambda x:(x["next"] is None,x["next"] or "9999",x["name"].casefold()))
+def shell(title,description,active,body,stamp):
+ links="".join('<a href="/%s"%s>%s</a>'%(p,' aria-current="page"' if p==active else "",label) for p,label in NAV)
+ return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="%s"><meta name="theme-color" content="#07121f"><link rel="canonical" href="https://astrometry.ch/%s"><link rel="icon" href="/pictures/favicon.ico"><link rel="stylesheet" href="/css/astro-v2.css"><script src="/js/astro-v2.js" defer></script><title>%s — Astrometry</title></head><body><a class="skip" href="#main">Skip to content</a><header><div class="wrap nav"><a class="logo" href="/index.html">✦ ASTROMETRY<span>.CH</span></a><nav aria-label="Main navigation">%s</nav><a class="github" href="https://github.com/hamdyaea/SolarSystemPercentage">Source ↗</a></div></header><main id="main">%s</main><footer><div class="wrap foot"><div><strong>✦ ASTROMETRY.CH</strong><p>Explore orbital cycles with curiosity and context.</p><p>Founded and developed by Hamdy Abou El Anein</p><p>Contact: <a href="mailto:info@daylightlinux.ch">info@daylightlinux.ch</a></p></div><div><a href="/methodology.html">Data & limitations</a><a href="/old/">Old website</a><a href="https://github.com/hamdyaea/SolarSystemPercentage">GitHub</a></div><small>Generated %s · Europe/Zurich</small></div></footer></body></html>'%(h(description,quote=True),active,h(title),links,body,h(stamp))
+def card(x):
+ pic='<img src="%s" alt="" loading="lazy">'%h(x["image"],quote=True) if x["image"] else '<span class="missing">✦</span>'
+ progress=('<div class="meter-head"><span>Listed-event interval</span><strong>%.1f%%</strong></div><div class="meter" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="%.1f" aria-label="Elapsed time between listed events"><span style="width:%.1f%%"></span></div>'%(x["progress"],x["progress"],x["progress"])) if x["progress"] is not None else '<p class="data-note">Interval unavailable — insufficient dates.</p>'
+ return '<article class="object-card" data-name="%s" data-category="%s"><div class="object-image">%s</div><div class="object-body"><span class="category">%s</span><h3>%s</h3><div class="dates"><span>Last listed <b>%s</b></span><span>Next listed <b>%s</b></span></div>%s<p class="period">Reported period: %s</p></div></article>'%(h(x["name"].casefold(),quote=True),h(x["kind"].casefold(),quote=True),pic,h(x["kind"]),h(x["name"]),h(x["last"] or "Not recorded"),h(x["next"] or "No future date"),progress,h(x["period"]))
+def head(kicker,title,lead):return '<section class="pagehead"><div class="wrap"><p class="eyebrow">%s</p><h1>%s</h1><p class="lead">%s</p></div></section>'%(kicker,title,lead)
+def build(source,out,today):
+ raw=json.loads(source.read_text());objects=normalize(raw,today)
+ if len(objects)<10:raise ValueError("Dataset incomplete")
+ upcoming=[x for x in objects if x["next"]];stamp=datetime.now(ZoneInfo("Europe/Zurich")).strftime("%d %B %Y %H:%M %Z")
+ start=date(today.year,1,1);end=date(today.year+1,1,1);elapsed=(today-start).days;total=(end-start).days;pct=100*elapsed/total
+ hero='<section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">THE SOLAR SYSTEM · EXPLORED</p><h1>Every orbit<br><em>tells a story.</em></h1><p class="lead">Discover planets, moons, comets and distant objects through documented orbital events. See what the data knows — and where its limits begin.</p><div class="actions"><a class="button" href="/objects.html">Explore objects ↗</a><a class="button secondary" href="/methodology.html">How the data works</a></div><div class="hero-stats"><div><strong>%d</strong><span>Objects</span></div><div><strong>%d</strong><span>With future listed dates</span></div><div><strong>%s</strong><span>Reference year</span></div></div></div><div class="orbital-visual" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="sun"></div><div class="planet planet-a"></div><div class="planet planet-b"></div></div></div></section>'%(len(objects),len(upcoming),today.year)
+ featured='<section class="section"><div class="wrap"><div class="section-heading"><div><p class="eyebrow">NEXT LISTED EVENTS</p><h2>Explore what comes next</h2></div><a class="text-link" href="/objects.html">Full catalogue ↗</a></div><p class="disclaimer">Curated historical dates, not live predictions. Verify against current ephemerides.</p><div class="cards">%s</div></div></section>'%"".join(map(card,upcoming[:6]))
+ year='<section class="section soft"><div class="wrap split"><div><p class="eyebrow">EARTH / THE PASSAGE OF TIME</p><h2>Our journey around the Sun</h2><p class="lead">The calendar-year indicator is not a precise orbital angle or perihelion calculation.</p><a class="text-link" href="/methodology.html">Understand the calculations ↗</a></div><div class="year-panel"><span>%d / CALENDAR YEAR</span><strong>%.1f%%</strong><div class="meter"><span style="width:%.1f%%"></span></div><p>%d of %d days elapsed</p></div></div></section>'%(today.year,pct,pct,elapsed,total)
+ write(out/"index.html",shell("Explore orbital cycles","Explore documented orbital events, planets and comets.","index.html",hero+featured+year,stamp))
+ kinds=sorted(set(x["kind"] for x in objects));controls='<div class="controls"><label for="search">Search</label><input id="search" type="search" placeholder="Search objects…" autocomplete="off"><label for="category">Category</label><select id="category"><option value="">All categories</option>%s</select><span id="count" role="status" aria-live="polite"></span></div>'%"".join('<option value="%s">%s</option>'%(h(k.casefold(),quote=True),h(k)) for k in kinds)
+ catalogue=head("OBJECT CATALOGUE","Explore the <em>universe.</em>","Search the historical catalogue. Missing future dates are not extrapolated.")+'<section class="section"><div class="wrap">'+controls+'<div class="cards" id="catalogue">'+''.join(map(card,objects))+'</div><p id="no-results" hidden>No objects match.</p></div></section>'
+ write(out/"objects.html",shell("Explore objects","Search documented perihelion events.","objects.html",catalogue,stamp))
+ methodology=head("DATA TRANSPARENCY","Science needs <em>context.</em>","Educational visualization of curated dates, not an authoritative ephemeris.")+'<section class="section"><div class="wrap prose"><h2>Data sources</h2><p>The original orbital.json records object names, periods, images and dated events. These may be incomplete, approximate or outdated.</p><h2>Progress is not orbital position</h2><p>When two listed dates bracket today, we show the fraction of calendar days elapsed between them. This does not indicate physical orbital position or distance; orbital speed varies.</p><h2>No invented future events</h2><p>We do not extrapolate missing perihelion dates. Objects with insufficient data have no progress bar. Use current professional ephemerides for scientific work.</p><h2>Lightweight architecture</h2><p>Python generates static HTML and JSON with atomic file replacement. No tracking, database, JavaScript framework or server-side app is required.</p><p><a class="text-link" href="/data/objects.json">Inspect normalized JSON ↗</a></p></div></section>'
+ write(out/"methodology.html",shell("Methodology","Sources and limitations of orbital data.","methodology.html",methodology,stamp))
+ about=head("THE PROJECT","Made for the <em>curious.</em>","An independent astronomy education project by Hamdy Abou El Anein.")+'<section class="section"><div class="wrap prose"><h2>Explore. Learn. Question.</h2><p>Astrometry makes orbital datasets approachable with clear visualizations and source notes.</p><h2>Open source</h2><p>Current code is on GitHub; the original implementation is preserved in the old branch.</p><p><a class="text-link" href="https://github.com/hamdyaea/SolarSystemPercentage">View source ↗</a></p><h2>Archive</h2><p><a href="/old/">Visit the previous Astrometry website</a>. Older data is retained as an archive, not presented as current science.</p></div></section>'
+ write(out/"about.html",shell("About","About Astrometry and its founder.","about.html",about,stamp))
+ write(out/"data/objects.json",json.dumps(dict(generated_at=datetime.now(ZoneInfo("Europe/Zurich")).isoformat(),reference_date=today.isoformat(),notice="Historical curated dates; not live ephemerides",objects=objects),ensure_ascii=False,indent=2)+"\n")
+ write(out/"sitemap.xml",'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>https://astrometry.ch/%s</loc></url>'%p for p,_ in NAV)+'</urlset>')
+ write(out/"robots.txt","User-agent: *\nAllow: /\nSitemap: https://astrometry.ch/sitemap.xml\n")
+ for name in ("css/astro-v2.css","js/astro-v2.js"):write(out/name,(HERE/name).read_text())
+ print("Built",len(objects),"objects;",len(upcoming),"future-dated objects")
+if __name__=="__main__":
+ p=argparse.ArgumentParser();p.add_argument("--source",type=Path,required=True);p.add_argument("--out",type=Path,required=True);p.add_argument("--date",type=date.fromisoformat,default=datetime.now(ZoneInfo("Europe/Zurich")).date());a=p.parse_args();build(a.source,a.out,a.date)

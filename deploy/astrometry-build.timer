@@ -1,0 +1,11 @@
+# Developer: Hamdy Abou El Anein
+# SPDX-License-Identifier: GPL-3.0-only
+[Unit]
+Description=Daily Astrometry static orbital refresh
+[Timer]
+OnCalendar=*-*-* 00:10:00
+Persistent=true
+RandomizedDelaySec=120
+Unit=astrometry-build.service
+[Install]
+WantedBy=timers.target

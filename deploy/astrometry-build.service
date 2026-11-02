@@ -1,0 +1,23 @@
+# Developer: Hamdy Abou El Anein
+# SPDX-License-Identifier: GPL-3.0-only
+[Unit]
+Description=Rebuild static Astrometry orbital pages
+After=local-fs.target
+[Service]
+Type=oneshot
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/astrometry
+ExecStart=/usr/bin/python3 /opt/astrometry/build.py --source /var/www/astrometry/orbital.json --out /var/www/astrometry
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/var/www/astrometry
+ProtectKernelTunables=yes
+ProtectControlGroups=yes
+ProtectKernelModules=yes
+RestrictAddressFamilies=AF_UNIX
+MemoryMax=96M
+CPUQuota=25%
+TimeoutStartSec=45
