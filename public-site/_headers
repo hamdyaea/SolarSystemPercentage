@@ -13,3 +13,7 @@
   X-Robots-Tag: noindex, follow
 /pictures/*.html
   X-Robots-Tag: noindex, follow
+
+# Technical deployment hostname; custom domains remain indexable.
+https://solarsystempercentage.pages.dev/*
+  X-Robots-Tag: noindex
