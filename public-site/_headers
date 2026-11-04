@@ -2,3 +2,14 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Cache-Control: public, max-age=0, must-revalidate, no-transform
+
+/old/*
+  X-Robots-Tag: noindex, follow
+/blog.html
+  X-Robots-Tag: noindex, follow
+/news.html
+  X-Robots-Tag: noindex, follow
+/main.html
+  X-Robots-Tag: noindex, follow
+/pictures/*.html
+  X-Robots-Tag: noindex, follow
