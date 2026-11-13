@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-13T00:11:02.450500+01:00",
-  "reference_date": "2026-11-13",
+  "generated_at": "2026-11-14T00:10:51.035184+01:00",
+  "reference_date": "2026-11-14",
   "notice": "Historical curated dates; not live ephemerides",
   "objects": [
     {
@@ -10,7 +10,7 @@
       "image": "/pictures/apophis.jpg",
       "last": "2025-12-30",
       "next": "2026-11-19",
-      "progress": 98.1
+      "progress": 98.5
     },
     {
       "name": "VT4 2020",
@@ -19,7 +19,7 @@
       "image": "/pictures/vt42020.webp",
       "last": "2026-01-11",
       "next": "2026-11-21",
-      "progress": 97.5
+      "progress": 97.8
     },
     {
       "name": "Moon",
@@ -28,7 +28,7 @@
       "image": "/pictures/lune.jpg",
       "last": "2026-10-28",
       "next": "2026-11-25",
-      "progress": 57.1
+      "progress": 60.7
     },
     {
       "name": "Venus",
@@ -37,7 +37,7 @@
       "image": "/pictures/venus.jpg",
       "last": "2026-05-15",
       "next": "2026-12-25",
-      "progress": 81.2
+      "progress": 81.7
     },
     {
       "name": "Earth",
@@ -46,7 +46,7 @@
       "image": "/pictures/terre.png",
       "last": "2026-01-03",
       "next": "2027-01-03",
-      "progress": 86.0
+      "progress": 86.3
     },
     {
       "name": "(89959) 2002 NT7",
@@ -55,7 +55,7 @@
       "image": "/pictures/nt7.gif",
       "last": "2026-05-13",
       "next": "2027-01-04",
-      "progress": 78.0
+      "progress": 78.4
     },
     {
       "name": "Encke",
@@ -64,7 +64,7 @@
       "image": "/pictures/encke.jpg",
       "last": "2023-10-12",
       "next": "2027-01-28",
-      "progress": 93.7
+      "progress": 93.8
     },
     {
       "name": "Mercury",
@@ -73,7 +73,7 @@
       "image": "/pictures/mercury.png",
       "last": "2026-11-10",
       "next": "2027-02-06",
-      "progress": 3.4
+      "progress": 4.5
     },
     {
       "name": "1862 Apollo",
@@ -82,7 +82,7 @@
       "image": "/pictures/1862Apollo.png",
       "last": "2025-05-06",
       "next": "2027-02-17",
-      "progress": 85.3
+      "progress": 85.4
     },
     {
       "name": "2020 SO",
@@ -91,7 +91,7 @@
       "image": "/pictures/2020SO.jpg",
       "last": "2026-03-24",
       "next": "2027-04-14",
-      "progress": 60.6
+      "progress": 60.9
     },
     {
       "name": "Tesla",
@@ -100,7 +100,7 @@
       "image": "/pictures/tesla.jpg",
       "last": "2025-10-24",
       "next": "2027-05-16",
-      "progress": 67.7
+      "progress": 67.8
     },
     {
       "name": "101955 Bennu",
@@ -109,7 +109,7 @@
       "image": "/pictures/bennu.gif",
       "last": "2026-04-11",
       "next": "2027-06-23",
-      "progress": 49.3
+      "progress": 49.5
     },
     {
       "name": "Ceres",
@@ -118,7 +118,7 @@
       "image": "/pictures/ceres.jpg",
       "last": "2022-12-08",
       "next": "2027-07-18",
-      "progress": 85.3
+      "progress": 85.4
     },
     {
       "name": "(162173) Ryugu",
@@ -127,7 +127,7 @@
       "image": "/pictures/Ryugu.gif",
       "last": "2026-07-08",
       "next": "2027-07-27",
-      "progress": 33.3
+      "progress": 33.6
     },
     {
       "name": "3200 Phaeton",
@@ -136,7 +136,7 @@
       "image": "/pictures/phaeton.gif",
       "last": "2026-09-03",
       "next": "2028-02-09",
-      "progress": 13.5
+      "progress": 13.7
     },
     {
       "name": "Mars",
@@ -145,7 +145,7 @@
       "image": "/pictures/mars.jpg",
       "last": "2026-03-25",
       "next": "2028-02-11",
-      "progress": 33.9
+      "progress": 34.0
     },
     {
       "name": "(NEO) 2020 TY1",
@@ -154,7 +154,7 @@
       "image": "/pictures/ty1.png",
       "last": "2026-02-15",
       "next": "2028-09-16",
-      "progress": 28.7
+      "progress": 28.8
     },
     {
       "name": "2018 VP1",
@@ -163,7 +163,7 @@
       "image": "/pictures/vp1.jpg",
       "last": "2026-11-01",
       "next": "2028-10-31",
-      "progress": 1.6
+      "progress": 1.8
     },
     {
       "name": "Faye",
@@ -190,7 +190,7 @@
       "image": "/pictures/88p.jpg",
       "last": "2026-03-23",
       "next": "2031-09-15",
-      "progress": 11.7
+      "progress": 11.8
     },
     {
       "name": "Saturn",
